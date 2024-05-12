@@ -1,0 +1,20 @@
+fields
+-list heightLevel heightLevelList
+-float maxhealth
+-float currenthealth
+-float movespeed
+-float damage
+
+-approach siege engine
+	-ai agent pathfinding
+
+-takeDamage (float damageValue)
+	currentHealth -= damageValue
+	if currentHealth <= 0,
+		enemyDie();
+
+-dealDamage (TowerHealth towerHealthScript)
+	towerhealthscript.takeDamage(damage)
+
+-enemyDie
+	destroy(gameObject)
