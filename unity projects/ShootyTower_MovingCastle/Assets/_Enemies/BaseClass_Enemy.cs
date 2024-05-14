@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BaseClass_Enemy : MonoBehaviour
 {
@@ -9,7 +10,14 @@ public class BaseClass_Enemy : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public float moveSpeed;
-    public float damage;
+    public float damagePerSec;
+
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+        NavMeshAgent navAgentScript = GetComponent<NavMeshAgent>();
+        navAgentScript.speed = moveSpeed;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +43,16 @@ public class BaseClass_Enemy : MonoBehaviour
 
     void enemyDie()
     {
+        Destroy(gameObject);
+    }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        //damage player
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Health_Player>().takeDamage(damagePerSec * Time.deltaTime);
+        }
     }
 
 }
