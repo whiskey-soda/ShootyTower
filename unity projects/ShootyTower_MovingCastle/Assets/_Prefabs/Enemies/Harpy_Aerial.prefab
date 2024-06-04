@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5835118688968897634}
   - component: {fileID: 5185405051001448595}
   m_Layer: 0
-  m_Name: Harpy_Tall
+  m_Name: Harpy_Aerial
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5835118688968897634
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4473e5298e85bb4fb20db94465f6ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heightLevelList: 02000000
+  heightLevelList: 00000000
   maxHealth: 25
   currentHealth: 0
   moveSpeed: 3
