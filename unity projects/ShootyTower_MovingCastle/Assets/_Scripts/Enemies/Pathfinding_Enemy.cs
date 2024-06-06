@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Scripting;
+
+[RequireComponent(typeof(NavMeshAgent))]
 
 public class Pathfinding_Enemy : MonoBehaviour
 {

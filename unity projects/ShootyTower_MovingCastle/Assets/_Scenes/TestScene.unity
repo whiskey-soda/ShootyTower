@@ -212,7 +212,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.26309004, g: 0.4113207, b: 0.28498775, a: 1}
   m_FlipX: 0
@@ -623,6 +623,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1734465606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215752211601350649, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566540823822471600, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
+      propertyPath: m_Name
+      value: Goblin
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 885e695063238dc4abc70e6846cbbcdd, type: 3}
 --- !u!1 &1930620384
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +695,8 @@ GameObject:
   - component: {fileID: 1930620387}
   - component: {fileID: 1930620390}
   - component: {fileID: 1930620391}
-  m_Layer: 0
+  - component: {fileID: 1930620392}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -836,6 +894,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!114 &1930620392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930620384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9018436fc018c1f418e04abdbe356a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  fireRate: 2
+  projectileSpeed: 1
+  pierce: 0
+  knockback: 0
+  range: 10
+  element: 0
+  projectilePrefab: {fileID: 3265185999461801760, guid: 118d1b2eabdfef84181a782e4875c90d, type: 3}
+  heightLevel: 0
+  readyToFire: 0
+  firingDelay: 0
 --- !u!1 &2117947032
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,3 +959,4 @@ SceneRoots:
   - {fileID: 2117947033}
   - {fileID: 585738480}
   - {fileID: 1930620386}
+  - {fileID: 1734465606}

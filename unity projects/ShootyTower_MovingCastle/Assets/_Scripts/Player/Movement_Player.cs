@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting;
 
-public class Movement : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+
+public class Movement_Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5;
 

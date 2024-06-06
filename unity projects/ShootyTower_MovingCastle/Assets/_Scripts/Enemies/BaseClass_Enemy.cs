@@ -6,15 +6,13 @@ using UnityEngine.AI;
 public class BaseClass_Enemy : MonoBehaviour
 {
 
-    public List<heightLevel> heightLevelList = new List<heightLevel>();
-    public float maxHealth;
-    public float currentHealth;
+    public List<HeightLevel> heightLevelList = new List<HeightLevel>();
+    public float health;
     public float moveSpeed;
     public float damagePerSec;
 
     private void Awake()
     {
-        currentHealth = maxHealth;
         NavMeshAgent navAgentScript = GetComponent<NavMeshAgent>();
         navAgentScript.speed = moveSpeed;
     }
@@ -33,9 +31,9 @@ public class BaseClass_Enemy : MonoBehaviour
 
     public void takeDamage(float damageValue)
     {
-        currentHealth -= damageValue;
+        health -= damageValue;
 
-        if (currentHealth <=0)
+        if (health <=0)
         {
             enemyDie();
         }

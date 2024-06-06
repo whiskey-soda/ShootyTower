@@ -31,7 +31,7 @@ public class TackShooter : TowerLayer
     {
         if (readyToFire)
         {
-            shoot();
+            Shoot();
             readyToFire = false;
             currentCooldown = firingDelay;
         }
@@ -48,7 +48,7 @@ public class TackShooter : TowerLayer
 
     }
 
-    void shoot()
+    void Shoot()
     {
         float currentFiringAngle = 0;
         float angleIncrementValue = 360 / numOfSpikes;
