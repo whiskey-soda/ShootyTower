@@ -8,14 +8,14 @@ using UnityEngine;
 public class BaseClass_Projectile : MonoBehaviour
 {
 
-    [SerializeField] public float damage;
-    [SerializeField] public float speed; //meters per second
-    [SerializeField] public float pierce;
-    [SerializeField] public float knockback;
-    [SerializeField] public float range; //meters
-    [SerializeField] public ElementType element;
-    [SerializeField] public HeightLevel myHeightLevel;
-    [SerializeField] public Vector2 normalizedMovementVector;
+    public float damage;
+    public float speed; //meters per second
+    public float pierce;
+    public float knockback;
+    public float range; //meters
+    public ElementType element;
+    public HeightLevel myHeightLevel;
+    public Vector2 normalizedMovementVector;
 
     [SerializeField] Rigidbody2D myRigidbody2D;
 

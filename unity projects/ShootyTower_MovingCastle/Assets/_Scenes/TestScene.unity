@@ -917,6 +917,8 @@ MonoBehaviour:
   heightLevel: 0
   readyToFire: 0
   firingDelay: 0
+  x: 1
+  y: 1
 --- !u!1 &2117947032
 GameObject:
   m_ObjectHideFlags: 0

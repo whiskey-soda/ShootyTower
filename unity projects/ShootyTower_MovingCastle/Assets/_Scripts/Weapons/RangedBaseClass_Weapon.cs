@@ -19,6 +19,9 @@ public class RangedBaseClass_Weapon : MonoBehaviour
     [SerializeField] bool readyToFire;
     [SerializeField] float firingDelay;
 
+    public float x;
+    public float y;
+
     private void Update()
     {
         if (firingDelay > 0)
@@ -32,7 +35,7 @@ public class RangedBaseClass_Weapon : MonoBehaviour
 
         if (readyToFire)
         {
-            CreateProjectile(new Vector2(1,1));
+            CreateProjectile(new Vector2(x,y));
             readyToFire = false;
             firingDelay = 1 / fireRate;
         }
@@ -67,8 +70,10 @@ public class RangedBaseClass_Weapon : MonoBehaviour
         projectileScript.element = element;
         projectileScript.myHeightLevel = heightLevel;
 
-        projectileScript.normalizedMovementVector = normalizedFiringDirection.normalized;
+        //make projectile point towards its move direction
+        projectileScript.normalizedMovementVector = normalizedFiringDirection.normalized;//for safety
+        projectileScript.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(normalizedFiringDirection.y, normalizedFiringDirection.x) * Mathf.Rad2Deg);
 
-        projectileScript.transform.LookAt(new Vector3(transform.position.x + normalizedFiringDirection.x, transform.position.y + normalizedFiringDirection.y, transform.position.z));
+        
     }
 }
