@@ -623,7 +623,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1734465606
+--- !u!1001 &1047887056
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -695,7 +695,6 @@ GameObject:
   - component: {fileID: 1930620387}
   - component: {fileID: 1930620390}
   - component: {fileID: 1930620391}
-  - component: {fileID: 1930620392}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -894,31 +893,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!114 &1930620392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930620384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9018436fc018c1f418e04abdbe356a60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  fireRate: 2
-  projectileSpeed: 1
-  pierce: 0
-  knockback: 0
-  range: 10
-  element: 0
-  projectilePrefab: {fileID: 3265185999461801760, guid: 118d1b2eabdfef84181a782e4875c90d, type: 3}
-  heightLevel: 0
-  readyToFire: 0
-  firingDelay: 0
-  x: 1
-  y: 1
 --- !u!1 &2117947032
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,4 +935,4 @@ SceneRoots:
   - {fileID: 2117947033}
   - {fileID: 585738480}
   - {fileID: 1930620386}
-  - {fileID: 1734465606}
+  - {fileID: 1047887056}

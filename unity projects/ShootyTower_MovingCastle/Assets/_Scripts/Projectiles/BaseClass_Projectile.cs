@@ -39,6 +39,7 @@ public class BaseClass_Projectile : MonoBehaviour
             BaseClass_Enemy enemyScript = collision.gameObject.GetComponent<BaseClass_Enemy>();
             bool hitSuccess = CheckForMatchingHeightLevels(enemyScript);
             if (hitSuccess) { ProcessHit(enemyScript); }
+
         }
     }
 
@@ -75,5 +76,7 @@ public class BaseClass_Projectile : MonoBehaviour
         enemyScript.takeDamage(damage);
         pierce -= 1;
         if (pierce <= 0) { Destroy(gameObject); }
+
+        enemyScript.gameObject.GetComponent<Knockback_Enemy>().ReceiveKnockback(knockback, normalizedMovementVector);
     }
 }

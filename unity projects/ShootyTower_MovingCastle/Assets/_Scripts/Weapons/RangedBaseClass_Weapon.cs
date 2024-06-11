@@ -5,22 +5,20 @@ using UnityEngine;
 public class RangedBaseClass_Weapon : MonoBehaviour
 {
     [Header("CONFIG")]
-    [SerializeField] float damage;
-    [SerializeField] float fireRate; //rounds per second
-    [SerializeField] float projectileSpeed;
-    [SerializeField] float pierce;
-    [SerializeField] float knockback;
-    [SerializeField] float range;
-    [SerializeField] ElementType element;
-    [SerializeField] GameObject projectilePrefab;
-    [SerializeField] HeightLevel heightLevel;
+    [SerializeField] public float damage;
+    [SerializeField] public float fireRate; //rounds per second
+    [SerializeField] public float projectileSpeed;
+    [SerializeField] public float pierce;
+    [SerializeField] public float knockback;
+    [SerializeField] public float range;
+    [SerializeField] public ElementType element;
+    [SerializeField] public GameObject projectilePrefab;
 
     [Header("DEBUG")]
+    [SerializeField] public HeightLevel heightLevel;
     [SerializeField] bool readyToFire;
     [SerializeField] float firingDelay;
 
-    public float x;
-    public float y;
 
     private void Update()
     {
@@ -35,20 +33,22 @@ public class RangedBaseClass_Weapon : MonoBehaviour
 
         if (readyToFire)
         {
-            CreateProjectile(new Vector2(x,y));
+            Shoot();
             readyToFire = false;
             firingDelay = 1 / fireRate;
         }
     }
 
-    void Shoot()
+    //to be overridden by subclasses
+    protected virtual void Shoot()
     {
         Debug.Log("Called: Base Ranged Projectile Shoot Method");
     }
 
-    void CreateProjectile(Vector2 normalizedFiringDirection)
+    protected void CreateProjectile(Vector2 normalizedFiringDirection)
     {
-        GameObject projectileObject = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        GameObject projectileObject = Instantiate(projectilePrefab, this.transform.position, Quaternion.identity);
+
         BaseClass_Projectile projectileScript = projectileObject.GetComponent<BaseClass_Projectile>();
 
         ConfigureProjectile(projectileScript, normalizedFiringDirection.normalized);
