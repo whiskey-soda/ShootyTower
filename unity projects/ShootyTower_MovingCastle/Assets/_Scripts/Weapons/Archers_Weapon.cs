@@ -8,6 +8,7 @@ public class Archers_Weapon : RangedBaseClass_Weapon
     private void Reset()
     {
         //set all defaults
+        weaponType = WeaponType.Archers;
         damage = 5;
         fireRate = .6f;
         projectileSpeed = 15;

@@ -8,6 +8,7 @@ public class Cannon_Weapon : RangedBaseClass_Weapon
     private void Reset()
     {
         //set all defaults
+        weaponType = WeaponType.Cannon;
         damage = 10;
         fireRate = .4f;
         projectileSpeed = 10;

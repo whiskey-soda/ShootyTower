@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class BaseClass_Enemy : MonoBehaviour
 {
 
-    public List<HeightLevel> heightLevelList = new List<HeightLevel>();
+    public List<HeightLevel> heightLevelList;
     public float health;
     public float moveSpeed;
     public float damagePerSec;
@@ -17,29 +17,18 @@ public class BaseClass_Enemy : MonoBehaviour
         navAgentScript.speed = moveSpeed;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void takeDamage(float damageValue)
+    public void TakeDamage(float damageValue)
     {
         health -= damageValue;
 
         if (health <=0)
         {
-            enemyDie();
+            EnemyDie();
         }
     }
 
-    void enemyDie()
+    void EnemyDie()
     {
         Destroy(gameObject);
     }

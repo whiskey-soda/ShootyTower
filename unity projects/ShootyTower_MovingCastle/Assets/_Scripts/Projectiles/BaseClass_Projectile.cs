@@ -73,7 +73,7 @@ public class BaseClass_Projectile : MonoBehaviour
 
     private void ProcessHit(BaseClass_Enemy enemyScript)
     {
-        enemyScript.takeDamage(damage);
+        enemyScript.TakeDamage(damage);
         pierce -= 1;
         if (pierce <= 0) { Destroy(gameObject); }
 

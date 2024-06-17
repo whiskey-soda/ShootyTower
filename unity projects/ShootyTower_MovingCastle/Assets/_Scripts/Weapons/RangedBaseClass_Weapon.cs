@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedBaseClass_Weapon : MonoBehaviour
+public class RangedBaseClass_Weapon : BaseClass_Weapon
 {
     [Header("CONFIG")]
-    [SerializeField] public float damage;
-    [SerializeField] public float fireRate; //rounds per second
-    [SerializeField] public float projectileSpeed;
-    [SerializeField] public float pierce;
-    [SerializeField] public float knockback;
-    [SerializeField] public float range;
-    [SerializeField] public ElementType element;
-    [SerializeField] public GameObject projectilePrefab;
+    public float damage;
+    public float fireRate; //rounds per second
+    public float projectileSpeed;
+    public float pierce;
+    public float knockback;
+    public float range;
+    public ElementType element;
+    public GameObject projectilePrefab;
 
     [Header("DEBUG")]
-    [SerializeField] public HeightLevel heightLevel;
     [SerializeField] bool readyToFire;
     [SerializeField] float firingDelay;
 
