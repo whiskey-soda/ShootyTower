@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 2
+  heightLevel: 0
   damage: 15
   fireRate: 0.4
   projectileSpeed: 15
@@ -88,8 +89,7 @@ MonoBehaviour:
   knockback: 3
   range: 10
   element: 0
-  projectilePrefab: {fileID: 3265185999461801760, guid: 118d1b2eabdfef84181a782e4875c90d, type: 3}
-  heightLevel: 0
+  projectilePrefab: {fileID: 3265185999461801760, guid: 672ce3e7e7100354ca0cc09c1b4aa9ce, type: 3}
   readyToFire: 0
   firingDelay: 0
   enemyList: []

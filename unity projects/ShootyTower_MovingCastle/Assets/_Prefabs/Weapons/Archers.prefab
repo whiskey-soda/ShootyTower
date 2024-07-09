@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponType: 0
+  heightLevel: 0
   damage: 5
   fireRate: 0.6
   projectileSpeed: 15
@@ -52,7 +53,6 @@ MonoBehaviour:
   knockback: 1
   range: 5
   element: 0
-  projectilePrefab: {fileID: 3265185999461801760, guid: 118d1b2eabdfef84181a782e4875c90d, type: 3}
-  heightLevel: 0
+  projectilePrefab: {fileID: 3265185999461801760, guid: ec52a3a7bb731c0489c2dce327abf2f6, type: 3}
   readyToFire: 0
   firingDelay: 0

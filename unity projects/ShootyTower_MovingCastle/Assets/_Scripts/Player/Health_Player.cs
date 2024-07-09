@@ -5,37 +5,38 @@ using UnityEngine;
 public class Health_Player : MonoBehaviour
 {
 
+    public static Health_Player Instance;
+
     public float maxHealth;
     public float currentHealth;
 
     private void Awake()
     {
+        // If there is an instance, and it's not me, delete myself.
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
+
         currentHealth = maxHealth;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void takeDamage(float damageValue)
+    public void TakeDamage(float damageValue)
     {
         currentHealth -= damageValue;
 
         if (currentHealth <= 0)
         {
-            gameOver();
+            GameOver();
         }
     }
 
-    void gameOver()
+    void GameOver()
     {
 
     }

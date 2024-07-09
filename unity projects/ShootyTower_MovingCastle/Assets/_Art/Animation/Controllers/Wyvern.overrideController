@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Wyvern
+  m_Controller: {fileID: 9100000, guid: efb6c291834043848b1ea79a84e2a269, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 519904dc4ce35a74a872a92a78965b80, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a3d9052c79451cc47852a986b58cb24f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e37050cf4c655a147a24aa8f0be48e25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8350cd49c41e5594a8ed519a0411e4d6, type: 2}

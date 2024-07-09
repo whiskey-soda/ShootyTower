@@ -11,6 +11,10 @@ public class BaseClass_Enemy : MonoBehaviour
     public float moveSpeed;
     public float damagePerSec;
 
+    [Header("DEBUG")]
+    //for animator functionality
+    public bool isAttacking = false;
+
     private void Awake()
     {
         NavMeshAgent navAgentScript = GetComponent<NavMeshAgent>();
@@ -36,9 +40,18 @@ public class BaseClass_Enemy : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         //damage player
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Tower"))
         {
-            collision.gameObject.GetComponent<Health_Player>().takeDamage(damagePerSec * Time.deltaTime);
+            isAttacking = true;
+            Health_Player.Instance.TakeDamage(damagePerSec * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Tower"))
+        {
+            isAttacking = false;
         }
     }
 
