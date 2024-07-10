@@ -66,7 +66,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
 --- !u!1 &4566540823822471600
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,11 +80,12 @@ GameObject:
   - component: {fileID: 107352382558697645}
   - component: {fileID: 579977654976380224}
   - component: {fileID: 6679878351425817683}
-  - component: {fileID: 8979501004030023608}
+  - component: {fileID: 61135127545401315}
   - component: {fileID: 3748213828895762969}
   - component: {fileID: 2760816679820575341}
   - component: {fileID: -3321750206329387547}
   - component: {fileID: -7059285614921680209}
+  - component: {fileID: 1473885492939993145}
   m_Layer: 6
   m_Name: Goblin
   m_TagString: Enemy
@@ -183,9 +184,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 4566540823822471600}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.01
+  m_Radius: 0.29
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 24
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -223,8 +224,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &8979501004030023608
-CircleCollider2D:
+--- !u!61 &61135127545401315
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -255,9 +256,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.2432}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.13}
+    oldSize: {x: 3.36, y: 3.36}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1.8, y: 2.8}
+  m_EdgeRadius: 0
 --- !u!114 &3748213828895762969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +334,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!208 &1473885492939993145
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566540823822471600}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.035, y: 0.005, z: 0.1}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: -0.11, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &5140519639916886646
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,4 +416,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8

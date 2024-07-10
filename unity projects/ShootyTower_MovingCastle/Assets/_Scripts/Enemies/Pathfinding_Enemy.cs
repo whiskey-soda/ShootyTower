@@ -7,6 +7,7 @@ using UnityEngine.Scripting;
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BaseClass_Enemy))]
+[RequireComponent(typeof(NavMeshObstacle))]
 
 public class Pathfinding_Enemy : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Pathfinding_Enemy : MonoBehaviour
     [SerializeField] Transform target;
 
     NavMeshAgent agent;
+    NavMeshObstacle myObstacle;
     BaseClass_Enemy myEnemyScript;
 
     float heightOffset = 0;
@@ -23,6 +25,9 @@ public class Pathfinding_Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        myObstacle = GetComponent<NavMeshObstacle>();
+        myObstacle.enabled = false;
 
         myEnemyScript = GetComponent<BaseClass_Enemy>();
 
@@ -35,16 +40,16 @@ public class Pathfinding_Enemy : MonoBehaviour
         }
         else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Aerial))
         {
-            heightOffset = 3.3f;
+            heightOffset = 3.63f;
         }
 
         else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Tall))
         {
-            heightOffset = 1.4f;
+            heightOffset = 2.4f;
         }
         else if (myEnemyScript.heightLevelList.Contains(HeightLevel.VeryTall))
         {
-            heightOffset = 2.4f;
+            heightOffset = 2.8f;
         }
     }
 
@@ -58,7 +63,17 @@ public class Pathfinding_Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position + new Vector3(0, heightOffset));
+        if (myEnemyScript.isAttacking)
+        {
+            agent.enabled = false;
+            myObstacle.enabled = true;
+        }
+        else
+        {
+            agent.enabled = true;
+            myObstacle.enabled = false;
+            agent.SetDestination(target.position + new Vector3(0, heightOffset));
+        }
     }
 
 }
