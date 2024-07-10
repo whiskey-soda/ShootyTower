@@ -8,7 +8,6 @@ using UnityEngine.Scripting;
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BaseClass_Enemy))]
-[RequireComponent(typeof(NavMeshObstacle))]
 
 public class Pathfinding_Enemy : MonoBehaviour
 {
