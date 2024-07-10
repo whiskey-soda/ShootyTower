@@ -13,6 +13,7 @@ TagManager:
   - Aerial Target
   - Enemy Hurtbox
   - Tower Hurtbox
+  - Ground 2 Weapon Position
   layers:
   - Default
   - TransparentFX
@@ -23,14 +24,14 @@ TagManager:
   - Enemy
   - Player
   - Projectile
-  - Ground1
-  - Ground2
+  - Ground
+  - 
   - Tall
   - VeryTall
   - Aerial
   - 
   - 
-  - 
+  - Targeting Weapon
   - 
   - 
   - 

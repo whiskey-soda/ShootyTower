@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7865200827598653286}
   - component: {fileID: 5467260263077192254}
   - component: {fileID: 5214433041680434723}
-  m_Layer: 7
+  m_Layer: 16
   m_Name: Heavy Ballista
   m_TagString: Untagged
   m_Icon: {fileID: 0}

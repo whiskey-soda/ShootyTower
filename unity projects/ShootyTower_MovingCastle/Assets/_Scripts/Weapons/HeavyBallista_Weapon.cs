@@ -41,9 +41,9 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy Hurtbox"))
         {
-            BaseClass_Enemy enemyScript =  collision.GetComponent<BaseClass_Enemy>();
+            BaseClass_Enemy enemyScript =  collision.GetComponentInParent<BaseClass_Enemy>();
 
             if (enemyScript.heightLevelList.Contains(heightLevel) &&
                 !enemyList.Contains(enemyScript))
@@ -55,9 +55,9 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy Hurtbox"))
         {
-            BaseClass_Enemy enemyScript = collision.GetComponent<BaseClass_Enemy>();
+            BaseClass_Enemy enemyScript = collision.GetComponentInParent<BaseClass_Enemy>();
 
             if (enemyList.Contains(enemyScript))
             {

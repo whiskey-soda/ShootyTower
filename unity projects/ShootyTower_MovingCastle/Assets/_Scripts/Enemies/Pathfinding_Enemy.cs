@@ -33,7 +33,7 @@ public class Pathfinding_Enemy : MonoBehaviour
         //check lowest and heighest first.
         //all ground units will have ground
         //all aerial units will have aerial, but might also have other layers. aerial is the one that matters for targeting
-        if (myEnemyScript.heightLevelList.Contains(HeightLevel.Ground1))
+        if (myEnemyScript.heightLevelList.Contains(HeightLevel.Ground))
         {
             target = GameObject.FindGameObjectWithTag("Ground Target").transform;
         }
@@ -42,14 +42,15 @@ public class Pathfinding_Enemy : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Aerial Target").transform;
         }
 
-        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Tall))
-        {
-            target = GameObject.FindGameObjectWithTag("Tall Target").transform;
-        }
         else if (myEnemyScript.heightLevelList.Contains(HeightLevel.VeryTall))
         {
             target = GameObject.FindGameObjectWithTag("Very Tall Target").transform;
         }
+        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Tall))
+        {
+            target = GameObject.FindGameObjectWithTag("Tall Target").transform;
+        }
+        
         
     }
 

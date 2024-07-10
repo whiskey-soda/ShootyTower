@@ -19,11 +19,11 @@ public class Cannon_Weapon : RangedBaseClass_Weapon
     }
     protected override void Shoot()
     {
-        //shoot in 4 cardinal directions
-        CreateProjectile(new Vector2(1, 0));
-        CreateProjectile(new Vector2(0, -1));
-        CreateProjectile(new Vector2(-1, 0));
-        CreateProjectile(new Vector2(0, 1));
+        //shoot in 4 diagonals
+        CreateProjectile(new Vector2(1, 1));
+        CreateProjectile(new Vector2(1, -1));
+        CreateProjectile(new Vector2(-1, -1));
+        CreateProjectile(new Vector2(-1, 1));
     }
 
 }
