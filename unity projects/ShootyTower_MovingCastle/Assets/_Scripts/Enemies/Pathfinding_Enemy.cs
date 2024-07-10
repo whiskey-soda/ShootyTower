@@ -72,6 +72,12 @@ public class Pathfinding_Enemy : MonoBehaviour
         {
             agent.enabled = true;
             myObstacle.enabled = false;
+
+            /*
+             * if enemies are stopping their pathfinding due to too many obstacles,
+             * change this to use sampleposition to find closest point in a larger radius
+             * instead of just going for the direct target position
+             */
             agent.SetDestination(target.position + new Vector3(0, heightOffset));
         }
     }
