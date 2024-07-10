@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Projectile
   - Tower
+  - Ground Target
+  - Tall Target
+  - Very Tall Target
+  - Aerial Target
   layers:
   - Default
   - TransparentFX

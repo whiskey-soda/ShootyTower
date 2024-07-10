@@ -15,10 +15,7 @@ public class Pathfinding_Enemy : MonoBehaviour
     [SerializeField] Transform target;
 
     NavMeshAgent agent;
-    NavMeshObstacle myObstacle;
     BaseClass_Enemy myEnemyScript;
-
-    float heightOffset = 0;
 
     private void Awake()
     {
@@ -26,59 +23,49 @@ public class Pathfinding_Enemy : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        myObstacle = GetComponent<NavMeshObstacle>();
-        myObstacle.enabled = false;
-
         myEnemyScript = GetComponent<BaseClass_Enemy>();
 
-        //check lowest and heighest first.
-        //all ground units will have ground
-        //all aerial units will have aerial, but might also have other layers. aerial is the one that matters for targeting
-        if (myEnemyScript.heightLevelList.Contains(HeightLevel.Ground1))
-        {
-            heightOffset = 0;
-        }
-        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Aerial))
-        {
-            heightOffset = 3.63f;
-        }
-
-        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Tall))
-        {
-            heightOffset = 2.4f;
-        }
-        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.VeryTall))
-        {
-            heightOffset = 2.8f;
-        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        //acquire target
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //check lowest and heighest first.
+        //all ground units will have ground
+        //all aerial units will have aerial, but might also have other layers. aerial is the one that matters for targeting
+        if (myEnemyScript.heightLevelList.Contains(HeightLevel.Ground1))
+        {
+            target = GameObject.FindGameObjectWithTag("Ground Target").transform;
+        }
+        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Aerial))
+        {
+            target = GameObject.FindGameObjectWithTag("Aerial Target").transform;
+        }
+
+        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Tall))
+        {
+            target = GameObject.FindGameObjectWithTag("Tall Target").transform;
+        }
+        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.VeryTall))
+        {
+            target = GameObject.FindGameObjectWithTag("Very Tall Target").transform;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //stop moving when in range, start moving when player is out of range
         if (myEnemyScript.isAttacking)
         {
             agent.enabled = false;
-            myObstacle.enabled = true;
         }
         else
         {
             agent.enabled = true;
-            myObstacle.enabled = false;
 
-            /*
-             * if enemies are stopping their pathfinding due to too many obstacles,
-             * change this to use sampleposition to find closest point in a larger radius
-             * instead of just going for the direct target position
-             */
-            agent.SetDestination(target.position + new Vector3(0, heightOffset));
+            agent.SetDestination(target.position);
         }
     }
 
