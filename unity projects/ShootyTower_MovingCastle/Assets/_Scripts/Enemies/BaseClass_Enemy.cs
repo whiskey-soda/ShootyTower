@@ -15,12 +15,6 @@ public class BaseClass_Enemy : MonoBehaviour
     //for animator functionality
     public bool isAttacking = false;
 
-    private void Awake()
-    {
-        NavMeshAgent navAgentScript = GetComponent<NavMeshAgent>();
-        navAgentScript.speed = moveSpeed;
-    }
-
 
     public void TakeDamage(float damageValue)
     {
@@ -37,22 +31,5 @@ public class BaseClass_Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        //damage player
-        if (collision.gameObject.CompareTag("Tower"))
-        {
-            isAttacking = true;
-            Health_Player.Instance.TakeDamage(damagePerSec * Time.deltaTime);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Tower"))
-        {
-            isAttacking = false;
-        }
-    }
 
 }

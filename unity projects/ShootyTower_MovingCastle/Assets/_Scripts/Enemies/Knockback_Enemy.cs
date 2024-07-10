@@ -11,6 +11,7 @@ public class Knockback_Enemy : MonoBehaviour
 {
 
     [Header("CONFIG")]
+    //speed at which knockback force decreases per second
     [SerializeField] float knockbackDecay = 10;
 
     Rigidbody2D myRigidbody2D;

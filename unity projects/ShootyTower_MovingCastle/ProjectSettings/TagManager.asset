@@ -11,6 +11,8 @@ TagManager:
   - Tall Target
   - Very Tall Target
   - Aerial Target
+  - Enemy Hurtbox
+  - Tower Hurtbox
   layers:
   - Default
   - TransparentFX

@@ -34,9 +34,11 @@ public class BaseClass_Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy Hurtbox"))
         {
-            BaseClass_Enemy enemyScript = collision.gameObject.GetComponent<BaseClass_Enemy>();
+            //checking parents because enemy hurtbox is a child object
+            BaseClass_Enemy enemyScript = collision.gameObject.GetComponentInParent<BaseClass_Enemy>();
+
             bool hitSuccess = CheckForMatchingHeightLevels(enemyScript);
             if (hitSuccess) { ProcessHit(enemyScript); }
 

@@ -7,23 +7,23 @@ using UnityEngine.Scripting;
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BaseClass_Enemy))]
-[RequireComponent(typeof(NavMeshObstacle))]
 
 public class Pathfinding_Enemy : MonoBehaviour
 {
 
-    [SerializeField] Transform target;
+    public Transform target;
 
     NavMeshAgent agent;
     BaseClass_Enemy myEnemyScript;
 
     private void Awake()
     {
+        myEnemyScript = GetComponent<BaseClass_Enemy>();
+
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-
-        myEnemyScript = GetComponent<BaseClass_Enemy>();
+        agent.speed = myEnemyScript.moveSpeed;
 
     }
 
