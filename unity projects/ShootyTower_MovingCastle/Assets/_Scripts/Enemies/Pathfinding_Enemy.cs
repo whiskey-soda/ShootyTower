@@ -1,3 +1,4 @@
+using NavMeshPlus.Components;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,8 @@ public class Pathfinding_Enemy : MonoBehaviour
     [SerializeField] Transform target;
 
     NavMeshAgent agent;
-    NavMeshObstacle myObstacle;
+    public GameObject myObstacle;
+
     BaseClass_Enemy myEnemyScript;
 
     float heightOffset = 0;
@@ -26,8 +28,8 @@ public class Pathfinding_Enemy : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        myObstacle = GetComponent<NavMeshObstacle>();
-        myObstacle.enabled = false;
+        myObstacle = GetComponentInChildren<NavMeshModifier>(true).gameObject;
+        myObstacle.SetActive(false);
 
         myEnemyScript = GetComponent<BaseClass_Enemy>();
 
@@ -66,14 +68,21 @@ public class Pathfinding_Enemy : MonoBehaviour
         if (myEnemyScript.isAttacking)
         {
             agent.enabled = false;
-            myObstacle.enabled = true;
+            myObstacle.SetActive(true);
         }
         else
         {
-            agent.enabled = true;
-            myObstacle.enabled = false;
+            myObstacle.SetActive(false);
+            Invoke("EnableAgent", .01f);
+            
+
             agent.SetDestination(target.position + new Vector3(0, heightOffset));
         }
+    }
+
+    void EnableAgent()
+    {
+        agent.enabled=true;
     }
 
 }
