@@ -8,6 +8,7 @@ using UnityEngine.Scripting;
 public class Movement_Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5;
+    public bool isMoving;
 
     PlayerControls playerControls;
     Rigidbody2D myRigidbody2D;
@@ -28,17 +29,14 @@ public class Movement_Player : MonoBehaviour
         playerControls.Disable();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         Vector2 moveVector = playerControls.Gameplay.Move.ReadValue<Vector2>();
         moveVector.Normalize();
         myRigidbody2D.velocity = moveVector * moveSpeed;
+
+        if (moveVector != Vector2.zero) { isMoving = true; } else { isMoving = false; }
+
     }
 }

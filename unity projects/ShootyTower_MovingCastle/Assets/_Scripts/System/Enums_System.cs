@@ -7,6 +7,8 @@ public enum ElementType { None, Magic, Fire, Electric, Bleed };
 
 public enum WeaponType { Archers, Cannon, HeavyBallista  };
 
+public enum Direction { Up, Down, Left, Right };
+
 public class Enums_System : MonoBehaviour
 {
 }
