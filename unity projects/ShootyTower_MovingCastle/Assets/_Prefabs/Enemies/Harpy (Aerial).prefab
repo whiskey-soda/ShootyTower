@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 8024629040672106661}
   m_Layer: 13
   m_Name: Aerial Collision
-  m_TagString: Untagged
+  m_TagString: Enemy Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

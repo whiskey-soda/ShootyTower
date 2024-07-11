@@ -69,7 +69,7 @@ public class KnockbackRegion_Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy Hurtbox"))
+        if (collision.CompareTag("Enemy Collision"))
         {
             bool isCorrectHeight = false;
 
@@ -90,21 +90,15 @@ public class KnockbackRegion_Player : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy Hurtbox"))
+        if (collision.CompareTag("Enemy Collision"))
         {
-            bool isCorrectHeight = false;
 
-            BaseClass_Enemy enemyScript = collision.GetComponentInParent<BaseClass_Enemy>();
-            isCorrectHeight = CheckForMatchingHeightLevel(isCorrectHeight, enemyScript);
-
-            if (isCorrectHeight)
+            Knockback_Enemy enemyKnockbackScript = collision.GetComponentInParent<Knockback_Enemy>();
+            if (enemiesInRange.Contains(enemyKnockbackScript))
             {
-                Knockback_Enemy enemyKnockbackScript = enemyScript.GetComponent<Knockback_Enemy>();
-                if (enemiesInRange.Contains(enemyKnockbackScript))
-                {
-                    enemiesInRange.Remove(enemyKnockbackScript);
-                }
+                enemiesInRange.Remove(enemyKnockbackScript);
             }
+
         }
     }
 

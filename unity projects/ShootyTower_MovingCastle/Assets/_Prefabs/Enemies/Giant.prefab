@@ -376,7 +376,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.1961098, y: 6.8883333}
+  m_Offset: {x: 2.1961098, y: 4.5902357}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -387,7 +387,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.0222197, y: 5.5632844}
+  m_Size: {x: 5.0222197, y: 10.159479}
   m_EdgeRadius: 0
 --- !u!114 &8799789522542913810
 MonoBehaviour:
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 5181852876152446520}
   m_Layer: 9
   m_Name: Ground1 Collision
-  m_TagString: Untagged
+  m_TagString: Enemy Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

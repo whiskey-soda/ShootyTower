@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 3033330937275032423}
   m_Layer: 12
   m_Name: Very Tall Collision
-  m_TagString: Untagged
+  m_TagString: Enemy Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 21429364}
-  m_Layer: 17
+  m_Layer: 13
   m_Name: Knockback Regions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1034746626}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 25674569}
   - component: {fileID: 25674571}
   - component: {fileID: 25674570}
-  m_Layer: 17
+  m_Layer: 13
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myHeightLevel: 4
   myDirection: 0
-  knockbackForce: 7
+  knockbackForce: 4
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -286,7 +286,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &26526661
 GameObject:
@@ -410,7 +410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 132136875}
-  m_Layer: 17
+  m_Layer: 12
   m_Name: Knockback Regions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 503922330}
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 237395474}
   - component: {fileID: 237395476}
   - component: {fileID: 237395475}
-  m_Layer: 17
+  m_Layer: 13
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +793,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &237864425
 GameObject:
@@ -804,7 +804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 237864426}
-  m_Layer: 17
+  m_Layer: 9
   m_Name: Knockback Regions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,8 +821,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1699925315}
   - {fileID: 393618532}
@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 393618532}
   - component: {fileID: 393618534}
   - component: {fileID: 393618533}
-  m_Layer: 17
+  m_Layer: 9
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -958,7 +958,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &438616402
 GameObject:
@@ -1154,7 +1154,7 @@ GameObject:
   - component: {fileID: 473745050}
   - component: {fileID: 473745052}
   - component: {fileID: 473745051}
-  m_Layer: 17
+  m_Layer: 9
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myHeightLevel: 0
   myDirection: 0
-  knockbackForce: 7
+  knockbackForce: 4
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -1237,7 +1237,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &503922329
 GameObject:
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 503922330}
   - component: {fileID: 503922332}
   - component: {fileID: 503922331}
-  m_Layer: 17
+  m_Layer: 12
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,7 +1333,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
@@ -1714,7 +1714,7 @@ GameObject:
   - component: {fileID: 681241246}
   - component: {fileID: 681241248}
   - component: {fileID: 681241247}
-  m_Layer: 17
+  m_Layer: 12
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1797,7 +1797,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &690843544
 GameObject:
@@ -1846,7 +1846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myHeightLevel: 2
   myDirection: 0
-  knockbackForce: 7
+  knockbackForce: 4
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -1893,7 +1893,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &741263507
 GameObject:
@@ -2019,7 +2019,7 @@ GameObject:
   - component: {fileID: 865067648}
   - component: {fileID: 865067650}
   - component: {fileID: 865067649}
-  m_Layer: 17
+  m_Layer: 13
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2102,7 +2102,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &1034746625
 GameObject:
@@ -2115,7 +2115,7 @@ GameObject:
   - component: {fileID: 1034746626}
   - component: {fileID: 1034746628}
   - component: {fileID: 1034746627}
-  m_Layer: 17
+  m_Layer: 13
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2198,7 +2198,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &1046798992
 GameObject:
@@ -2211,7 +2211,7 @@ GameObject:
   - component: {fileID: 1046798993}
   - component: {fileID: 1046798995}
   - component: {fileID: 1046798994}
-  m_Layer: 17
+  m_Layer: 12
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2294,7 +2294,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1085580722
 GameObject:
@@ -2661,7 +2661,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1574361169
 GameObject:
@@ -2674,7 +2674,7 @@ GameObject:
   - component: {fileID: 1574361170}
   - component: {fileID: 1574361172}
   - component: {fileID: 1574361171}
-  m_Layer: 17
+  m_Layer: 9
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2757,7 +2757,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1613500528
 GameObject:
@@ -2904,7 +2904,7 @@ GameObject:
   - component: {fileID: 1699925315}
   - component: {fileID: 1699925317}
   - component: {fileID: 1699925316}
-  m_Layer: 17
+  m_Layer: 9
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2987,7 +2987,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &1924428601
 GameObject:
@@ -3000,7 +3000,7 @@ GameObject:
   - component: {fileID: 1924428602}
   - component: {fileID: 1924428604}
   - component: {fileID: 1924428603}
-  m_Layer: 17
+  m_Layer: 12
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3036,7 +3036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myHeightLevel: 3
   myDirection: 0
-  knockbackForce: 7
+  knockbackForce: 4
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -3083,7 +3083,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 5, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1930620384
 GameObject:
@@ -3367,7 +3367,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &2110911975
 GameObject:
@@ -3530,7 +3530,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
 --- !u!1 &2117947032
 GameObject:

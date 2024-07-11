@@ -14,6 +14,7 @@ TagManager:
   - Enemy Hurtbox
   - Tower Hurtbox
   - Ground 2 Weapon Position
+  - Enemy Collision
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - 
   - 
   - Targeting Weapon
-  - Knockback Region
+  - 
   - 
   - 
   - 

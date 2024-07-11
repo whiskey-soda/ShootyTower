@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 1577543388174771934}
   m_Layer: 9
   m_Name: Ground1 Collision
-  m_TagString: Untagged
+  m_TagString: Enemy Collision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
