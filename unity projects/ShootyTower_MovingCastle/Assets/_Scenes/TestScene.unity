@@ -240,6 +240,8 @@ MonoBehaviour:
   myHeightLevel: 4
   myDirection: 0
   knockbackForce: 4
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -747,6 +749,8 @@ MonoBehaviour:
   myHeightLevel: 4
   myDirection: 1
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -912,6 +916,8 @@ MonoBehaviour:
   myHeightLevel: 0
   myDirection: 3
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -1191,6 +1197,8 @@ MonoBehaviour:
   myHeightLevel: 0
   myDirection: 0
   knockbackForce: 4
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -1250,6 +1258,7 @@ GameObject:
   - component: {fileID: 503922330}
   - component: {fileID: 503922332}
   - component: {fileID: 503922331}
+  - component: {fileID: 503922333}
   m_Layer: 12
   m_Name: Left
   m_TagString: Untagged
@@ -1287,6 +1296,8 @@ MonoBehaviour:
   myHeightLevel: 3
   myDirection: 2
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -1297,7 +1308,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503922329}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1333,8 +1344,43 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3}
+  m_Size: {x: 1, y: 4}
   m_EdgeRadius: 0
+--- !u!58 &503922333
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503922329}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1, y: 1.8}
+  serializedVersion: 2
+  m_Radius: 3.1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1797,8 @@ MonoBehaviour:
   myHeightLevel: 3
   myDirection: 3
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -1797,7 +1845,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 3}
+  m_Size: {x: 1, y: 4}
   m_EdgeRadius: 0
 --- !u!1 &690843544
 GameObject:
@@ -1810,7 +1858,7 @@ GameObject:
   - component: {fileID: 690843545}
   - component: {fileID: 690843547}
   - component: {fileID: 690843546}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1847,6 +1895,8 @@ MonoBehaviour:
   myHeightLevel: 2
   myDirection: 0
   knockbackForce: 4
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -2056,6 +2106,8 @@ MonoBehaviour:
   myHeightLevel: 4
   myDirection: 3
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -2152,6 +2204,8 @@ MonoBehaviour:
   myHeightLevel: 4
   myDirection: 2
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -2248,6 +2302,8 @@ MonoBehaviour:
   myHeightLevel: 3
   myDirection: 1
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -2460,7 +2516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1266534410}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: Knockback Regions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2578,7 +2634,7 @@ GameObject:
   - component: {fileID: 1453107669}
   - component: {fileID: 1453107671}
   - component: {fileID: 1453107670}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2615,6 +2671,8 @@ MonoBehaviour:
   myHeightLevel: 2
   myDirection: 1
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -2663,6 +2721,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &1457173566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.676724
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.26212803
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597322802906047132, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+      propertyPath: m_Name
+      value: Wyvern (Very Tall)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
 --- !u!1 &1574361169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2826,8 @@ MonoBehaviour:
   myHeightLevel: 0
   myDirection: 1
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -2941,6 +3058,8 @@ MonoBehaviour:
   myHeightLevel: 0
   myDirection: 2
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -3037,6 +3156,8 @@ MonoBehaviour:
   myHeightLevel: 3
   myDirection: 0
   knockbackForce: 4
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -3284,7 +3405,7 @@ GameObject:
   - component: {fileID: 2015104216}
   - component: {fileID: 2015104218}
   - component: {fileID: 2015104217}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3321,6 +3442,8 @@ MonoBehaviour:
   myHeightLevel: 2
   myDirection: 2
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -3447,7 +3570,7 @@ GameObject:
   - component: {fileID: 2114413011}
   - component: {fileID: 2114413013}
   - component: {fileID: 2114413012}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3484,6 +3607,8 @@ MonoBehaviour:
   myHeightLevel: 2
   myDirection: 3
   knockbackForce: 5
+  stuckEnemyYRange: 0.2
+  unstickEnemyYDisplacement: -0.3
   myMovementScript: {fileID: 0}
   myRigidbody2D: {fileID: 0}
   enemiesInRange: []
@@ -3649,3 +3774,4 @@ SceneRoots:
   - {fileID: 1438226426}
   - {fileID: 1930620386}
   - {fileID: 2129745454}
+  - {fileID: 1457173566}

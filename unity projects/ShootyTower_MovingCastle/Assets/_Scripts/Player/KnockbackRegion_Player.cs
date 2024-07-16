@@ -11,6 +11,8 @@ public class KnockbackRegion_Player : MonoBehaviour
     [SerializeField] HeightLevel myHeightLevel;
     [SerializeField] Direction myDirection;
     [SerializeField] float knockbackForce = 5;
+    [SerializeField] float stuckEnemyYRange = .2f;
+    [SerializeField] float unstickEnemyYDisplacement = -.3f;
 
     [Header("DEBUG")]
     [SerializeField] Movement_Player myMovementScript;
@@ -118,6 +120,16 @@ public class KnockbackRegion_Player : MonoBehaviour
     void KnockEnemyBack(Knockback_Enemy enemyKnockbackScript)
     {
         Vector2 knockbackDirection = enemyKnockbackScript.transform.position - transform.position;
+
+        //knock enemy back southward if they are stuck
+        if (myDirection == Direction.Left || myDirection == Direction.Right)
+        {
+            if (Mathf.Abs(enemyKnockbackScript.transform.position.y - transform.position.y) < stuckEnemyYRange)
+            {
+                knockbackDirection = new Vector2(knockbackDirection.x, knockbackDirection.y + unstickEnemyYDisplacement);
+            }
+        }
+
         enemyKnockbackScript.ReceiveKnockback(knockbackForce, knockbackDirection.normalized);
     }
 }
