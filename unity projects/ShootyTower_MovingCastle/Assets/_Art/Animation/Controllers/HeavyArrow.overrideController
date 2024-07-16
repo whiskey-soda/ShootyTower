@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HeavyArrow
+  m_Controller: {fileID: 9100000, guid: 93d602446d5c2be4fa2477f48f050fc4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4ae353d9828e1214db424b0ea5884df1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c9de6443cf376d64dabcb1b8311e7e3f, type: 2}
