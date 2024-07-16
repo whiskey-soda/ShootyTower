@@ -1256,9 +1256,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 503922330}
+  - component: {fileID: 503922333}
   - component: {fileID: 503922332}
   - component: {fileID: 503922331}
-  - component: {fileID: 503922333}
   m_Layer: 12
   m_Name: Left
   m_TagString: Untagged
@@ -2721,63 +2721,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &1457173566
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -9.676724
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.26212803
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2955737642025599072, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597322802906047132, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
-      propertyPath: m_Name
-      value: Wyvern (Very Tall)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
 --- !u!1 &1574361169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,4 +3717,3 @@ SceneRoots:
   - {fileID: 1438226426}
   - {fileID: 1930620386}
   - {fileID: 2129745454}
-  - {fileID: 1457173566}
