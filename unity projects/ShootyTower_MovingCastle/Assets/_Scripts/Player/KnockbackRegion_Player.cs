@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
+[RequireComponent(typeof(CircleCollider2D))]
+
 public class KnockbackRegion_Player : MonoBehaviour
 {
-    
-
     [Header("CONFIG")]
-    [SerializeField] HeightLevel myHeightLevel;
-    [SerializeField] Direction myDirection;
-    [SerializeField] float knockbackForce = 5;
-    [SerializeField] float stuckEnemyYRange = .2f;
-    [SerializeField] float unstickEnemyYDisplacement = -.3f;
+    [SerializeField] float knockbackForce = 3;
+    [SerializeField] float stuckEnemyRange = 1.5f;
+    [SerializeField] float unstickEnemyDisplacement = 1;
+    [SerializeField] float knockbackDetectionLeeway = .7f;
 
     [Header("DEBUG")]
     [SerializeField] Movement_Player myMovementScript;
@@ -25,17 +24,53 @@ public class KnockbackRegion_Player : MonoBehaviour
         myMovementScript = GetComponentInParent<Movement_Player>();
         myRigidbody2D = GetComponentInParent<Rigidbody2D>();
     }
+    
 
     // Update is called once per frame
     void Update()
     {
         if (myMovementScript.isMoving)
         {
-            bool isActive = CheckIfActive();
+            KnockbackEnemies();
 
-            if (isActive)
+        }
+    }
+
+    private void KnockbackEnemies()
+    {
+        foreach (Knockback_Enemy enemy in enemiesInRange)
+        {
+            //left
+            if (myRigidbody2D.velocity.x < 0)
             {
-                foreach (Knockback_Enemy enemy in enemiesInRange)
+                if (enemy.collisionCollider.bounds.center.x < transform.position.x - knockbackDetectionLeeway)
+                {
+                    KnockEnemyBack(enemy);
+                }
+            }
+
+            //right
+            if (myRigidbody2D.velocity.x > 0)
+            {
+                if (enemy.collisionCollider.bounds.center.x > transform.position.x + knockbackDetectionLeeway)
+                {
+                    KnockEnemyBack(enemy);
+                }
+            }
+
+            //down
+            if (myRigidbody2D.velocity.y < 0)
+            {
+                if (enemy.collisionCollider.bounds.center.y < transform.position.y - knockbackDetectionLeeway)
+                {
+                    KnockEnemyBack(enemy);
+                }
+            }
+
+            //up
+            if (myRigidbody2D.velocity.y > 0)
+            {
+                if (enemy.collisionCollider.bounds.center.y > transform.position.y + knockbackDetectionLeeway)
                 {
                     KnockEnemyBack(enemy);
                 }
@@ -44,47 +79,17 @@ public class KnockbackRegion_Player : MonoBehaviour
         }
     }
 
-    private bool CheckIfActive()
-    {
-        bool isActive = false;
-        switch (myDirection)
-        {
-            case Direction.Left:
-                if (myRigidbody2D.velocity.x < 0) { isActive = true; }
-                break;
-
-            case Direction.Right:
-                if (myRigidbody2D.velocity.x > 0) { isActive = true; }
-                break;
-
-            case Direction.Up:
-                if (myRigidbody2D.velocity.y > 0) { isActive = true; }
-                break;
-
-            case Direction.Down:
-                if (myRigidbody2D.velocity.y < 0) { isActive = true; };
-                break;
-        }
-
-        return isActive;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy Collision"))
         {
-            bool isCorrectHeight = false;
 
             BaseClass_Enemy enemyScript = collision.GetComponentInParent<BaseClass_Enemy>();
-            isCorrectHeight = CheckForMatchingHeightLevel(isCorrectHeight, enemyScript);
 
-            if (isCorrectHeight)
+            Knockback_Enemy enemyKnockbackScript = enemyScript.GetComponent<Knockback_Enemy>();
+            if (!enemiesInRange.Contains(enemyKnockbackScript))
             {
-                Knockback_Enemy enemyKnockbackScript = enemyScript.GetComponent<Knockback_Enemy>();
-                if (!enemiesInRange.Contains(enemyKnockbackScript))
-                {
-                    enemiesInRange.Add(enemyKnockbackScript);
-                }
+                enemiesInRange.Add(enemyKnockbackScript);
             }
         }
 
@@ -104,32 +109,54 @@ public class KnockbackRegion_Player : MonoBehaviour
         }
     }
 
-    private bool CheckForMatchingHeightLevel(bool hitDetected, BaseClass_Enemy enemyScript)
-    {
-        if (enemyScript != null)
-        {
-            foreach (HeightLevel heightLevel in enemyScript.heightLevelList)
-            {
-                if (heightLevel == myHeightLevel) { hitDetected = true; }
-            }
-        }
-
-        return hitDetected;
-    }
-
     void KnockEnemyBack(Knockback_Enemy enemyKnockbackScript)
     {
         Vector2 knockbackDirection = enemyKnockbackScript.transform.position - transform.position;
 
-        //knock enemy back southward if they are stuck
-        if (myDirection == Direction.Left || myDirection == Direction.Right)
+        //if displacement is too low, enemy may get stuck on player.
+        //this code knocks the enemy back with extra force to get them unstuck
+        knockbackDirection = Unstick(knockbackDirection);
+
+        enemyKnockbackScript.ReceiveKnockback(knockbackForce, knockbackDirection.normalized);
+    }
+
+    /// <summary>
+    /// adds extra force to unstick enemies if they are at risk of getting stuck on the edges of the
+    /// player's collider
+    /// </summary>
+    /// <param name="knockbackDirection"></param>
+    /// <returns></returns>
+    private Vector2 Unstick(Vector2 knockbackDirection)
+    {
+        if (knockbackDirection.x <= stuckEnemyRange)
         {
-            if (Mathf.Abs(enemyKnockbackScript.transform.position.y - transform.position.y) < stuckEnemyYRange)
+
+            if (knockbackDirection.x <= 0)
             {
-                knockbackDirection = new Vector2(knockbackDirection.x, knockbackDirection.y + unstickEnemyYDisplacement);
+                knockbackDirection = new Vector2(knockbackDirection.x - unstickEnemyDisplacement,
+                                                knockbackDirection.y);
+            }
+            else
+            {
+                knockbackDirection = new Vector2(knockbackDirection.x + unstickEnemyDisplacement,
+                                                knockbackDirection.y);
+            }
+        }
+        if (knockbackDirection.y <= stuckEnemyRange)
+        {
+
+            if (knockbackDirection.y <= 0)
+            {
+                knockbackDirection = new Vector2(knockbackDirection.x,
+                                                knockbackDirection.y - unstickEnemyDisplacement);
+            }
+            else
+            {
+                knockbackDirection = new Vector2(knockbackDirection.x,
+                                                knockbackDirection.y + unstickEnemyDisplacement);
             }
         }
 
-        enemyKnockbackScript.ReceiveKnockback(knockbackForce, knockbackDirection.normalized);
+        return knockbackDirection;
     }
 }

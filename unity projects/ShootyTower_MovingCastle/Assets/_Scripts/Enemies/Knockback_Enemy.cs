@@ -14,13 +14,30 @@ public class Knockback_Enemy : MonoBehaviour
     //speed at which knockback force decreases per second
     [SerializeField] float knockbackDecay = 10;
 
+    [Header("DEBUG")]
+    //used for detecting collisions with tower
+    public Collider2D collisionCollider;
     Rigidbody2D myRigidbody2D;
     BaseClass_Enemy myEnemyScript;
+
+    
 
     private void Awake()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
         myEnemyScript = GetComponent<BaseClass_Enemy>();
+    }
+
+    private void Start()
+    {
+        //fetch collider transform in children
+        foreach (Transform childTransform in transform)
+        {
+            if (childTransform.CompareTag("Enemy Collision"))
+            {
+                collisionCollider = childTransform.GetComponent<Collider2D>();
+            }
+        }
     }
 
 
