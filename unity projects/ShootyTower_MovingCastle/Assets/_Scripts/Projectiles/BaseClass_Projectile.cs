@@ -36,11 +36,9 @@ public class BaseClass_Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy Hurtbox"))
         {
-            //checking parents because enemy hurtbox is a child object
-            BaseClass_Enemy enemyScript = collision.gameObject.GetComponentInParent<BaseClass_Enemy>();
-
-            bool hitSuccess = CheckForMatchingHeightLevels(enemyScript);
-            if (hitSuccess) { ProcessHit(enemyScript); }
+            Hurtbox_Enemy hurtboxScript = collision.GetComponent<Hurtbox_Enemy>();
+            bool hitSuccess = CheckForMatchingHeightLevels(hurtboxScript);
+            if (hitSuccess) { ProcessHit(hurtboxScript); }
 
         }
     }
@@ -59,26 +57,24 @@ public class BaseClass_Projectile : MonoBehaviour
         }
     }
 
-    private bool CheckForMatchingHeightLevels(BaseClass_Enemy enemyScript)
+    private bool CheckForMatchingHeightLevels(Hurtbox_Enemy hurtboxScript)
     {
         bool bulletHit = false;
-        foreach (HeightLevel enemyHeightLevel in enemyScript.heightLevelList)
+        if (myHeightLevel == hurtboxScript.myHeightLevel)
         {
-            if (enemyHeightLevel == myHeightLevel)
-            {
-                bulletHit = true;
-            }
+            bulletHit = true;
         }
 
         return bulletHit;
     }
 
-    private void ProcessHit(BaseClass_Enemy enemyScript)
+    private void ProcessHit(Hurtbox_Enemy hurtboxScript)
     {
-        enemyScript.TakeDamage(damage);
+        hurtboxScript.TakeDamage(damage);
+        hurtboxScript.ApplyKnockback(knockback, normalizedMovementVector);
+
         pierce -= 1;
         if (pierce <= 0) { Destroy(gameObject); }
 
-        enemyScript.gameObject.GetComponent<Knockback_Enemy>().ReceiveKnockback(knockback, normalizedMovementVector);
     }
 }

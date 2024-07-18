@@ -38,6 +38,10 @@ public class WeaponManager_Player : MonoBehaviour
 
         SetWeaponPosition(newWeapon, heightLevel);
 
+        //if weapon is using a heightlevel that only matters for weapon positioning (like ground2),
+        //change the height level to the correct one for collisions so the projectiles have correct layer
+        if (newWeaponScript.heightLevel == HeightLevel.Ground2) { newWeaponScript.heightLevel = HeightLevel.Ground; }
+
     }
 
     private void SetWeaponPosition(GameObject newWeapon, HeightLevel heightLevel )

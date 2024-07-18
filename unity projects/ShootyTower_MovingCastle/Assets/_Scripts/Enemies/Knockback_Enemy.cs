@@ -76,9 +76,14 @@ public class Knockback_Enemy : MonoBehaviour
         return currentVelocity;
     }
 
-    public void ReceiveKnockback(float knockbackValue, Vector2 normalizedMovementVector)
+    /// <summary>
+    /// normalizes knockback direction, then knocks enemy back with the force of knockbackValue in knockbackDirection
+    /// </summary>
+    /// <param name="knockbackValue"></param>
+    /// <param name="knockbackDirection"></param>
+    public void ReceiveKnockback(float knockbackValue, Vector2 knockbackDirection)
     { 
-        myRigidbody2D.velocity = (myEnemyScript.moveSpeed + knockbackValue) * normalizedMovementVector;
+        myRigidbody2D.velocity = (myEnemyScript.moveSpeed + knockbackValue) * knockbackDirection.normalized;
     }
 
 }

@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackDecay: 10
+  collisionCollider: {fileID: 0}
 --- !u!114 &2641220654233581654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,8 +312,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3847044354225922871}
   - component: {fileID: 9035415859086250250}
+  - component: {fileID: 7601264727927866051}
   m_Layer: 6
-  m_Name: Hurtbox
+  m_Name: Tall Hurtbox
   m_TagString: Enemy Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,6 +380,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3880124, y: 2.347047}
   m_EdgeRadius: 0
+--- !u!114 &7601264727927866051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6341560665402287079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85d52d6b03a0e64481ee438b2bb999b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myHeightLevel: 2
+  myEnemyScript: {fileID: 0}
+  myKnockbackScript: {fileID: 0}
 --- !u!1 &8897170803255259015
 GameObject:
   m_ObjectHideFlags: 0

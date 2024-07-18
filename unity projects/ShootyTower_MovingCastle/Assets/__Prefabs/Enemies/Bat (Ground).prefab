@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6820857858260585916}
   - component: {fileID: 2842850240861988545}
+  - component: {fileID: 916366598543908114}
   m_Layer: 6
-  m_Name: Hurtbox
+  m_Name: Ground Hurtbox
   m_TagString: Enemy Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,6 +78,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7308941, y: 0.89214665}
   m_EdgeRadius: 0
+--- !u!114 &916366598543908114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817611156168345909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85d52d6b03a0e64481ee438b2bb999b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myHeightLevel: 0
+  myEnemyScript: {fileID: 0}
+  myKnockbackScript: {fileID: 0}
 --- !u!1 &7617110718900748935
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackDecay: 10
+  collisionCollider: {fileID: 0}
 --- !u!114 &1668999917033963974
 MonoBehaviour:
   m_ObjectHideFlags: 0

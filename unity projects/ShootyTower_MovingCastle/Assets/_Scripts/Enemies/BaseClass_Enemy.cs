@@ -16,7 +16,7 @@ public class BaseClass_Enemy : MonoBehaviour
     public bool isAttacking = false;
 
 
-    public void TakeDamage(float damageValue)
+    public void DamageHealth(float damageValue)
     {
         health -= damageValue;
 

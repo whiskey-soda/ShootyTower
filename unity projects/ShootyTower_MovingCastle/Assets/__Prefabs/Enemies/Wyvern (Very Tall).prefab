@@ -435,6 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4021166357866945359}
   - component: {fileID: 7509033089687576492}
+  - component: {fileID: 1694257971545925262}
   m_Layer: 6
   m_Name: Tall Hurtbox
   m_TagString: Enemy Hurtbox
@@ -502,6 +503,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2869532, y: 1.1109834}
   m_EdgeRadius: 0
+--- !u!114 &1694257971545925262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6376239377753800845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85d52d6b03a0e64481ee438b2bb999b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myHeightLevel: 2
+  myEnemyScript: {fileID: 0}
+  myKnockbackScript: {fileID: 0}
 --- !u!1 &7746396164037947619
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246321733572935740}
   - component: {fileID: 8819748436495586558}
+  - component: {fileID: 4080006028495429498}
   m_Layer: 6
   m_Name: Very Tall Hurtbox
   m_TagString: Enemy Hurtbox
@@ -579,3 +596,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.9035473, y: 1.4508011}
   m_EdgeRadius: 0
+--- !u!114 &4080006028495429498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7746396164037947619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b85d52d6b03a0e64481ee438b2bb999b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myHeightLevel: 3
+  myEnemyScript: {fileID: 0}
+  myKnockbackScript: {fileID: 0}
