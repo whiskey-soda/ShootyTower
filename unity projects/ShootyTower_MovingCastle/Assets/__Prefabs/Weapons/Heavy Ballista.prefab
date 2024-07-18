@@ -87,7 +87,7 @@ MonoBehaviour:
   projectileSpeed: 15
   pierce: 1
   knockback: 3
-  range: 10
+  range: 13
   element: 0
   projectilePrefab: {fileID: 3265185999461801760, guid: 672ce3e7e7100354ca0cc09c1b4aa9ce, type: 3}
   readyToFire: 0
