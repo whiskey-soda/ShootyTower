@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class XPCollector_Player : MonoBehaviour
+{
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("XP Orb"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+}

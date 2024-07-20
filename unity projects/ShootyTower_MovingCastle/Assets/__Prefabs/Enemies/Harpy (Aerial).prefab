@@ -131,6 +131,7 @@ Transform:
   - {fileID: 7312441654532892949}
   - {fileID: 6773196419237212254}
   - {fileID: 8693775488359661391}
+  - {fileID: 5446427241019169333}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4968004971574120756
@@ -263,6 +264,8 @@ MonoBehaviour:
   health: 25
   moveSpeed: 3
   damagePerSec: 5
+  xpValue: 2
+  xpSpawner: {fileID: 0}
   isAttacking: 0
 --- !u!114 &5235660896799592075
 MonoBehaviour:
@@ -485,3 +488,73 @@ MonoBehaviour:
   myHeightLevel: 4
   myEnemyScript: {fileID: 0}
   myKnockbackScript: {fileID: 0}
+--- !u!1001 &7659555931133391658
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9047094249736821449}
+    m_Modifications:
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739596896868959662, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112036421888141823, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455169409047950475, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+      propertyPath: m_Name
+      value: XP Spawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+--- !u!4 &5446427241019169333 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2439171102107527455, guid: c98d65b313734d3429e454dbb928d24e, type: 3}
+  m_PrefabInstance: {fileID: 7659555931133391658}
+  m_PrefabAsset: {fileID: 0}

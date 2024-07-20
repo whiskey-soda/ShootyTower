@@ -8,7 +8,7 @@ using static UnityEditor.Rendering.FilterWindow;
 public class HeavyBallista_Weapon : RangedBaseClass_Weapon
 {
     [Header("HEAVY BALLISTA")]
-    [SerializeField] List<BaseClass_Enemy> enemyList;
+    [SerializeField] List<Hurtbox_Enemy> enemyList;
 
     private void Reset()
     {
@@ -34,7 +34,7 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
     {
         if (enemyList.Count != 0)
         {
-            BaseClass_Enemy highestHealthEnemy = GetHighestHealthEnemyInRange();
+            Hurtbox_Enemy highestHealthEnemy = GetClosestEnemyInRange();
             CreateProjectile(highestHealthEnemy.transform.position - transform.position);
         }
     }
@@ -43,12 +43,12 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
     {
         if (collision.CompareTag("Enemy Hurtbox"))
         {
-            BaseClass_Enemy enemyScript =  collision.GetComponentInParent<BaseClass_Enemy>();
+            Hurtbox_Enemy enemyHurtboxScript =  collision.GetComponent<Hurtbox_Enemy>();
 
-            if (enemyScript.heightLevelList.Contains(heightLevel) &&
-                !enemyList.Contains(enemyScript))
+            if (enemyHurtboxScript.myHeightLevel == heightLevel &&
+                !enemyList.Contains(enemyHurtboxScript))
             {
-                enemyList.Add(enemyScript);
+                enemyList.Add(enemyHurtboxScript);
             }
         }
     }
@@ -57,7 +57,7 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
     {
         if (collision.CompareTag("Enemy Hurtbox"))
         {
-            BaseClass_Enemy enemyScript = collision.GetComponentInParent<BaseClass_Enemy>();
+            Hurtbox_Enemy enemyScript = collision.GetComponent<Hurtbox_Enemy>();
 
             if (enemyList.Contains(enemyScript))
             {
@@ -66,25 +66,28 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
         }
     }
 
-    private BaseClass_Enemy GetHighestHealthEnemyInRange()
+    private Hurtbox_Enemy GetClosestEnemyInRange()
     {
-        BaseClass_Enemy highestHealthEnemy = null;
-        foreach (BaseClass_Enemy enemy in enemyList)
+        Hurtbox_Enemy closestEnemy = null;
+        float closestEnemyDistance = 0;
+
+        foreach (Hurtbox_Enemy enemy in enemyList)
         {
-            if (highestHealthEnemy == null)
+            if (closestEnemy == null)
             {
-                highestHealthEnemy = enemy;
+                closestEnemy = enemy;
+                closestEnemyDistance = Vector2.Distance(transform.position, enemy.transform.position);
             }
             else
             {
-                if (enemy.health > highestHealthEnemy.health)
+                if (Vector2.Distance(transform.position, enemy.transform.position) < closestEnemyDistance)
                 {
-                    highestHealthEnemy = enemy;
+                    closestEnemy = enemy;
                 }
             }
         }
 
-        return highestHealthEnemy;
+        return closestEnemy;
     }
 
 }
