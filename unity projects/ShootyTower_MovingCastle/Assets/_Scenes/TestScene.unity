@@ -1681,6 +1681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438226426}
   - component: {fileID: 1438226425}
+  - component: {fileID: 1438226427}
   m_Layer: 0
   m_Name: Debugger
   m_TagString: Untagged
@@ -1718,6 +1719,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1438226427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438226424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c170ad728d789c6408116df3c9638e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: 0
+  stat: 0
+  upgradePercent: 0
+  weaponUpgrader: {fileID: 0}
 --- !u!1 &1613500528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,6 +2016,7 @@ GameObject:
   - component: {fileID: 1930620390}
   - component: {fileID: 1930620391}
   - component: {fileID: 1930620392}
+  - component: {fileID: 1930620395}
   - component: {fileID: 1930620394}
   - component: {fileID: 1930620393}
   m_Layer: 7
@@ -2093,7 +2111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6123a9d95011b054ea31748515c77f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponList:
+  weaponPrefabList:
   - {fileID: 8956030300687006383, guid: 4a08d7e42c55ec54296a0087e8fe08ad, type: 3}
   - {fileID: 3433206202803441927, guid: 811c71c930964624787810680ccbed6b, type: 3}
   - {fileID: 2488294450955596680, guid: a594adae329314e47ac38a2ee2bae679, type: 3}
@@ -2102,6 +2120,7 @@ MonoBehaviour:
   tallWeaponTransform: {fileID: 0}
   veryTallWeaponTransform: {fileID: 0}
   aerialWeaponTransform: {fileID: 0}
+  weaponUpgradeScript: {fileID: 0}
 --- !u!95 &1930620393
 Animator:
   serializedVersion: 5
@@ -2175,6 +2194,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1930620395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930620384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83fb64ada36ba7f49a4aee84c7da53a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownedWeapons: []
 --- !u!1 &2110911975
 GameObject:
   m_ObjectHideFlags: 0

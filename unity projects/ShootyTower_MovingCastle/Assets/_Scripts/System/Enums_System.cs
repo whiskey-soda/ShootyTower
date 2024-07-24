@@ -9,6 +9,8 @@ public enum WeaponType { Archers, Cannon, HeavyBallista  };
 
 public enum Direction { Up, Down, Left, Right };
 
+public enum WeaponStat {  damage, fireRate, projectileSpeed, pierce, knockback, range, element };
+
 public class Enums_System : MonoBehaviour
 {
 }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(WeaponUpgrader_Player))]
+
 public class WeaponManager_Player : MonoBehaviour
 {
     [Header("CONFIG")]
-    public List<GameObject> weaponList;
+    public List<GameObject> weaponPrefabList;
 
     [Header("DEBUG")]
     [SerializeField] Transform groundWeaponTransform;
@@ -14,6 +16,13 @@ public class WeaponManager_Player : MonoBehaviour
     [SerializeField] Transform tallWeaponTransform;
     [SerializeField] Transform veryTallWeaponTransform;
     [SerializeField] Transform aerialWeaponTransform;
+
+    [SerializeField] WeaponUpgrader_Player weaponUpgradeScript;
+
+    private void Awake()
+    {
+        weaponUpgradeScript = GetComponent<WeaponUpgrader_Player>();
+    }
 
     private void Start()
     {
@@ -41,6 +50,9 @@ public class WeaponManager_Player : MonoBehaviour
         //if weapon is using a heightlevel that only matters for weapon positioning (like ground2),
         //change the height level to the correct one for collisions so the projectiles have correct layer
         if (newWeaponScript.heightLevel == HeightLevel.Ground2) { newWeaponScript.heightLevel = HeightLevel.Ground; }
+
+        //add weapon to script on upgrader so it can receive upgrades
+        weaponUpgradeScript.ownedWeapons.Add(newWeaponScript);
 
     }
 
@@ -78,7 +90,7 @@ public class WeaponManager_Player : MonoBehaviour
         GameObject weaponToAdd = null;
 
         //parse list for correct weapon prefab
-        foreach (GameObject weapon in weaponList)
+        foreach (GameObject weapon in weaponPrefabList)
         {
             if (weapon.GetComponent<BaseClass_Weapon>().weaponType == weaponType)
             {
