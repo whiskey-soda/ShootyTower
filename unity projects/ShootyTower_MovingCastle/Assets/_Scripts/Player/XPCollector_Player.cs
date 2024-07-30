@@ -8,6 +8,8 @@ public class XPCollector_Player : MonoBehaviour
     {
         if (collision.CompareTag("XP Orb"))
         {
+            float xpValue = collision.GetComponent<Data_XP>().value;
+            Leveling_Player.Instance.AddXp(xpValue);
             Destroy(collision.gameObject);
         }
     }
