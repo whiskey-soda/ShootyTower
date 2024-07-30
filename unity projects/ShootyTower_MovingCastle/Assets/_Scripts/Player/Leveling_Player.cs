@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Leveling_Player : MonoBehaviour
 {
+
+    public UnityEvent LevelUp;
+
     [Header("CONFIG")]
     [SerializeField] float xpRequirementIncreasePerLevel = 10;
 
@@ -32,11 +36,12 @@ public class Leveling_Player : MonoBehaviour
     {
         if (currentXP >= lvlUpXpRequirement)
         {
-            LevelUp();
+            LevelUp.Invoke();
+            RaiseLevel();
         }
     }
 
-    void LevelUp()
+    void RaiseLevel()
     {
         currentLevel++;
         lvlUpXpRequirement += xpRequirementIncreasePerLevel;

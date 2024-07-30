@@ -16,6 +16,7 @@ TagManager:
   - Ground 2 Weapon Position
   - Enemy Collision
   - XP Orb
+  - Level Up Menu
   layers:
   - Default
   - TransparentFX
