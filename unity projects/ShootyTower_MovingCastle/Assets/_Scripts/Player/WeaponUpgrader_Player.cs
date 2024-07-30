@@ -34,6 +34,8 @@ public class WeaponUpgrader_Player : MonoBehaviour
     /// <param name="weapon"></param>
     private static void UpgradeRangedStat(RangedBaseClass_Weapon weapon, WeaponStat statToUpgrade, float upgradePercent)
     {
+        //TODO: Make this upgrade based on a new BaseStat variable for each stat.
+        //TODO: also make a separate method for multiplying the current stat value for X tier upgrades
         switch (statToUpgrade)
         {
             case WeaponStat.damage:
