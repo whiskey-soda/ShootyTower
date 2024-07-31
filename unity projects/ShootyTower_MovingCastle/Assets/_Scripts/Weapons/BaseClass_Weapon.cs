@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class BaseClass_Weapon : MonoBehaviour
 {
-    [Header("DEBUG (BASE CLASS)")]
+    [Header("CONFIG (BASE CLASS)")]
     public WeaponType weaponType;
+
+    [Header("DEBUG (BASE CLASS)")]
     public HeightLevel heightLevel;
 
     /* modular stats system, scrapped because it would require too many list searches

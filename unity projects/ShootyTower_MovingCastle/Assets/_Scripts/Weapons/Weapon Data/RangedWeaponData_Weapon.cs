@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class RangedWeaponData_Weapon : ScriptableObject
 {
-    public WeaponType weaponType;
+    //already set manually on baseclass_weapon
+    //public WeaponType weaponType;
     public float damage;
     public float fireRate; //rounds per second
     public float projectileSpeed;

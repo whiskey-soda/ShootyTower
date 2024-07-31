@@ -28,7 +28,8 @@ public class RangedBaseClass_Weapon : BaseClass_Weapon
 
     private void SetBaseStats()
     {
-        weaponType = baseStats.weaponType;
+        //already set manually on baseclass_weapon
+        //weaponType = baseStats.weaponType;
         damage = baseStats.damage;
         fireRate = baseStats.fireRate;
         projectileSpeed = baseStats.projectileSpeed;

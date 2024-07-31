@@ -80,11 +80,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0567f58c42fb7640856a1e787e41b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 3
   heightLevel: 0
   baseStats: {fileID: 11400000, guid: e44f58b2771940c47b455764cea0f176, type: 2}
-  readyToFire: 0
-  firingDelay: 0
   damage: 0
   fireRate: 0
   projectileSpeed: 0
@@ -93,4 +91,6 @@ MonoBehaviour:
   range: 0
   element: 0
   projectilePrefab: {fileID: 0}
+  readyToFire: 0
+  firingDelay: 0
   enemyList: []

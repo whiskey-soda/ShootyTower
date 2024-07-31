@@ -11,6 +11,8 @@ public enum Direction { Up, Down, Left, Right };
 
 public enum StatType {  damage, fireRate, projectileSpeed, pierce, knockback, range, element };
 
+public enum UpgradeTier {  Common, Uncommon, Rare, Legendary }
+
 public class Enums_System : MonoBehaviour
 {
 }

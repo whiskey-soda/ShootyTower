@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9471faedd0e8e074aa7110098818d70f, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  weaponType: 0
+  weaponType: 1
   damage: 5
   fireRate: 0.6
   projectileSpeed: 15
