@@ -13,7 +13,7 @@ public class WeaponUpgrader_Player : MonoBehaviour
     /// <param name="weaponToUpgrade"></param>
     /// <param name="statToUpgrade"></param>
     /// <param name="upgradePercent"></param>
-    public void UpgradeRangedWeapon(WeaponType weaponToUpgrade, WeaponStat statToUpgrade, float upgradePercent)
+    public void UpgradeRangedWeapon(WeaponType weaponToUpgrade, StatType statToUpgrade, float upgradePercent)
     {
 
         foreach (RangedBaseClass_Weapon weapon in ownedWeapons)
@@ -32,33 +32,33 @@ public class WeaponUpgrader_Player : MonoBehaviour
     /// <param name="statToUpgrade"></param>
     /// <param name="upgradePercent"></param>
     /// <param name="weapon"></param>
-    private static void UpgradeRangedStat(RangedBaseClass_Weapon weapon, WeaponStat statToUpgrade, float upgradePercent)
+    private static void UpgradeRangedStat(RangedBaseClass_Weapon weapon, StatType statToUpgrade, float upgradePercent)
     {
         //TODO: Make this upgrade based on a new BaseStat variable for each stat.
         //TODO: also make a separate method for multiplying the current stat value for X tier upgrades
         switch (statToUpgrade)
         {
-            case WeaponStat.damage:
+            case StatType.damage:
                 weapon.damage += weapon.damage * (upgradePercent / 100);
                 break;
 
-            case WeaponStat.fireRate:
+            case StatType.fireRate:
                 weapon.fireRate += weapon.fireRate * (upgradePercent / 100);
                 break;
 
-            case WeaponStat.projectileSpeed:
+            case StatType.projectileSpeed:
                 weapon.projectileSpeed += weapon.projectileSpeed * (upgradePercent / 100);
                 break;
 
-            case WeaponStat.pierce:
+            case StatType.pierce:
                 weapon.pierce += weapon.pierce * (upgradePercent / 100);
                 break;
 
-            case WeaponStat.knockback:
+            case StatType.knockback:
                 weapon.knockback += weapon.knockback * (upgradePercent / 100);
                 break;
 
-            case WeaponStat.range:
+            case StatType.range:
                 weapon.range += weapon.range * (upgradePercent / 100);
                 break;
 

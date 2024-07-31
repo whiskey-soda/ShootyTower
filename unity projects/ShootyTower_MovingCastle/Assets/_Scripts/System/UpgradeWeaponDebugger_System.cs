@@ -7,7 +7,7 @@ public class UpgradeWeaponDebugger_System : MonoBehaviour
 
     [Header("CONFIG")]
     [SerializeField] WeaponType weapon;
-    [SerializeField] WeaponStat stat;
+    [SerializeField] StatType stat;
     [SerializeField] float upgradePercent;
 
     [Header("DEBUG")]
