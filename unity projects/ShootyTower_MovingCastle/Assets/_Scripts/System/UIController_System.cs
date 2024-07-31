@@ -31,7 +31,7 @@ public class UIController_System : MonoBehaviour
         LevelUpMenu.SetActive(true);
     }
 
-    void HideLevelUpMenu()
+    public void HideLevelUpMenu()
     {
         LevelUpMenu.SetActive(false);
     }
