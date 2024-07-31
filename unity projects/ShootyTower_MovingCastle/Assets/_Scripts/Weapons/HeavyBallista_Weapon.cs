@@ -7,7 +7,7 @@ using static UnityEditor.Rendering.FilterWindow;
 
 public class HeavyBallista_Weapon : RangedBaseClass_Weapon
 {
-    [Header("HEAVY BALLISTA")]
+    [Header("DEBUG (HEAVY BALLISTA)")]
     [SerializeField] List<Hurtbox_Enemy> enemyList;
 
 

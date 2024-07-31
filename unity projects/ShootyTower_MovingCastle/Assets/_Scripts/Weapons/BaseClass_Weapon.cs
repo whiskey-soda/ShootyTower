@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaseClass_Weapon : MonoBehaviour
 {
-    [Header("WEAPON DATA")]
+    [Header("DEBUG (BASE CLASS)")]
     public WeaponType weaponType;
     public HeightLevel heightLevel;
 

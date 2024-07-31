@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   weaponType: 0
-  damage: 0
-  fireRate: 0
-  projectileSpeed: 0
-  pierce: 0
-  knockback: 0
-  range: 0
+  damage: 5
+  fireRate: 0.6
+  projectileSpeed: 15
+  pierce: 2
+  knockback: 1
+  range: 8
   element: 0
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3265185999461801760, guid: ec52a3a7bb731c0489c2dce327abf2f6, type: 3}

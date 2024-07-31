@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class RangedBaseClass_Weapon : BaseClass_Weapon
 {
-    [Header("CONFIG")]
+    [Header("CONFIG (RANGED BASE CLASS)")]
     public RangedWeaponData_Weapon baseStats = null;
 
-    [Header("DEBUG")]
-    [SerializeField] bool readyToFire;
-    [SerializeField] float firingDelay;
+    [Header("DEBUG (RANGED BASE CLASS)")]
     public float damage;
     public float fireRate; //rounds per second
     public float projectileSpeed;
     public float pierce;
     public float knockback;
     public float range;
+
     public ElementType element;
     public GameObject projectilePrefab;
+
+    [SerializeField] bool readyToFire;
+    [SerializeField] float firingDelay;
 
     protected virtual void Awake()
     {

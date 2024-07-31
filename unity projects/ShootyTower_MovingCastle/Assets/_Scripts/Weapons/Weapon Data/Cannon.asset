@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9471faedd0e8e074aa7110098818d70f, type: 3}
   m_Name: Cannon
   m_EditorClassIdentifier: 
-  weaponType: 0
-  damage: 0
-  fireRate: 0
-  projectileSpeed: 0
-  pierce: 0
-  knockback: 0
-  range: 0
+  weaponType: 1
+  damage: 10
+  fireRate: 0.4
+  projectileSpeed: 10
+  pierce: 6
+  knockback: 4
+  range: 10.5
   element: 0
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3265185999461801760, guid: dd4a5c6fcdc0b744198f4c7b656220e7, type: 3}

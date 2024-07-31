@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9471faedd0e8e074aa7110098818d70f, type: 3}
   m_Name: Heavy Ballista
   m_EditorClassIdentifier: 
-  weaponType: 0
-  damage: 0
-  fireRate: 0
-  projectileSpeed: 0
-  pierce: 0
-  knockback: 0
-  range: 0
+  weaponType: 2
+  damage: 15
+  fireRate: 0.4
+  projectileSpeed: 15
+  pierce: 1
+  knockback: 3
+  range: 13
   element: 0
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3265185999461801760, guid: 672ce3e7e7100354ca0cc09c1b4aa9ce, type: 3}
