@@ -10,21 +10,11 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
     [Header("HEAVY BALLISTA")]
     [SerializeField] List<Hurtbox_Enemy> enemyList;
 
-    private void Reset()
-    {
-        //set all defaults
-        weaponType = WeaponType.HeavyBallista;
-        damage = 15;
-        fireRate = .4f;
-        projectileSpeed = 15;
-        pierce = 1;
-        knockback = 3;
-        range = 10;
-        element = ElementType.None;
-    }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         CircleCollider2D myCollider = GetComponent<CircleCollider2D>();
         myCollider.isTrigger = true;
         myCollider.radius = range;

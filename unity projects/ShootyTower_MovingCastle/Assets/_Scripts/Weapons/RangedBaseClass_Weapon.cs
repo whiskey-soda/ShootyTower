@@ -5,6 +5,11 @@ using UnityEngine;
 public class RangedBaseClass_Weapon : BaseClass_Weapon
 {
     [Header("CONFIG")]
+    public RangedWeaponData_Weapon baseStats = null;
+
+    [Header("DEBUG")]
+    [SerializeField] bool readyToFire;
+    [SerializeField] float firingDelay;
     public float damage;
     public float fireRate; //rounds per second
     public float projectileSpeed;
@@ -14,10 +19,24 @@ public class RangedBaseClass_Weapon : BaseClass_Weapon
     public ElementType element;
     public GameObject projectilePrefab;
 
-    [Header("DEBUG")]
-    [SerializeField] bool readyToFire;
-    [SerializeField] float firingDelay;
+    protected virtual void Awake()
+    {
+        SetBaseStats();
+    }
 
+    private void SetBaseStats()
+    {
+        weaponType = baseStats.weaponType;
+        damage = baseStats.damage;
+        fireRate = baseStats.fireRate;
+        projectileSpeed = baseStats.projectileSpeed;
+        pierce = baseStats.pierce;
+        knockback = baseStats.knockback;
+        range = baseStats.range;
+        element = baseStats.element;
+
+        projectilePrefab = baseStats.projectilePrefab;
+    }
 
     private void Update()
     {
