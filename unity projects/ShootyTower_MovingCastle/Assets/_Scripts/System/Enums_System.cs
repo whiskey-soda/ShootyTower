@@ -9,7 +9,7 @@ public enum WeaponType { Undefined, Bow, Cannon, HeavyBallista  };
 
 public enum Direction { Up, Down, Left, Right };
 
-public enum StatType {  damage, fireRate, projectileSpeed, pierce, knockback, range, element };
+public enum StatType {  damage, fireRate, projectileSpeed, pierce, knockback, range };
 
 public enum UpgradeTier {  Common, Uncommon, Rare, Legendary }
 
