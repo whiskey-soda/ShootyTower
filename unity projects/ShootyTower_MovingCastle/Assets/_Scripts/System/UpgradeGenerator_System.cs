@@ -48,10 +48,7 @@ public class UpgradeGenerator_System : MonoBehaviour
         {
             GenerateUniqueUpgradeOption(generatedUpgrades, i);
 
-            upgradeOptionScripts[i].weaponToUpgrade = generatedUpgrades[i].weaponToUpgrade;
-            upgradeOptionScripts[i].statToUpgrade = generatedUpgrades[i].statToUpgrade;
-            upgradeOptionScripts[i].upgradeTier = generatedUpgrades[i].upgradeTier;
-            upgradeOptionScripts[i].upgradePercent = generatedUpgrades[i].upgradePercent;
+            upgradeOptionScripts[i].SetUpgradeData(generatedUpgrades[i]);
         }
     }
 
