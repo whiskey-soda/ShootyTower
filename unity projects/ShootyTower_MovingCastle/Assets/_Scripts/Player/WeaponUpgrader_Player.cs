@@ -13,7 +13,7 @@ public class WeaponUpgrader_Player : MonoBehaviour
     /// <param name="weaponToUpgrade"></param>
     /// <param name="statToUpgrade"></param>
     /// <param name="upgradePercent"></param>
-    public void UpgradeRangedWeapon(WeaponType weaponToUpgrade, StatType statToUpgrade, float upgradePercent)
+    public void UpgradeRangedWeapon(WeaponType weaponToUpgrade, StatType statToUpgrade, UpgradeTier tier, float upgradePercent)
     {
 
         foreach (RangedBaseClass_Weapon weapon in ownedWeapons)
@@ -21,7 +21,11 @@ public class WeaponUpgrader_Player : MonoBehaviour
             if (weapon.weaponType == weaponToUpgrade)
             {
                 //this method does not currently support changing elements
-                UpgradeRangedStat(weapon, statToUpgrade, upgradePercent);
+                if (tier == UpgradeTier.Legendary)
+                {
+                    LegendaryUpgradeRangedStat(weapon, statToUpgrade, upgradePercent);
+                }
+                else { NormalUpgradeRangedStat(weapon, statToUpgrade, upgradePercent); }
             }
         }
     }
@@ -32,36 +36,66 @@ public class WeaponUpgrader_Player : MonoBehaviour
     /// <param name="statToUpgrade"></param>
     /// <param name="upgradePercent"></param>
     /// <param name="weapon"></param>
-    private static void UpgradeRangedStat(RangedBaseClass_Weapon weapon, StatType statToUpgrade, float upgradePercent)
+    private static void NormalUpgradeRangedStat(RangedBaseClass_Weapon weapon, StatType statToUpgrade, float upgradePercent)
     {
-        //TODO: Make this upgrade based on a new BaseStat variable for each stat.
-        //TODO: also make a separate method for multiplying the current stat value for X tier upgrades
         switch (statToUpgrade)
         {
             case StatType.damage:
-                weapon.damage += weapon.damage * (upgradePercent / 100);
+                weapon.damage += weapon.baseStats.damage * (upgradePercent / 100);
                 break;
 
             case StatType.fireRate:
-                weapon.fireRate += weapon.fireRate * (upgradePercent / 100);
+                weapon.fireRate += weapon.baseStats.fireRate * (upgradePercent / 100);
                 break;
 
             case StatType.projectileSpeed:
-                weapon.projectileSpeed += weapon.projectileSpeed * (upgradePercent / 100);
+                weapon.projectileSpeed += weapon.baseStats.projectileSpeed * (upgradePercent / 100);
                 break;
 
             case StatType.pierce:
-                weapon.pierce += weapon.pierce * (upgradePercent / 100);
+                weapon.pierce += weapon.baseStats.pierce * (upgradePercent / 100);
                 break;
 
             case StatType.knockback:
-                weapon.knockback += weapon.knockback * (upgradePercent / 100);
+                weapon.knockback += weapon.baseStats.knockback * (upgradePercent / 100);
                 break;
 
             case StatType.range:
-                weapon.range += weapon.range * (upgradePercent / 100);
+                weapon.range += weapon.baseStats.range * (upgradePercent / 100);
                 break;
 
         }
     }
+
+    private static void LegendaryUpgradeRangedStat(RangedBaseClass_Weapon weapon, StatType statToUpgrade, float upgradeCoefficient)
+    {
+        switch (statToUpgrade)
+        {
+            case StatType.damage:
+                weapon.damage *= upgradeCoefficient;
+                break;
+
+            case StatType.fireRate:
+                weapon.fireRate *= upgradeCoefficient;
+                break;
+
+            case StatType.projectileSpeed:
+                weapon.projectileSpeed *= upgradeCoefficient;
+                break;
+
+            case StatType.pierce:
+                weapon.pierce *= upgradeCoefficient;
+                break;
+
+            case StatType.knockback:
+                weapon.knockback *= upgradeCoefficient;
+                break;
+
+            case StatType.range:
+                weapon.range *= upgradeCoefficient;
+                break;
+
+        }
+    }
+
 }

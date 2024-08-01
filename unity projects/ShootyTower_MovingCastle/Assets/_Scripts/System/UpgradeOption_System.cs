@@ -10,11 +10,18 @@ public class UpgradeOption_System : MonoBehaviour
     StatType statToUpgrade;
     UpgradeTier upgradeTier;
     float upgradePercent;
-    public TextMeshProUGUI description;
+    TextMeshProUGUI description;
+    WeaponUpgrader_Player weaponUpgraderScript;
 
     private void Start()
     {
         description = GetComponentInChildren<TextMeshProUGUI>();
+        weaponUpgraderScript = FindObjectOfType<WeaponUpgrader_Player>();
+    }
+
+    public void ApplyUpgrade()
+    {
+        weaponUpgraderScript.UpgradeRangedWeapon(weaponToUpgrade, statToUpgrade, upgradeTier, upgradePercent);
     }
 
     public void SetUpgradeData(UpgradeGenerator_System.UpgradeOptionData newData)

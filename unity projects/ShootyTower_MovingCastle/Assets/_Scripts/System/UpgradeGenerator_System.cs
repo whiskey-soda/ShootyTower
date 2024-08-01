@@ -23,14 +23,6 @@ public class UpgradeGenerator_System : MonoBehaviour
         public float upgradePercent;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            GenerateUpgradeOptions();
-        }
-    }
-
     private void Start()
     {
         weaponUpgraderScript = FindObjectOfType<WeaponUpgrader_Player>();
@@ -38,7 +30,7 @@ public class UpgradeGenerator_System : MonoBehaviour
         upgradeOptionScripts = FindObjectsOfType<UpgradeOption_System>(true);
     }
 
-    void GenerateUpgradeOptions()
+    public void GenerateUpgradeOptions()
     {
 
         UpgradeOptionData[] generatedUpgrades = new UpgradeOptionData[upgradeOptionScripts.Length];

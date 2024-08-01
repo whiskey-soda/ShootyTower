@@ -22,6 +22,6 @@ public class UpgradeWeaponDebugger_System : MonoBehaviour
     [ContextMenu("Upgrade Weapon")]
     void AddWeapon()
     {
-        weaponUpgrader.UpgradeRangedWeapon(weapon, stat, upgradePercent);
+        weaponUpgrader.UpgradeRangedWeapon(weapon, stat, UpgradeTier.Legendary, upgradePercent);
     }
 }

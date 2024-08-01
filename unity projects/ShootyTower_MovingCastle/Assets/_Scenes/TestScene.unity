@@ -600,6 +600,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1522574517}
+        m_TargetAssemblyTypeName: UpgradeOption_System, Assembly-CSharp
+        m_MethodName: ApplyUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &115015421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,7 +1083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603cbcf8c26a7a84f82f35a714e07e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: {fileID: 0}
 --- !u!1 &297578501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,7 +1561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603cbcf8c26a7a84f82f35a714e07e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: {fileID: 0}
 --- !u!1 &585738477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2318,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 569688820}
+        m_TargetAssemblyTypeName: UpgradeOption_System, Assembly-CSharp
+        m_MethodName: ApplyUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1336048783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2870,7 +2892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603cbcf8c26a7a84f82f35a714e07e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: {fileID: 0}
 --- !u!1 &1562644059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3112,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1765206670}
         m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
         m_MethodName: HideLevelUpMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 205421203}
+        m_TargetAssemblyTypeName: UpgradeOption_System, Assembly-CSharp
+        m_MethodName: ApplyUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4007,6 +4040,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1765206670}
         m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
         m_MethodName: ShowLevelUpMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1765206671}
+        m_TargetAssemblyTypeName: UpgradeGenerator_System, Assembly-CSharp
+        m_MethodName: GenerateUpgradeOptions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
