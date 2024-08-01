@@ -40,39 +40,46 @@ public class KnockbackRegion_Player : MonoBehaviour
     {
         foreach (Knockback_Enemy enemy in enemiesInRange)
         {
-            //left
-            if (myRigidbody2D.velocity.x < 0)
+            if (enemy == null)
             {
-                if (enemy.collisionCollider.bounds.center.x < transform.position.x - knockbackDetectionLeeway)
-                {
-                    KnockEnemyBack(enemy);
-                }
+                enemiesInRange.Remove(enemy);
             }
-
-            //right
-            if (myRigidbody2D.velocity.x > 0)
+            else
             {
-                if (enemy.collisionCollider.bounds.center.x > transform.position.x + knockbackDetectionLeeway)
+                //left
+                if (myRigidbody2D.velocity.x < 0)
                 {
-                    KnockEnemyBack(enemy);
+                    if (enemy.collisionCollider.bounds.center.x < transform.position.x - knockbackDetectionLeeway)
+                    {
+                        KnockEnemyBack(enemy);
+                    }
                 }
-            }
 
-            //down
-            if (myRigidbody2D.velocity.y < 0)
-            {
-                if (enemy.collisionCollider.bounds.center.y < transform.position.y - knockbackDetectionLeeway)
+                //right
+                if (myRigidbody2D.velocity.x > 0)
                 {
-                    KnockEnemyBack(enemy);
+                    if (enemy.collisionCollider.bounds.center.x > transform.position.x + knockbackDetectionLeeway)
+                    {
+                        KnockEnemyBack(enemy);
+                    }
                 }
-            }
 
-            //up
-            if (myRigidbody2D.velocity.y > 0)
-            {
-                if (enemy.collisionCollider.bounds.center.y > transform.position.y + knockbackDetectionLeeway)
+                //down
+                if (myRigidbody2D.velocity.y < 0)
                 {
-                    KnockEnemyBack(enemy);
+                    if (enemy.collisionCollider.bounds.center.y < transform.position.y - knockbackDetectionLeeway)
+                    {
+                        KnockEnemyBack(enemy);
+                    }
+                }
+
+                //up
+                if (myRigidbody2D.velocity.y > 0)
+                {
+                    if (enemy.collisionCollider.bounds.center.y > transform.position.y + knockbackDetectionLeeway)
+                    {
+                        KnockEnemyBack(enemy);
+                    }
                 }
             }
 

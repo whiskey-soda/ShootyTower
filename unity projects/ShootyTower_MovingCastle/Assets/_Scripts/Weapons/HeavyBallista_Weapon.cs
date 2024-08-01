@@ -9,19 +9,25 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
 {
     [Header("DEBUG (HEAVY BALLISTA)")]
     [SerializeField] List<Hurtbox_Enemy> enemyList;
+    CircleCollider2D myCollider;
 
 
     protected override void Awake()
     {
         base.Awake();
 
-        CircleCollider2D myCollider = GetComponent<CircleCollider2D>();
+        myCollider = GetComponent<CircleCollider2D>();
         myCollider.isTrigger = true;
         myCollider.radius = range;
     }
 
+
+
     protected override void Shoot()
     {
+        //ensure radius is accurate before firing
+        myCollider.radius = range;
+
         if (enemyList.Count != 0)
         {
             Hurtbox_Enemy highestHealthEnemy = GetClosestEnemyInRange();
@@ -33,7 +39,7 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
     {
         if (collision.CompareTag("Enemy Hurtbox"))
         {
-            Hurtbox_Enemy enemyHurtboxScript =  collision.GetComponent<Hurtbox_Enemy>();
+            Hurtbox_Enemy enemyHurtboxScript = collision.GetComponent<Hurtbox_Enemy>();
 
             if (enemyHurtboxScript.myHeightLevel == heightLevel &&
                 !enemyList.Contains(enemyHurtboxScript))
@@ -75,6 +81,7 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
                     closestEnemy = enemy;
                 }
             }
+
         }
 
         return closestEnemy;

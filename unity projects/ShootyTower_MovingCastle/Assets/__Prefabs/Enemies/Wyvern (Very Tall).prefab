@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4473e5298e85bb4fb20db94465f6ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heightLevelList: 0300000002000000
+  heightLevelList: 0400000003000000
   health: 75
   moveSpeed: 2
   damagePerSec: 10
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85d52d6b03a0e64481ee438b2bb999b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myHeightLevel: 2
+  myHeightLevel: 3
   myEnemyScript: {fileID: 0}
   myKnockbackScript: {fileID: 0}
 --- !u!1 &7746396164037947619
@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85d52d6b03a0e64481ee438b2bb999b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myHeightLevel: 3
+  myHeightLevel: 4
   myEnemyScript: {fileID: 0}
   myKnockbackScript: {fileID: 0}
 --- !u!1001 &6685177001634246997
