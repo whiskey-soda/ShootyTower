@@ -13,7 +13,7 @@ public class UpgradeGenerator_System : MonoBehaviour
 
     [Header("DEBUG")]
     WeaponUpgrader_Player weaponUpgraderScript;
-    UpgradeOption_System[] upgradeOptions;
+    public UpgradeOption_System[] upgradeOptionScripts;
 
     public struct UpgradeOptionData
     {
@@ -35,23 +35,23 @@ public class UpgradeGenerator_System : MonoBehaviour
     {
         weaponUpgraderScript = FindObjectOfType<WeaponUpgrader_Player>();
 
-        upgradeOptions = GetComponentsInChildren<UpgradeOption_System>();
+        upgradeOptionScripts = FindObjectsOfType<UpgradeOption_System>(true);
     }
 
     void GenerateUpgradeOptions()
     {
 
-        UpgradeOptionData[] generatedUpgrades = new UpgradeOptionData[upgradeOptions.Length];
+        UpgradeOptionData[] generatedUpgrades = new UpgradeOptionData[upgradeOptionScripts.Length];
 
         //generate enough upgrades to fill all the option objects
-        for (int i = 0; i < upgradeOptions.Length; i++)
+        for (int i = 0; i < upgradeOptionScripts.Length; i++)
         {
             GenerateUniqueUpgradeOption(generatedUpgrades, i);
 
-            upgradeOptions[i].weaponToUpgrade = generatedUpgrades[i].weaponToUpgrade;
-            upgradeOptions[i].statToUpgrade = generatedUpgrades[i].statToUpgrade;
-            upgradeOptions[i].upgradeTier = generatedUpgrades[i].upgradeTier;
-            upgradeOptions[i].upgradePercent = generatedUpgrades[i].upgradePercent;
+            upgradeOptionScripts[i].weaponToUpgrade = generatedUpgrades[i].weaponToUpgrade;
+            upgradeOptionScripts[i].statToUpgrade = generatedUpgrades[i].statToUpgrade;
+            upgradeOptionScripts[i].upgradeTier = generatedUpgrades[i].upgradeTier;
+            upgradeOptionScripts[i].upgradePercent = generatedUpgrades[i].upgradePercent;
         }
     }
 
@@ -71,7 +71,6 @@ public class UpgradeGenerator_System : MonoBehaviour
         //if it is a duplicate, generate upgrades until a unique upgrade is generated
         while (isDuplicate)
         {
-            Console.WriteLine("DUPE DETECTED. Regenerating...");
             generatedUpgrades[originalIndex] = GenerateUpgradeOption();
             isDuplicate = CheckIfIsDuplicate(generatedUpgrades, originalIndex);
         }

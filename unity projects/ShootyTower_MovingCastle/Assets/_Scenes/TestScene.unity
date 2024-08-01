@@ -3435,6 +3435,7 @@ MonoBehaviour:
   uncommonUpgradePercent: 15
   rareUpgradePercent: 25
   legendaryUpgradePercent: 1.5
+  upgradeOptionScripts: []
 --- !u!1 &1791234664
 GameObject:
   m_ObjectHideFlags: 0
