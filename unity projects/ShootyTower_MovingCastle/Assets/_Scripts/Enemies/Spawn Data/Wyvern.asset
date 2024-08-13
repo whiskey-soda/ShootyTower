@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c0034e65994f748bd815f4266ff33b, type: 3}
+  m_Name: Wyvern
+  m_EditorClassIdentifier: 
+  spawnWeight: 2
+  prefabsList:
+  - {fileID: 3597322802906047132, guid: da62cefeeca6ab740ab34251c0cea15c, type: 3}
+  - {fileID: 6093705770686783760, guid: 9e0f4e777fc2d244eb802ea1f2253d97, type: 3}
