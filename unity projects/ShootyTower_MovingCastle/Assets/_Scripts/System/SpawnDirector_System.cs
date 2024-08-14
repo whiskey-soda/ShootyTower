@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemySpawner_System))]
@@ -8,13 +9,21 @@ public class SpawnDirector_System : MonoBehaviour
     [Header("CONFIG")]
     [SerializeField] float waveDurationSecs = 50;
 
+    [SerializeField] SpawnData_Enemy[] allEnemyTypesList;
+
     [SerializeField] SpawnData_Enemy[] wave1_9NewEnemyOrder;
 
-    [SerializeField] float spawnRateIncreasePerWave = 1.2f;
-    [SerializeField] float healthBonusIncreasePerWave = 1.1f;
+    //applied per wave
+    [SerializeField] float spawnRateIncreaseMultiplier = 1.2f;
+    [SerializeField] float healthBonusIncreaseMultiplier = 1.1f;
+
+    [SerializeField] float campaignEnd_BuffDecreaseCoefficient = .6f;
+
+    //how much the difficulty buff rates increase after each campaign is done
+    [SerializeField] float campaignEnd_DifficultyRatesIncreaseMultiplier = 1.2f;
 
     [Header("DEBUG")]
-    [SerializeField] EnemySpawner_System enemySpawnerScript;
+   [SerializeField] EnemySpawner_System enemySpawnerScript;
 
     [SerializeField] int currentWaveNum = 0;
 
@@ -25,9 +34,15 @@ public class SpawnDirector_System : MonoBehaviour
     [SerializeField] float waveWeightTotal;
 
     [SerializeField] float spawnsPerSec = 1;
-    [SerializeField] float healthBonusPercent = 0;
+    [SerializeField] float healthBonusMultiplier = 1;
 
     [SerializeField] bool enemiesSpawning = false;
+
+    [SerializeField] int numOfEnemyTypesInWave = 3;
+    [SerializeField] int wavesRemainingUntilNewType = 3;
+
+    [SerializeField] float campaignStart_spawnsPerSec;
+    [SerializeField] float campaignStart_healthBonusMultiplier;
 
     private void Awake()
     {
@@ -64,6 +79,7 @@ public class SpawnDirector_System : MonoBehaviour
         Invoke(nameof(EndWave), waveDurationSecs);
     }
 
+    [ContextMenu("End Wave")]
     void EndWave()
     {
         enemiesSpawning = false;
@@ -75,6 +91,20 @@ public class SpawnDirector_System : MonoBehaviour
         {
             enemiesInWave.Add(wave1_9NewEnemyOrder[currentWaveNum - 1]);
         }
+        else 
+        {
+            spawnsPerSec *= spawnRateIncreaseMultiplier;
+            healthBonusMultiplier *= healthBonusIncreaseMultiplier;
+
+            //generate random assortments of enemies for the wave
+            //gradually increase the amount of enemies in the wave
+            //if the amount of enemies reaches the maximum, stop adding new enemies
+            if (numOfEnemyTypesInWave < 9)
+            {
+                ConfigureRandomWaveComposition();
+            }
+        }
+
 
         enemiesInWave.Sort();
 
@@ -89,6 +119,47 @@ public class SpawnDirector_System : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// processes logic for random wave composition generation
+    /// </summary>
+    private void ConfigureRandomWaveComposition()
+    {
+        wavesRemainingUntilNewType--;
+        GenerateWaveEnemyTypes();
+
+        if (wavesRemainingUntilNewType <= 0)
+        {
+            numOfEnemyTypesInWave++;
+            wavesRemainingUntilNewType = numOfEnemyTypesInWave;
+        }
+    }
+
+    /// <summary>
+    /// adds new enemies to the wave composition until it is full
+    /// </summary>
+    private void GenerateWaveEnemyTypes()
+    {
+        enemiesInWave.Clear();
+
+        for (int i = 0; i < numOfEnemyTypesInWave; i++)
+        {
+            //add unique enemy type to wave
+            bool addedSuccessfully = false;
+
+            while (!addedSuccessfully)
+            {
+                SpawnData_Enemy enemyToAdd = allEnemyTypesList[Random.Range(0, allEnemyTypesList.Count())];
+
+                if (!enemiesInWave.Contains(enemyToAdd))
+                {
+                    enemiesInWave.Add(enemyToAdd);
+                    addedSuccessfully = true;
+                }
+            }
+
+        }
+    }
+
 
     /// <summary>
     /// chooses a random enemy from the enemy types in the current wave,
@@ -97,7 +168,6 @@ public class SpawnDirector_System : MonoBehaviour
     void SpawnRandomEnemy()
     {
         float spawnNum = Random.Range(1, waveWeightTotal);
-        Debug.Log(spawnNum);
 
         foreach (SpawnData_Enemy enemy in enemiesInWave)
         {
@@ -118,4 +188,40 @@ public class SpawnDirector_System : MonoBehaviour
 
         }
     }
+
+    [ContextMenu("Start Campaign")]
+    void StartCampaign()
+    {
+        campaignStart_spawnsPerSec = spawnsPerSec;
+        campaignStart_healthBonusMultiplier = healthBonusMultiplier;
+    }
+
+    /// <summary>
+    /// decrements enemy buff values and increases the difficulty scaling multipliers
+    /// </summary>
+    [ContextMenu("End Campaign")]
+    void EndCampaign()
+    {
+        currentWaveNum = 0;
+
+        spawnsPerSec = DecrementEnemyBuff(spawnsPerSec, campaignStart_spawnsPerSec);
+        healthBonusMultiplier = DecrementEnemyBuff(healthBonusMultiplier, campaignStart_healthBonusMultiplier);
+
+        spawnRateIncreaseMultiplier *= campaignEnd_DifficultyRatesIncreaseMultiplier;
+        healthBonusIncreaseMultiplier *= campaignEnd_DifficultyRatesIncreaseMultiplier;
+    }
+
+    float DecrementEnemyBuff(float buff, float buffBaseValue)
+    {
+        float newBuffValue = buff;
+
+        newBuffValue *= campaignEnd_BuffDecreaseCoefficient;
+        if (newBuffValue < buffBaseValue)
+        {
+            newBuffValue = buffBaseValue;
+        }
+
+        return newBuffValue;
+    }
+
 }

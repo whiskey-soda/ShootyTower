@@ -3625,6 +3625,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveDurationSecs: 50
+  allEnemyTypesList:
+  - {fileID: 11400000, guid: 0803517a1205fa140b573cbd65d31f24, type: 2}
+  - {fileID: 11400000, guid: c24730c82b5731348a8ee03b1665373e, type: 2}
+  - {fileID: 11400000, guid: 9f3f257710f160f4ea4c5d70e1aba8d4, type: 2}
+  - {fileID: 11400000, guid: d6d9cc9fb04c16345b4587ea623411ba, type: 2}
+  - {fileID: 11400000, guid: 84835de6d7cc6c24a839dd6d981438dd, type: 2}
+  - {fileID: 11400000, guid: d481ffb1b78be9a48be8905d6d22d8b2, type: 2}
+  - {fileID: 11400000, guid: 9b34f4b461b2df64592de24388ab7801, type: 2}
+  - {fileID: 11400000, guid: 7770edd1bfa41e944b342fac9d9c2fff, type: 2}
   wave1_9NewEnemyOrder:
   - {fileID: 11400000, guid: 0cc1f5da056b5f64488f018b49d391d2, type: 2}
   - {fileID: 11400000, guid: c24730c82b5731348a8ee03b1665373e, type: 2}
@@ -3635,8 +3644,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b34f4b461b2df64592de24388ab7801, type: 2}
   - {fileID: 11400000, guid: 7770edd1bfa41e944b342fac9d9c2fff, type: 2}
   - {fileID: 11400000, guid: 0803517a1205fa140b573cbd65d31f24, type: 2}
-  spawnRateIncreasePerWave: 1.2
-  healthBonusIncreasePerWave: 1.1
+  spawnRateIncreaseMultiplier: 1.2
+  healthBonusIncreaseMultiplier: 1.1
+  campaignEnd_BuffDecreaseCoefficient: 0.6
+  campaignEnd_DifficultyRatesIncreaseMultiplier: 1.2
   enemySpawnerScript: {fileID: 0}
   currentWaveNum: 0
   spawnDelay: 0
@@ -3644,8 +3655,12 @@ MonoBehaviour:
   enemiesInWave: []
   waveWeightTotal: 0
   spawnsPerSec: 1
-  healthBonusPercent: 0
+  healthBonusMultiplier: 1
   enemiesSpawning: 0
+  numOfEnemyTypesInWave: 3
+  wavesRemainingUntilNewType: 3
+  campaignStart_spawnsPerSec: 0
+  campaignStart_healthBonusMultiplier: 0
 --- !u!1 &1791234664
 GameObject:
   m_ObjectHideFlags: 0
