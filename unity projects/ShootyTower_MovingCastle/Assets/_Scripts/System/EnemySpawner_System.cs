@@ -27,8 +27,14 @@ public class EnemySpawner_System : MonoBehaviour
         Vector2 spawnLocation = (Vector2)playerTransform.position + Random.insideUnitCircle.normalized * spawnDistance;
         GameObject newEnemyObject = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
 
-        //configure base class script
+        //boost health
         BaseClass_Enemy enemyBaseClass = newEnemyObject.GetComponent<BaseClass_Enemy>();
         enemyBaseClass.health *= healthBonusMultiplier;
+
+        //give necessary info to respawn script for respawning
+        Respawn_Enemy respawnScript = newEnemyObject.GetComponent<Respawn_Enemy>();
+        respawnScript.spawnScript = this;
+        respawnScript.healthBonusMultiplier = healthBonusMultiplier;
+        respawnScript.prefab = enemyPrefab;
     }
 }
