@@ -7,7 +7,7 @@ using UnityEngine;
 public class Respawn_Enemy : MonoBehaviour
 {
     [Header("CONFIG")]
-    const float respawnDistance = 30;
+    [SerializeField] float respawnDistance = 30;
 
     [Header("DEBUG")]
     //both set by spawner on initial spawn
@@ -18,7 +18,7 @@ public class Respawn_Enemy : MonoBehaviour
     Transform targetTransform;
     float distanceFromTarget;
 
-    private void Awake()
+    private void Start()
     {
         targetTransform = GetComponent<Pathfinding_Enemy>().target;
     }
@@ -28,10 +28,13 @@ public class Respawn_Enemy : MonoBehaviour
     {
         distanceFromTarget = Vector2.Distance(transform.position, targetTransform.position);
 
-        if (distanceFromTarget < respawnDistance)
+        if (distanceFromTarget > respawnDistance)
         {
             spawnScript.SpawnEnemy(prefab, healthBonusMultiplier);
+
+            Destroy(gameObject);
         }
+
     }
 
 }
