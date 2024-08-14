@@ -7,7 +7,7 @@ public class BaseClass_Enemy : MonoBehaviour
 {
 
     public List<HeightLevel> heightLevelList;
-    public float health;
+    public float health; //health bonus is applies by spawner script
     public float moveSpeed;
     public float damagePerSec;
 

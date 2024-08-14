@@ -22,9 +22,13 @@ public class EnemySpawner_System : MonoBehaviour
     /// spawns an enemy prefab at a random point that is a set distance away from the player
     /// </summary>
     /// <param name="enemyPrefab"></param>
-    public void SpawnEnemy(GameObject enemyPrefab)
+    public void SpawnEnemy(GameObject enemyPrefab, float healthBonusMultiplier)
     {
         Vector2 spawnLocation = (Vector2)playerTransform.position + Random.insideUnitCircle.normalized * spawnDistance;
-        Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
+        GameObject newEnemyObject = Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
+
+        //configure base class script
+        BaseClass_Enemy enemyBaseClass = newEnemyObject.GetComponent<BaseClass_Enemy>();
+        enemyBaseClass.health *= healthBonusMultiplier;
     }
 }

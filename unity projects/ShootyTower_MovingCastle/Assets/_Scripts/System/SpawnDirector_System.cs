@@ -23,26 +23,29 @@ public class SpawnDirector_System : MonoBehaviour
     [SerializeField] float campaignEnd_DifficultyRatesIncreaseMultiplier = 1.2f;
 
     [Header("DEBUG")]
-   [SerializeField] EnemySpawner_System enemySpawnerScript;
+    [SerializeField] EnemySpawner_System enemySpawnerScript;
 
     [SerializeField] int currentWaveNum = 0;
+
+    [SerializeField] bool enemiesSpawning = false;
 
     [SerializeField] float spawnDelay;
     [SerializeField] float currentSpawnCooldown;
 
-    [SerializeField] List<SpawnData_Enemy> enemiesInWave;
-    [SerializeField] float waveWeightTotal;
 
     [SerializeField] float spawnsPerSec = 1;
     [SerializeField] float healthBonusMultiplier = 1;
 
-    [SerializeField] bool enemiesSpawning = false;
+    [SerializeField] float campaignStart_spawnsPerSec;
+    [SerializeField] float campaignStart_healthBonusMultiplier;
+
+
+    [SerializeField] List<SpawnData_Enemy> enemiesInWave;
+    [SerializeField] float waveWeightTotal;
 
     [SerializeField] int numOfEnemyTypesInWave = 3;
     [SerializeField] int wavesRemainingUntilNewType = 3;
 
-    [SerializeField] float campaignStart_spawnsPerSec;
-    [SerializeField] float campaignStart_healthBonusMultiplier;
 
     private void Awake()
     {
@@ -177,7 +180,7 @@ public class SpawnDirector_System : MonoBehaviour
                 //spawn random prefab from the enemy's list of prefabs
                 //for example, spawns a harpy at a random height
                 int enemyPrefabToSpawn = Random.Range(0, enemy.prefabsList.Count);
-                enemySpawnerScript.SpawnEnemy(enemy.prefabsList[enemyPrefabToSpawn]);
+                enemySpawnerScript.SpawnEnemy(enemy.prefabsList[enemyPrefabToSpawn], healthBonusMultiplier);
 
                 break;
             }
