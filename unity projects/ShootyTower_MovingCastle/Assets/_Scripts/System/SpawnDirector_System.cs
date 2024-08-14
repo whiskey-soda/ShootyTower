@@ -76,6 +76,8 @@ public class SpawnDirector_System : MonoBehaviour
             enemiesInWave.Add(wave1_9NewEnemyOrder[currentWaveNum - 1]);
         }
 
+        enemiesInWave.Sort();
+
         spawnDelay = 1 / spawnsPerSec;
         currentSpawnCooldown = 0;
 
@@ -108,6 +110,10 @@ public class SpawnDirector_System : MonoBehaviour
                 enemySpawnerScript.SpawnEnemy(enemy.prefabsList[enemyPrefabToSpawn]);
 
                 break;
+            }
+            else
+            {
+                spawnNum -= enemy.spawnWeight;
             }
 
         }
