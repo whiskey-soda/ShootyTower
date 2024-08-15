@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 5479594371353186395}
   - component: {fileID: 6158631473673260777}
   - component: {fileID: 2141948369446293269}
+  - component: {fileID: 4547755837664338756}
   m_Layer: 6
   m_Name: Bat (Very Tall)
   m_TagString: Enemy
@@ -395,6 +396,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdaa5501ccbdf94aa0c763b277b0c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4547755837664338756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3271101580280280133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca766c593b4881f41995e78775cb2a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnDistance: 30
+  spawnScript: {fileID: 0}
+  healthBonusMultiplier: 0
+  prefab: {fileID: 0}
 --- !u!1 &7159376436105387755
 GameObject:
   m_ObjectHideFlags: 0

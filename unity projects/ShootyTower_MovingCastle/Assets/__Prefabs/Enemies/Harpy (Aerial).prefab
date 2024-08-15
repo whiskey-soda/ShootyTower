@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 4235074016645483406}
   - component: {fileID: 4137900615044319199}
   - component: {fileID: 1860428396614258954}
+  - component: {fileID: -2151909115362942574}
   m_Layer: 6
   m_Name: Harpy (Aerial)
   m_TagString: Enemy
@@ -328,6 +329,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdaa5501ccbdf94aa0c763b277b0c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2151909115362942574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5209016663190664122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca766c593b4881f41995e78775cb2a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnDistance: 30
+  spawnScript: {fileID: 0}
+  healthBonusMultiplier: 0
+  prefab: {fileID: 0}
 --- !u!1 &5721917376888792624
 GameObject:
   m_ObjectHideFlags: 0

@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 417952130798828950}
   - component: {fileID: 371909633160737936}
   - component: {fileID: 2797153354997885033}
+  - component: {fileID: -8495105661424323426}
   m_Layer: 6
   m_Name: Harpy (Very Tall)
   m_TagString: Enemy
@@ -488,6 +489,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdaa5501ccbdf94aa0c763b277b0c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8495105661424323426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7033808309442316932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca766c593b4881f41995e78775cb2a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnDistance: 30
+  spawnScript: {fileID: 0}
+  healthBonusMultiplier: 0
+  prefab: {fileID: 0}
 --- !u!1001 &1293281854802858744
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent (typeof(Pathfinding_Enemy))]
 public class Respawn_Enemy : MonoBehaviour
 {
-    [Header("CONFIG")]
+    [Header("CONFIG (change in code ONLY)")]
     [SerializeField] float respawnDistance = 30;
 
     [Header("DEBUG")]

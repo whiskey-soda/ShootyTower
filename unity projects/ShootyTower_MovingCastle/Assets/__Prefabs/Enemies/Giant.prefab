@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2649072249987507801}
   - component: {fileID: 1732301608632055755}
   - component: {fileID: 3822431974533268022}
+  - component: {fileID: -8048891618715861292}
   m_Layer: 6
   m_Name: Giant
   m_TagString: Enemy
@@ -238,6 +239,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdaa5501ccbdf94aa0c763b277b0c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8048891618715861292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124243413475153285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca766c593b4881f41995e78775cb2a01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnDistance: 30
+  spawnScript: {fileID: 0}
+  healthBonusMultiplier: 0
+  prefab: {fileID: 0}
 --- !u!1 &3704308612177442826
 GameObject:
   m_ObjectHideFlags: 0
