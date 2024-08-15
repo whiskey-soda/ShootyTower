@@ -840,8 +840,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 20, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 75, y: 50, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2117947033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3650,17 +3650,17 @@ MonoBehaviour:
   campaignEnd_DifficultyRatesIncreaseMultiplier: 1.2
   enemySpawnerScript: {fileID: 0}
   currentWaveNum: 0
+  enemiesSpawning: 0
   spawnDelay: 0
   currentSpawnCooldown: 0
-  enemiesInWave: []
-  waveWeightTotal: 0
   spawnsPerSec: 1
   healthBonusMultiplier: 1
-  enemiesSpawning: 0
-  numOfEnemyTypesInWave: 3
-  wavesRemainingUntilNewType: 3
   campaignStart_spawnsPerSec: 0
   campaignStart_healthBonusMultiplier: 0
+  enemiesInWave: []
+  waveWeightTotal: 0
+  numOfEnemyTypesInWave: 3
+  wavesRemainingUntilNewType: 3
 --- !u!1 &1791234664
 GameObject:
   m_ObjectHideFlags: 0
