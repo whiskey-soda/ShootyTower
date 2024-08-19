@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Pause_System))]
+
 public class UIController_System : MonoBehaviour
 {
     public static UIController_System Instance;
 
     [Header("DEBUG")]
     [SerializeField] GameObject LevelUpMenu;
+    Pause_System pauseScript;
+
+    private void Awake()
+    {
+        pauseScript = gameObject.GetComponent<Pause_System>();
+    }
 
     private void Start()
     {
@@ -29,10 +37,12 @@ public class UIController_System : MonoBehaviour
     public void ShowLevelUpMenu()
     {
         LevelUpMenu.SetActive(true);
+        pauseScript.PauseGame();
     }
 
     public void HideLevelUpMenu()
     {
         LevelUpMenu.SetActive(false);
+        pauseScript.ResumeGame();
     }
 }

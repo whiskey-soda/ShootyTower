@@ -3533,6 +3533,7 @@ GameObject:
   - component: {fileID: 1765206671}
   - component: {fileID: 1765206673}
   - component: {fileID: 1765206672}
+  - component: {fileID: 1765206674}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -3661,6 +3662,18 @@ MonoBehaviour:
   waveWeightTotal: 0
   numOfEnemyTypesInWave: 3
   wavesRemainingUntilNewType: 3
+--- !u!114 &1765206674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765206666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7798c3456ea2734386275ce2de8e248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1791234664
 GameObject:
   m_ObjectHideFlags: 0
