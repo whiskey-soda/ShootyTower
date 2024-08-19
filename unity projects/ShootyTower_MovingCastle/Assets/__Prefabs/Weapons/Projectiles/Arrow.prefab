@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7486945829399029688}
   - component: {fileID: 7570256942349891635}
   - component: {fileID: 531996267087000285}
+  - component: {fileID: 6564563610613053841}
   m_Layer: 8
   m_Name: Arrow
   m_TagString: Projectile
@@ -192,3 +193,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6564563610613053841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265185999461801760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb378ee315e1e8479b3b775ad062934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageNumPrefab: {fileID: 4185150195709931488, guid: ef6872c3e8d78154f832c95ee0a742c0, type: 3}

@@ -4,7 +4,9 @@ using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent (typeof(DamageNumberSpawner_System))]
 
+//deals damage to the enemy
 public class BaseClass_Projectile : MonoBehaviour
 {
 
@@ -18,11 +20,14 @@ public class BaseClass_Projectile : MonoBehaviour
     public Vector2 normalizedMovementVector;
 
     [SerializeField] Rigidbody2D myRigidbody2D;
+    DamageNumberSpawner_System damageNumberSpawner;
 
     private void Awake()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
         GetComponent<Collider2D>().isTrigger = true;
+
+        damageNumberSpawner = GetComponent<DamageNumberSpawner_System>();
     }
 
     // Update is called once per frame
@@ -72,6 +77,8 @@ public class BaseClass_Projectile : MonoBehaviour
     {
         hurtboxScript.TakeDamage(damage);
         hurtboxScript.ApplyKnockback(knockback, normalizedMovementVector);
+
+        damageNumberSpawner.SpawnDamageNumber(damage);
 
         pierce -= 1;
         if (pierce <= 0) { Destroy(gameObject); }

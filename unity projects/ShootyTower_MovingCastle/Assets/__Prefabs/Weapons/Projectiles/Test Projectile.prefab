@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2609707197792372185}
   - component: {fileID: 2733126686041173447}
   - component: {fileID: 7486945829399029688}
+  - component: {fileID: 6564563610613053841}
   m_Layer: 8
   m_Name: Test Projectile
   m_TagString: Projectile
@@ -118,6 +119,19 @@ MonoBehaviour:
   myHeightLevel: 4
   normalizedMovementVector: {x: 0, y: 0}
   myRigidbody2D: {fileID: 0}
+--- !u!114 &6564563610613053841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265185999461801760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb378ee315e1e8479b3b775ad062934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageNumPrefab: {fileID: 4185150195709931488, guid: ef6872c3e8d78154f832c95ee0a742c0, type: 3}
 --- !u!1 &6335859793238698469
 GameObject:
   m_ObjectHideFlags: 0
