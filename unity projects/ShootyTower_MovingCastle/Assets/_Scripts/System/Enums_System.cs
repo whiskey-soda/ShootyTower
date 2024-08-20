@@ -13,6 +13,12 @@ public enum StatType {  damage, fireRate, projectileSpeed, pierce, knockback, ra
 
 public enum UpgradeTier {  Common, Uncommon, Rare, Legendary }
 
+public enum LegsType { wheels, walker, tank, spider, shoppingCart }
+
+public enum LegSpeed { normal, slow, fast }
+
+public enum HazardEffect {  full, resistant, immune }
+
 public class Enums_System : MonoBehaviour
 {
 }
