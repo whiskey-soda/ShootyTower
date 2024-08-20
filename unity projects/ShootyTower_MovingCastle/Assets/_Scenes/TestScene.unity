@@ -257,6 +257,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13683028}
   m_CullTransparentMesh: 1
+--- !u!1 &21224687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 21224688}
+  - component: {fileID: 21224689}
+  m_Layer: 7
+  m_Name: Hazard Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &21224688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21224687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -7.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1930620386}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &21224689
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21224687}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 6.5, y: 2}
+  m_Direction: 1
 --- !u!1 &21590366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3912,6 +3979,7 @@ GameObject:
   - component: {fileID: 1930620394}
   - component: {fileID: 1930620393}
   - component: {fileID: 1930620396}
+  - component: {fileID: 1930620397}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -3935,6 +4003,7 @@ Transform:
   - {fileID: 674310947}
   - {fileID: 26526662}
   - {fileID: 159228378}
+  - {fileID: 21224688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1930620389
@@ -3990,7 +4059,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 471c6cf605395e24fa0a096e0bd6052b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  currentMoveSpeed: 0
+  fastMoveSpeed: 7
+  normalMoveSpeed: 5
+  slowMoveSpeed: 3
+  slowedSpeed_Full: 0
+  slowedSpeed_Resistant: 0
   isMoving: 0
 --- !u!114 &1930620392
 MonoBehaviour:
@@ -4143,6 +4217,22 @@ MonoBehaviour:
   currentLevel: 1
   lvlUpXpRequirement: 5
   currentXP: 0
+--- !u!114 &1930620397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930620384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44185299a755364d93d69004cb61f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  speed: 0
+  slowEffect: 0
+  damageEffect: 0
 --- !u!1 &2110911975
 GameObject:
   m_ObjectHideFlags: 0

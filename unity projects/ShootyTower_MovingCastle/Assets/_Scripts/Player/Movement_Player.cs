@@ -9,9 +9,15 @@ using UnityEngine.Scripting;
 public class Movement_Player : MonoBehaviour
 {
     [SerializeField] float currentMoveSpeed;
-    [SerializeField] float normalMoveSpeed = 5;
+
+    [SerializeField] float fastMoveSpeed = 5;
+    [SerializeField] float normalMoveSpeed = 4;
     [SerializeField] float slowMoveSpeed = 3;
-    [SerializeField] float fastMoveSpeed = 7;
+
+    [SerializeField] float slowedSpeed_Full = 2.5f;
+    [SerializeField] float slowedSpeed_Resistant = 2;
+
+    bool isSlowed = false;
 
     public bool isMoving;
 

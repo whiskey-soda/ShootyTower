@@ -17,6 +17,7 @@ TagManager:
   - Enemy Collision
   - XP Orb
   - Level Up Menu
+  - Hazard
   layers:
   - Default
   - TransparentFX
@@ -38,7 +39,7 @@ TagManager:
   - 
   - Pickups
   - 
-  - 
+  - World
   - 
   - 
   - 
