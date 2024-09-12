@@ -10,16 +10,16 @@ public class Movement_Player : MonoBehaviour
 {
     [SerializeField] float currentMoveSpeed;
 
-    [SerializeField] float fastMoveSpeed = 5;
-    [SerializeField] float normalMoveSpeed = 4;
+    [SerializeField] float fastMoveSpeed = 7;
+    [SerializeField] float normalMoveSpeed = 5;
     [SerializeField] float slowMoveSpeed = 3;
-
-    [SerializeField] float slowedSpeed_Full = 2.5f;
-    [SerializeField] float slowedSpeed_Resistant = 2;
+    [Space]
+    [SerializeField] float slowedSpeed_Full = 2;
+    [SerializeField] float slowedSpeed_Resistant = 2.5f;
 
     bool isSlowed = false;
 
-    public bool isMoving;
+    public bool isMoving = false;
 
     PlayerControls playerControls;
     Rigidbody2D myRigidbody2D;
@@ -61,11 +61,36 @@ public class Movement_Player : MonoBehaviour
                 break;
         }
 
+        //apply slows based on the leg resistance to slowing hazards
+        if (isSlowed)
+        {
+            if (legsScript.slowEffect == HazardEffect.full)
+            {
+                currentMoveSpeed = slowedSpeed_Full;
+            }
+            else if (legsScript.slowEffect == HazardEffect.resistant)
+            {
+                currentMoveSpeed = slowedSpeed_Resistant;
+            }
+        }
+
+        //apply movement
         Vector2 moveVector = playerControls.Gameplay.Move.ReadValue<Vector2>();
         moveVector.Normalize();
         myRigidbody2D.velocity = moveVector * currentMoveSpeed;
 
+        //update isMoving variable
         if (moveVector != Vector2.zero) { isMoving = true; } else { isMoving = false; }
 
+    }
+
+    public void ApplySlowEffect()
+    {
+        isSlowed = true;
+    }
+
+    public void RemoveSlowEffect()
+    {
+        isSlowed = false;
     }
 }

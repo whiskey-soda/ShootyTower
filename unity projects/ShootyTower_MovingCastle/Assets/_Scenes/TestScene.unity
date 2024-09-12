@@ -4063,8 +4063,8 @@ MonoBehaviour:
   fastMoveSpeed: 7
   normalMoveSpeed: 5
   slowMoveSpeed: 3
-  slowedSpeed_Full: 0
-  slowedSpeed_Resistant: 0
+  slowedSpeed_Full: 2
+  slowedSpeed_Resistant: 2.5
   isMoving: 0
 --- !u!114 &1930620392
 MonoBehaviour:
