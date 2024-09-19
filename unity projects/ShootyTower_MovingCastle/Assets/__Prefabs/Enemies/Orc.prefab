@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8768591350548674334}
   - component: {fileID: 1381831878765343107}
+  - component: {fileID: 8648032590259413597}
   m_Layer: 9
   m_Name: Ground1 Collision
   m_TagString: Enemy Collision
@@ -67,6 +68,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -1.6}
   serializedVersion: 2
   m_Radius: 0.9
+--- !u!114 &8648032590259413597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432929469742598753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6162a540fbd11d4b8233030db56dcd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2504838685934172738
 GameObject:
   m_ObjectHideFlags: 0
