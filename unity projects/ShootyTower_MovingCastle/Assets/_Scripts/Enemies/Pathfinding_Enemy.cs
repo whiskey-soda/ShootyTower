@@ -16,7 +16,7 @@ public class Pathfinding_Enemy : MonoBehaviour
     NavMeshAgent agent;
     BaseClass_Enemy myEnemyScript;
 
-    float slowSpeed = 1;
+    float slowSpeed = 1.7f;
 
     private void Awake()
     {
@@ -34,8 +34,13 @@ public class Pathfinding_Enemy : MonoBehaviour
         agent.speed = myEnemyScript.moveSpeed;
     }
 
+    /// <summary>
+    /// slows enemies if their normal move speed is above the slowed move speed,
+    /// otherwise leaves them alone because theyre already struggling enough
+    /// </summary>
     public void ApplySlow()
     {
+        if (slowSpeed < myEnemyScript.moveSpeed)
         agent.speed = slowSpeed;
     }
 
