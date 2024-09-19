@@ -16,6 +16,8 @@ public class Pathfinding_Enemy : MonoBehaviour
     NavMeshAgent agent;
     BaseClass_Enemy myEnemyScript;
 
+    float slowSpeed = 1;
+
     private void Awake()
     {
         myEnemyScript = GetComponent<BaseClass_Enemy>();
@@ -23,8 +25,18 @@ public class Pathfinding_Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        agent.speed = myEnemyScript.moveSpeed;
+        ResetMoveSpeed();
 
+    }
+
+    public void ResetMoveSpeed()
+    {
+        agent.speed = myEnemyScript.moveSpeed;
+    }
+
+    public void ApplySlow()
+    {
+        agent.speed = slowSpeed;
     }
 
     // Start is called before the first frame update
