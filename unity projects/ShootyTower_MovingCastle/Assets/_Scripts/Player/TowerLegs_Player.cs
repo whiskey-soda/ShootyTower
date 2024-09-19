@@ -9,4 +9,12 @@ public class TowerLegs_Player : MonoBehaviour
     public HazardEffect slowEffect;
     public HazardEffect damageEffect;
 
+
+    public void ChangeLegType(LegData_Player legDataSO)
+    {
+        type = legDataSO.type;
+        speed = legDataSO.speed;
+        slowEffect = legDataSO.slowEffect;
+        damageEffect = legDataSO.damageEffect;
+    }
 }
