@@ -1,24 +1,30 @@
+using NavMeshPlus.Components;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RegionGeneration_World : MonoBehaviour
 {
+    [Header("CONFIG")]
 
     [SerializeField] Tileset_World[] tilesets;
 
-    uint worldXSize = 5;
-    uint worldYSize = 5;
-    uint worldSize;
+    [SerializeField] uint worldSize = 1;
+
+    [Space]
+    [SerializeField] uint worldXSize = 5;
+    [SerializeField] uint worldYSize = 3;
 
     float tileSize = 25;
 
-    int seed = 0;
+    int seed = 555;
 
     Tileset_World activeTileset;
-    float tilesetWeight = 0;
 
+
+    [SerializeField] NavMeshSurface[] navMeshSurfaces;
 
     private void Awake()
     {
@@ -26,12 +32,11 @@ public class RegionGeneration_World : MonoBehaviour
         worldXSize *= worldSize;
         worldYSize *= worldSize;
 
-        //set seed for world generation
-        seed = Random.Range(-9999, 10000);
-        Random.InitState(seed);
+    }
 
-        activeTileset = PickRandomTileset(tilesets);
-        tilesetWeight = activeTileset.CalculateTotalWeight();
+    private void Start()
+    {
+        navMeshSurfaces = FindObjectsOfType<NavMeshSurface>();
     }
 
     Tileset_World PickRandomTileset(Tileset_World[] tileSets)
@@ -56,12 +61,28 @@ public class RegionGeneration_World : MonoBehaviour
         }
     }
 
-    void GenerateWorld()
+    [ContextMenu("Generate Region")]
+    void GenerateRegion()
     {
+
+        //set seed for world generation
+        seed = Random.Range(-9999, 10000);
+        Random.InitState(seed);
+
+        //set up variables for tile generation
+        activeTileset = PickRandomTileset(tilesets);
+
+        //generate the tiles
         for (int rowsSpawned = 0; rowsSpawned < worldYSize; rowsSpawned++)
         {
             SpawnRowOfTiles((uint)rowsSpawned);
         }
+
+        foreach (NavMeshSurface surface in navMeshSurfaces)
+        {
+            surface.BuildNavMesh();
+        }
+
     }
     
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6df4264eab301f45b0a2eae4961acf7, type: 3}
+  m_Name: _Test Snow Tileset
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: c271e5e96c64956448089a5e2f8c0e1a, type: 2}
+  - {fileID: 11400000, guid: 122a6c2af90dafa40aadc5e3afed55c1, type: 2}
+  - {fileID: 11400000, guid: 0d52b478c5884214dbcdc03ff27b3e62, type: 2}
+  - {fileID: 11400000, guid: 0278596666e29974cb509fc242ec6a2b, type: 2}

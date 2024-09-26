@@ -17,6 +17,10 @@ public class Tileset_World : ScriptableObject
         tiles.Sort();
     }
 
+    /// <summary>
+    /// picks a random tile while considering the tile's spawnweight and the total weight of the tileset
+    /// </summary>
+    /// <returns></returns>
     public Tile_World PickRandomTile()
     {
         float tileToSpawn = Random.Range(0, totalWeight);
@@ -45,6 +49,7 @@ public class Tileset_World : ScriptableObject
         {
             totalWeight += tile.spawnWeight;
         }
+
         return totalWeight;
     }
 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b41e15b693dc704cae4474bc7b6e6b2, type: 3}
+  m_Name: snow Thorns
+  m_EditorClassIdentifier: 
+  tileVariants:
+  - {fileID: 7672950865670061015, guid: a8f129604fbb22445a5fd599c83c8c55, type: 3}
+  - {fileID: 4409277361082381579, guid: d7677ee179a17b3499e6582ae9f4bfd4, type: 3}
+  spawnWeight: 2

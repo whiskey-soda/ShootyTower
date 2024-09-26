@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b41e15b693dc704cae4474bc7b6e6b2, type: 3}
+  m_Name: snow Lava
+  m_EditorClassIdentifier: 
+  tileVariants:
+  - {fileID: 212682698779933923, guid: 40ac609edf801e94b943667a70e3f3b1, type: 3}
+  - {fileID: 9143367020115018803, guid: d1c912788d16e7b4496c44f251653250, type: 3}
+  spawnWeight: 1

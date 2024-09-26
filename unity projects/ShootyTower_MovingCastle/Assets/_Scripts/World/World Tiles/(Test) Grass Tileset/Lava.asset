@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b41e15b693dc704cae4474bc7b6e6b2, type: 3}
+  m_Name: Lava
+  m_EditorClassIdentifier: 
+  tileVariants:
+  - {fileID: 212682698779933923, guid: 6285d494c55386646a29da86b4872584, type: 3}
+  - {fileID: 9143367020115018803, guid: 065f217d88aefc345bd44940b2ea4613, type: 3}
+  spawnWeight: 1
