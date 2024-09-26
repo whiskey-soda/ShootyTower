@@ -170,7 +170,7 @@ public class SpawnDirector_System : MonoBehaviour
     /// </summary>
     void SpawnRandomEnemy()
     {
-        float spawnNum = Random.Range(1, waveWeightTotal);
+        float spawnNum = Random.Range(0, waveWeightTotal);
 
         foreach (SpawnData_Enemy enemy in enemiesInWave)
         {
