@@ -17,14 +17,18 @@ public class RegionGeneration_World : MonoBehaviour
     [SerializeField] uint worldXSize = 5;
     [SerializeField] uint worldYSize = 3;
 
-    float tileSize = 25;
+    const float tileSize = 25;
 
-    int seed = 555;
+    [Header("DEBUG")]
+
+    int seed = 0;
 
     Tileset_World activeTileset;
 
 
     [SerializeField] NavMeshSurface[] navMeshSurfaces;
+
+    GameObject environmentParentObj;
 
     private void Awake()
     {
@@ -37,6 +41,7 @@ public class RegionGeneration_World : MonoBehaviour
     private void Start()
     {
         navMeshSurfaces = FindObjectsOfType<NavMeshSurface>();
+        environmentParentObj = new GameObject("Environment");
     }
 
     Tileset_World PickRandomTileset(Tileset_World[] tileSets)
@@ -47,7 +52,8 @@ public class RegionGeneration_World : MonoBehaviour
 
     void SpawnTile(Tile_World tile, Vector2 spawnLocation)
     {
-        Instantiate(tile.GetRandomVariant(), spawnLocation, Quaternion.identity);
+        GameObject spawnedTile = Instantiate(tile.GetRandomVariant(), environmentParentObj.transform);
+        spawnedTile.transform.position = spawnLocation;
     }
 
     void SpawnRowOfTiles(uint rowsSpawned)
