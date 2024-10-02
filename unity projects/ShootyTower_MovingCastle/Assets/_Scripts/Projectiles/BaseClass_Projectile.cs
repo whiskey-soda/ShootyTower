@@ -43,7 +43,7 @@ public class BaseClass_Projectile : MonoBehaviour
         {
             Hurtbox_Enemy hurtboxScript = collision.GetComponent<Hurtbox_Enemy>();
             bool hitSuccess = CheckForMatchingHeightLevels(hurtboxScript);
-            if (hitSuccess) { ProcessHit(hurtboxScript); }
+            if (hitSuccess) { ProcessEnemyHit(hurtboxScript); }
 
         }
     }
@@ -73,15 +73,23 @@ public class BaseClass_Projectile : MonoBehaviour
         return bulletHit;
     }
 
-    private void ProcessHit(Hurtbox_Enemy hurtboxScript)
+    private void ProcessEnemyHit(Hurtbox_Enemy hurtboxScript)
     {
         hurtboxScript.TakeDamage(damage);
         hurtboxScript.ApplyKnockback(knockback, normalizedMovementVector);
 
+        ProcessHit();
+        
+    }
+
+    public void ProcessHit()
+    {
         damageNumberSpawner.SpawnDamageNumber(damage);
 
         pierce -= 1;
         if (pierce <= 0) { Destroy(gameObject); }
 
     }
+
+
 }
