@@ -46,6 +46,13 @@ public class BaseClass_Projectile : MonoBehaviour
             if (hitSuccess) { ProcessEnemyHit(hurtboxScript); }
 
         }
+        else if (collision.gameObject.CompareTag("Prop Hurtbox"))
+        {
+            Hurtbox_World hurtboxScript = collision.GetComponent<Hurtbox_World>();
+            bool hitSuccess = CheckForMatchingHeightLevels(hurtboxScript);
+            hurtboxScript.ReportDamage(damage);
+            if (hitSuccess) { ProcessHit(); }
+        }
     }
 
     /// <summary>
@@ -63,6 +70,17 @@ public class BaseClass_Projectile : MonoBehaviour
     }
 
     private bool CheckForMatchingHeightLevels(Hurtbox_Enemy hurtboxScript)
+    {
+        bool bulletHit = false;
+        if (myHeightLevel == hurtboxScript.myHeightLevel)
+        {
+            bulletHit = true;
+        }
+
+        return bulletHit;
+    }
+
+    private bool CheckForMatchingHeightLevels(Hurtbox_World hurtboxScript)
     {
         bool bulletHit = false;
         if (myHeightLevel == hurtboxScript.myHeightLevel)

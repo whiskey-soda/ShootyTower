@@ -18,6 +18,7 @@ TagManager:
   - XP Orb
   - Level Up Menu
   - Hazard
+  - Prop Hurtbox
   layers:
   - Default
   - TransparentFX
