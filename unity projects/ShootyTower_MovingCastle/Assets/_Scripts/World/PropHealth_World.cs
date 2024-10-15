@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PropHealth_World : MonoBehaviour
 {
-    [SerializeField] float maxHealth = 200;
+    [SerializeField] protected float maxHealth = 200;
     float currentHealth;
 
-    private void Start()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(float damageVal)
+    public virtual void TakeDamage(float damageVal)
     {
         currentHealth -= damageVal;
 

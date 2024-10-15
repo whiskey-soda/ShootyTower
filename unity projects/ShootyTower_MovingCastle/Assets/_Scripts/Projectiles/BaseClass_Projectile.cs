@@ -50,8 +50,11 @@ public class BaseClass_Projectile : MonoBehaviour
         {
             Hurtbox_World hurtboxScript = collision.GetComponent<Hurtbox_World>();
             bool hitSuccess = CheckForMatchingHeightLevels(hurtboxScript);
-            hurtboxScript.ReportDamage(damage);
-            if (hitSuccess) { ProcessHit(); }
+            if (hitSuccess)
+            {
+                hurtboxScript.ReportDamage(damage);
+                ProcessHit(); 
+            }
         }
     }
 

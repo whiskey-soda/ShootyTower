@@ -3414,6 +3414,7 @@ GameObject:
   - component: {fileID: 1765206672}
   - component: {fileID: 1765206674}
   - component: {fileID: 1765206675}
+  - component: {fileID: 1765206676}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -3573,6 +3574,21 @@ MonoBehaviour:
   worldXSize: 5
   worldYSize: 3
   navMeshSurfaces: []
+--- !u!114 &1765206676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765206666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f0ea41921bd064a97a054c926c8e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineralCount: 0
+  crystalCount: 0
+  dustCount: 0
 --- !u!1 &1791234664
 GameObject:
   m_ObjectHideFlags: 0

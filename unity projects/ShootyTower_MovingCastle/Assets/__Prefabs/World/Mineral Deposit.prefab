@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5017100050557317067}
-  - component: {fileID: 6225812780668102682}
+  - component: {fileID: -7732772237593736956}
   m_Layer: 20
-  m_Name: Ore Deposit
+  m_Name: Mineral Deposit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 2385542348025699878}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6225812780668102682
+--- !u!114 &-7732772237593736956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2295656427068293852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fdaa347d6db42743a00b9f27ba6ae96, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d499b8ebc5ce1641823207c1c581848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
