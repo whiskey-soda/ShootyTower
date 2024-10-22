@@ -24,7 +24,7 @@ public class Attack_Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Tower Hurtbox"))
         {
             myBaseClass.isAttacking = true;
-            Health_Player.Instance.TakeDamage(myBaseClass.damagePerSec * Time.deltaTime);
+            Health_Player.instance.TakeDamage(myBaseClass.damagePerSec * Time.deltaTime);
         }
     }
 

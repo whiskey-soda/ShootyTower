@@ -12,22 +12,20 @@ public class Leveling_Player : MonoBehaviour
     [SerializeField] float xpRequirementIncreasePerLevel = 10;
 
     [Header("DEBUG")]
-    [SerializeField] uint currentLevel = 1;
-    [SerializeField] float lvlUpXpRequirement = 5;
-    [SerializeField] float currentXP;
+    public uint currentLevel = 1; 
+    public float lvlUpXpRequirement = 5;
+    public float currentXP;
 
-    public static Leveling_Player Instance;
+    public static Leveling_Player instance;
 
     private void Start()
     {
-        // If there is an instance, and it's not me, delete myself.
-        if (Instance != null && Instance != this)
+        //singleton code
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
         {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
+            Destroy(gameObject);
         }
     }
 

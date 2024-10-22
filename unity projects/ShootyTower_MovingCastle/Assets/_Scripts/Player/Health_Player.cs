@@ -5,21 +5,19 @@ using UnityEngine;
 public class Health_Player : MonoBehaviour
 {
 
-    public static Health_Player Instance;
+    public static Health_Player instance;
 
     public float maxHealth;
     public float currentHealth;
 
     private void Awake()
     {
-        // If there is an instance, and it's not me, delete myself.
-        if (Instance != null && Instance != this)
+        //singleton code
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
         {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
+            Destroy(gameObject);
         }
 
 

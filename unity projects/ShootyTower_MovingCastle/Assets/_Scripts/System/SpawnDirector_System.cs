@@ -25,7 +25,7 @@ public class SpawnDirector_System : MonoBehaviour
     [Header("DEBUG")]
     [SerializeField] EnemySpawner_System enemySpawnerScript;
 
-    [SerializeField] int currentWaveNum = 0;
+    public int currentWaveNum = 0;
 
     [SerializeField] bool enemiesSpawning = false;
 
@@ -35,6 +35,7 @@ public class SpawnDirector_System : MonoBehaviour
 
     [SerializeField] float spawnsPerSec = 1;
     [SerializeField] float healthBonusMultiplier = 1;
+    public float difficulty = 1;
 
     [SerializeField] float campaignStart_spawnsPerSec;
     [SerializeField] float campaignStart_healthBonusMultiplier;
@@ -46,10 +47,20 @@ public class SpawnDirector_System : MonoBehaviour
     [SerializeField] int numOfEnemyTypesInWave = 3;
     [SerializeField] int wavesRemainingUntilNewType = 3;
 
+    public static SpawnDirector_System instance;
+
 
     private void Awake()
     {
         enemySpawnerScript = GetComponent<EnemySpawner_System>();
+
+        //singleton code
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -66,6 +77,8 @@ public class SpawnDirector_System : MonoBehaviour
                 currentSpawnCooldown -= Time.deltaTime;
             }
         }
+
+        difficulty = (spawnsPerSec + healthBonusMultiplier) / 2;
     }
 
     [ContextMenu("Start Wave")]

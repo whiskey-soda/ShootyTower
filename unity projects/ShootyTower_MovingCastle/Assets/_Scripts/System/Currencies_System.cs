@@ -18,7 +18,7 @@ public class Currencies_System : MonoBehaviour
             instance = this;
         else if (instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
