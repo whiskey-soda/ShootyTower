@@ -67,13 +67,30 @@ public class RegionGeneration_World : MonoBehaviour
         }
     }
 
-    [ContextMenu("Generate Region")]
-    void GenerateRegion()
+    /// <summary>
+    /// sets seed to a random int value between -9999 and 9999
+    /// </summary>
+    void SetSeedToRandom()
     {
-
         //set seed for world generation
         seed = Random.Range(-9999, 10000);
         Random.InitState(seed);
+    }
+
+    /// <summary>
+    /// sets seed to the value passed in to the function
+    /// </summary>
+    /// <param name="newSeed"></param>
+    void SetSeed(int newSeed)
+    {
+        seed = newSeed;
+        Random.InitState(seed);
+    }
+
+    [ContextMenu("Generate Region")]
+    void GenerateRegion()
+    {
+        //seed should be set before region is generated
 
         //set up variables for tile generation
         activeTileset = PickRandomTileset(tilesets);
