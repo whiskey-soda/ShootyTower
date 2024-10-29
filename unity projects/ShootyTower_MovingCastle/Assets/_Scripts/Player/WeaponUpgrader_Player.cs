@@ -28,6 +28,10 @@ public class WeaponUpgrader_Player : MonoBehaviour
                 else { NormalUpgradeRangedStat(weapon, statToUpgrade, upgradePercent); }
             }
         }
+
+        //update the fuel consumption total
+        MineralFuel_System.instance.RaiseConsumptionRate(tier);
+
     }
 
     /// <summary>
