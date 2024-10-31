@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 3239547723462420875}
   - component: {fileID: 8087468013525327037}
   - component: {fileID: 874560870976266263}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Ground Hurtbox
   m_TagString: Prop Hurtbox
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2849757677257350944}
   - component: {fileID: 1690817642810528031}
   - component: {fileID: 5131090347955730187}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Tall Hurtbox
   m_TagString: Prop Hurtbox
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 8271699634014326414}
   - component: {fileID: 863936418164844607}
   - component: {fileID: 6206634103620639389}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Very Tall Hurtbox
   m_TagString: Prop Hurtbox
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2385542348025699878}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Hurtboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 6111278224125588451}
   - component: {fileID: 1314010262555490885}
   - component: {fileID: 2927858651137983390}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Aerial Hurtbox
   m_TagString: Prop Hurtbox
   m_Icon: {fileID: 0}

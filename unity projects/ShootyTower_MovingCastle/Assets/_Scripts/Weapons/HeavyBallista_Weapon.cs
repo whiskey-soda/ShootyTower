@@ -8,7 +8,8 @@ using static UnityEditor.Rendering.FilterWindow;
 public class HeavyBallista_Weapon : RangedBaseClass_Weapon
 {
     [Header("DEBUG (HEAVY BALLISTA)")]
-    [SerializeField] List<Hurtbox_Enemy> enemyList;
+    [SerializeField] List<Hurtbox_Enemy> enemyList = new List<Hurtbox_Enemy>();
+    List<Hurtbox_World> propsInRange = new List<Hurtbox_World>();
     CircleCollider2D myCollider;
 
 
@@ -30,8 +31,14 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
 
         if (enemyList.Count != 0)
         {
-            Hurtbox_Enemy highestHealthEnemy = GetClosestEnemyInRange();
-            CreateProjectile(highestHealthEnemy.transform.position - transform.position);
+            Hurtbox_Enemy closestEnemy = GetClosestEnemyInRange();
+            CreateProjectile(closestEnemy.transform.position - transform.position);
+        }
+        //target closest prop if no enemies are in range
+        else if (propsInRange.Count != 0)
+        {
+            Hurtbox_World closestProp = GetClosestPropInRange();
+            CreateProjectile(closestProp.transform.position - transform.position);
         }
     }
 
@@ -47,6 +54,16 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
                 enemyList.Add(enemyHurtboxScript);
             }
         }
+        else if (collision.CompareTag("Prop Hurtbox"))
+        {
+            Hurtbox_World propHurtboxScript = collision.GetComponent<Hurtbox_World>();
+
+            if (propHurtboxScript.myHeightLevel == heightLevel &&
+                !propsInRange.Contains(propHurtboxScript))
+            {
+                propsInRange.Add(propHurtboxScript);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -58,6 +75,15 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
             if (enemyList.Contains(enemyScript))
             {
                 enemyList.Remove(enemyScript);
+            }
+        }
+        else if (collision.CompareTag("Prop Hurtbox"))
+        {
+            Hurtbox_World propHurtboxScript = collision.GetComponent<Hurtbox_World>();
+
+            if (propsInRange.Contains(propHurtboxScript))
+            {
+                propsInRange.Remove(propHurtboxScript);
             }
         }
     }
@@ -79,12 +105,32 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
                 if (Vector2.Distance(transform.position, enemy.transform.position) < closestEnemyDistance)
                 {
                     closestEnemy = enemy;
+                    closestEnemyDistance = Vector2.Distance(transform.position, enemy.transform.position);
                 }
             }
 
         }
 
         return closestEnemy;
+    }
+
+    Hurtbox_World GetClosestPropInRange()
+    {
+        Hurtbox_World closestProp = null;
+        float closestPropDistance = 0;
+        foreach(Hurtbox_World prop in propsInRange)
+        {
+            //if no closest prop has been determined
+            if (closestProp == null ||
+                //OR prop is closer than previous closest prop
+                Vector2.Distance(transform.position, prop.transform.position) < closestPropDistance)
+            {
+                closestProp = prop;
+                closestPropDistance = Vector2.Distance(transform.position, prop.transform.position);
+            }
+        }
+
+        return closestProp;
     }
 
 }
