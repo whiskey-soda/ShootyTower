@@ -10,7 +10,7 @@ public class Hurtbox_Enemy : MonoBehaviour
     public HeightLevel myHeightLevel;
 
     [Header("DEBUG")]
-    [SerializeField] BaseClass_Enemy myEnemyScript;
+    public BaseClass_Enemy myEnemyScript;
     [SerializeField] Knockback_Enemy myKnockbackScript;
 
     private void Awake()

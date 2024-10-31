@@ -4,13 +4,23 @@ using UnityEngine;
 using static UnityEditor.Rendering.FilterWindow;
 
 [RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(LineRenderer))]
 
 public class HeavyBallista_Weapon : RangedBaseClass_Weapon
 {
+    [Header("CONFIG (HEAVY BALLISTA)")]
+    [SerializeField] Color trackingLaserColor = Color.red;
+    [SerializeField] float trackingLaserWidth = .1f;
+
     [Header("DEBUG (HEAVY BALLISTA)")]
+    bool targetsInRange = false;
+    Transform targetTransform;
+
     [SerializeField] List<Hurtbox_Enemy> enemyList = new List<Hurtbox_Enemy>();
     List<Hurtbox_World> propsInRange = new List<Hurtbox_World>();
     CircleCollider2D myCollider;
+
+    LineRenderer trackingLaser;
 
 
     protected override void Awake()
@@ -20,26 +30,48 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.isTrigger = true;
         myCollider.radius = range;
+
+        trackingLaser = GetComponent<LineRenderer>();
+        trackingLaser.startColor = trackingLaserColor;
+        trackingLaser.endColor = trackingLaserColor;
+        trackingLaser.startWidth = trackingLaserWidth;
+        trackingLaser.endWidth = trackingLaserWidth;
+
+    }
+
+    protected override void Update()
+    {
+        /*  NOTE: This code currently parses the lists of targets in range every frame.
+         *  This is done in order to set the tracking laser.
+         *  If I ever want to remove the tracking laser, this logic should be moved to
+         *  the Shoot() method so that it ONLY runs when needed
+         */
+
+        //scan for targets
+        TryFindTarget();
+
+        //display tracking laser on chosen target
+        if (targetsInRange)
+        {
+            trackingLaser.enabled = true;
+            trackingLaser.SetPosition(0, transform.position);
+            trackingLaser.SetPosition(1, targetTransform.position);
+        }
+        else { trackingLaser.enabled = false; }
+
+        base.Update();
     }
 
 
 
     protected override void Shoot()
     {
-        //ensure radius is accurate before firing
-        myCollider.radius = range;
+        
+        if (targetsInRange)
+        {
+            CreateProjectile(targetTransform.position - transform.position);
+        }
 
-        if (enemyList.Count != 0)
-        {
-            Hurtbox_Enemy closestEnemy = GetClosestEnemyInRange();
-            CreateProjectile(closestEnemy.transform.position - transform.position);
-        }
-        //target closest prop if no enemies are in range
-        else if (propsInRange.Count != 0)
-        {
-            Hurtbox_World closestProp = GetClosestPropInRange();
-            CreateProjectile(closestProp.transform.position - transform.position);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -88,30 +120,30 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
         }
     }
 
-    private Hurtbox_Enemy GetClosestEnemyInRange()
+    private Hurtbox_Enemy GetHighestHealthEnemyInRange()
     {
-        Hurtbox_Enemy closestEnemy = null;
-        float closestEnemyDistance = 0;
+        Hurtbox_Enemy highestHealthEnemy = null;
+        float highestEnemyHealth = 0;
 
         foreach (Hurtbox_Enemy enemy in enemyList)
         {
-            if (closestEnemy == null)
+            if (highestHealthEnemy == null)
             {
-                closestEnemy = enemy;
-                closestEnemyDistance = Vector2.Distance(transform.position, enemy.transform.position);
+                highestHealthEnemy = enemy;
+                highestEnemyHealth = enemy.myEnemyScript.health;
             }
             else
             {
-                if (Vector2.Distance(transform.position, enemy.transform.position) < closestEnemyDistance)
+                if (enemy.myEnemyScript.health > highestEnemyHealth)
                 {
-                    closestEnemy = enemy;
-                    closestEnemyDistance = Vector2.Distance(transform.position, enemy.transform.position);
+                    highestHealthEnemy = enemy;
+                    highestEnemyHealth = enemy.myEnemyScript.health;
                 }
             }
 
         }
 
-        return closestEnemy;
+        return highestHealthEnemy;
     }
 
     Hurtbox_World GetClosestPropInRange()
@@ -133,4 +165,36 @@ public class HeavyBallista_Weapon : RangedBaseClass_Weapon
         return closestProp;
     }
 
+    void TryFindTarget()
+    {
+        //ensure radius is accurate before choosing target
+        myCollider.radius = range;
+
+        //find target if target in range
+        if (enemyList.Count != 0 ||
+            propsInRange.Count != 0)
+        {
+            targetsInRange = true;
+            ChooseTarget();
+        }
+        else
+        {
+            targetsInRange = false;
+        }
+
+    }
+
+    private void ChooseTarget()
+    {
+        //parse enemy list for highest health enemy
+        if (enemyList.Count != 0)
+        {
+            targetTransform = GetHighestHealthEnemyInRange().transform;
+        }
+        //if no enemies in range, parse props list for closest prop
+        else if (propsInRange.Count != 0)
+        {
+            targetTransform = GetClosestPropInRange().transform;
+        }
+    }
 }

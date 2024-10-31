@@ -41,7 +41,7 @@ public class RangedBaseClass_Weapon : BaseClass_Weapon
         projectilePrefab = baseStats.projectilePrefab;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (firingDelay > 0)
         {
