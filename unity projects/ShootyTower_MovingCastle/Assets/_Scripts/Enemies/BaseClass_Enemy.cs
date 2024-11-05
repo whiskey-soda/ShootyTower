@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class BaseClass_Enemy : MonoBehaviour
 {
-
+    [Header("CONFIG")]
+    public HeightLevel baseHeight; //defines collision box location
     public List<HeightLevel> heightLevelList;
     public float health; //health bonus is applies by spawner script
     public float moveSpeed;

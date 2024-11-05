@@ -90,10 +90,8 @@ public class KnockbackRegion_Player : MonoBehaviour
     {
         if (collision.CompareTag("Enemy Collision"))
         {
+            Knockback_Enemy enemyKnockbackScript = collision.GetComponent<Knockback_Enemy>();
 
-            BaseClass_Enemy enemyScript = collision.GetComponentInParent<BaseClass_Enemy>();
-
-            Knockback_Enemy enemyKnockbackScript = enemyScript.GetComponent<Knockback_Enemy>();
             if (!enemiesInRange.Contains(enemyKnockbackScript))
             {
                 enemiesInRange.Add(enemyKnockbackScript);
@@ -107,7 +105,8 @@ public class KnockbackRegion_Player : MonoBehaviour
         if (collision.CompareTag("Enemy Collision"))
         {
 
-            Knockback_Enemy enemyKnockbackScript = collision.GetComponentInParent<Knockback_Enemy>();
+            Knockback_Enemy enemyKnockbackScript = collision.GetComponent<Knockback_Enemy>();
+
             if (enemiesInRange.Contains(enemyKnockbackScript))
             {
                 enemiesInRange.Remove(enemyKnockbackScript);

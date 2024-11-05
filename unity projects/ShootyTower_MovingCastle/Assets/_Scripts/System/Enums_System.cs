@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum HeightLevel { Undefined, Ground, Ground2, Tall, VeryTall, Aerial };
+public enum HeightLevel { Ground, Tall, High, Sky };
 public enum ElementType { None, Magic, Fire, Electric, Bleed };
 
 public enum WeaponType { Undefined, Bow, Cannon, HeavyBallista  };

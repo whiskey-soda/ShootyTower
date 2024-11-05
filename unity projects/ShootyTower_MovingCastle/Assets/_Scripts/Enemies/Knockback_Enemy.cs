@@ -5,27 +5,23 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof (BaseClass_Enemy))]
+[RequireComponent(typeof(Collider2D))]
 
+//should be placed on enemy collision child object
 public class Knockback_Enemy : MonoBehaviour
 {
-
-    [Header("CONFIG")]
-    //speed at which knockback force decreases per second
-    [SerializeField] float knockbackDecay = 10;
-    //used for detecting collisions with tower
-    public Collider2D collisionCollider;
-
+        
     [Header("DEBUG")]
+    //allows tower to apply knockback
+    public Collider2D collisionCollider;
     NavMeshAgent agent;
     BaseClass_Enemy myEnemyScript;
 
-    
-
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
-        myEnemyScript = GetComponent<BaseClass_Enemy>();
+        agent = GetComponentInParent<NavMeshAgent>();
+        myEnemyScript = GetComponentInParent<BaseClass_Enemy>();
+        collisionCollider = GetComponent<Collider2D>();
     }
 
     /// <summary>

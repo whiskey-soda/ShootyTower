@@ -9,11 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4357761364586697589}
-  - component: {fileID: 115432445707950989}
   - component: {fileID: 5942051613815201397}
   - component: {fileID: 1152674120910523136}
   - component: {fileID: 2268883341111614092}
-  - component: {fileID: 6355246900379053871}
   - component: {fileID: 2194279282238851609}
   - component: {fileID: 7627717125671421388}
   m_Layer: 6
@@ -43,33 +41,6 @@ Transform:
   - {fileID: 2304751526482645983}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &115432445707950989
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850425482862047822}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!195 &5942051613815201397
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -78,10 +49,10 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850425482862047822}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.3
   m_Speed: 3.5
-  m_Acceleration: 24
+  m_Acceleration: 64
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -104,7 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4473e5298e85bb4fb20db94465f6ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heightLevelList: 0100000002000000
+  baseHeight: 0
+  heightLevelList: 00000000
   health: 25
   moveSpeed: 3
   damagePerSec: 5
@@ -124,20 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!114 &6355246900379053871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850425482862047822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a82c9fd88490f3949b2a2644daa69bf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackDecay: 10
-  collisionCollider: {fileID: 0}
 --- !u!114 &2194279282238851609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +225,7 @@ GameObject:
   - component: {fileID: 8510472745095791543}
   - component: {fileID: 1178777651065627029}
   - component: {fileID: 1474417511621824104}
+  - component: {fileID: 5865317384718444006}
   m_Layer: 9
   m_Name: Collision
   m_TagString: Enemy Collision
@@ -336,6 +295,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6162a540fbd11d4b8233030db56dcd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5865317384718444006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516019015383724922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a82c9fd88490f3949b2a2644daa69bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCollider: {fileID: 1178777651065627029}
 --- !u!1 &8115722174939407065
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,11 +11,6 @@ public class WeaponManager_Player : MonoBehaviour
     public List<GameObject> weaponPrefabList;
 
     [Header("DEBUG")]
-    [SerializeField] Transform groundWeaponTransform;
-    [SerializeField] Transform ground2WeaponTransform;
-    [SerializeField] Transform tallWeaponTransform;
-    [SerializeField] Transform veryTallWeaponTransform;
-    [SerializeField] Transform aerialWeaponTransform;
 
     [SerializeField] WeaponUpgrader_Player weaponUpgradeScript;
 
@@ -24,14 +19,6 @@ public class WeaponManager_Player : MonoBehaviour
         weaponUpgradeScript = GetComponent<WeaponUpgrader_Player>();
     }
 
-    private void Start()
-    {
-        groundWeaponTransform = GameObject.FindGameObjectWithTag("Ground Target").transform;
-        ground2WeaponTransform = GameObject.FindGameObjectWithTag("Ground 2 Weapon Position").transform;
-        tallWeaponTransform = GameObject.FindGameObjectWithTag("Tall Target").transform;
-        veryTallWeaponTransform = GameObject.FindGameObjectWithTag("Very Tall Target").transform;
-        aerialWeaponTransform = GameObject.FindGameObjectWithTag("Aerial Target").transform;
-    }
 
     public void AddWeapon(WeaponType weaponType, HeightLevel heightLevel)
     {
@@ -47,10 +34,6 @@ public class WeaponManager_Player : MonoBehaviour
 
         SetWeaponPosition(newWeapon, heightLevel);
 
-        //if weapon is using a heightlevel that only matters for weapon positioning (like ground2),
-        //change the height level to the correct one for collisions so the projectiles have correct layer
-        if (newWeaponScript.heightLevel == HeightLevel.Ground2) { newWeaponScript.heightLevel = HeightLevel.Ground; }
-
         //add weapon to script on upgrader so it can receive upgrades
         weaponUpgradeScript.ownedWeapons.Add(newWeaponScript);
 
@@ -59,26 +42,24 @@ public class WeaponManager_Player : MonoBehaviour
     private void SetWeaponPosition(GameObject newWeapon, HeightLevel heightLevel )
     {
         Vector2 weaponPosition = Vector2.zero;
+
+        //fetch correct height position from transform library
         switch (heightLevel)
         {
             case HeightLevel.Ground:
-                weaponPosition = groundWeaponTransform.position;
-                break;
-
-            case HeightLevel.Ground2:
-                weaponPosition = ground2WeaponTransform.position;
+                weaponPosition = TransformLibrary_System.instance.GroundWeapon.position;
                 break;
 
             case HeightLevel.Tall:
-                weaponPosition = tallWeaponTransform.position;
+                weaponPosition = TransformLibrary_System.instance.TallWeapon.position;
                 break;
 
-            case HeightLevel.VeryTall:
-                weaponPosition = veryTallWeaponTransform.position;
+            case HeightLevel.High:
+                weaponPosition = TransformLibrary_System.instance.HighWeapon.position;
                 break;
 
-            case HeightLevel.Aerial:
-                weaponPosition = aerialWeaponTransform.position;
+            case HeightLevel.Sky:
+                weaponPosition = TransformLibrary_System.instance.SkyWeapon.position;
                 break;
         }
 

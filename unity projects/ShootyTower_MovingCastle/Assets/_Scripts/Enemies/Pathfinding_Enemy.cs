@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Scripting;
@@ -46,25 +47,24 @@ public class Pathfinding_Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //check lowest and heighest first.
-        //all ground units will have ground
-        //all aerial units will have aerial, but might also have other layers. aerial is the one that matters for targeting
-        if (myEnemyScript.heightLevelList.Contains(HeightLevel.Ground))
+        //choose target based on base height of enemy
+        switch (myEnemyScript.baseHeight)
         {
-            target = GameObject.FindGameObjectWithTag("Ground Target").transform;
-        }
-        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Aerial))
-        {
-            target = GameObject.FindGameObjectWithTag("Aerial Target").transform;
-        }
+            case HeightLevel.Ground:
+                target = TransformLibrary_System.instance.GroundTarget;
+                break;
 
-        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.VeryTall))
-        {
-            target = GameObject.FindGameObjectWithTag("Very Tall Target").transform;
-        }
-        else if (myEnemyScript.heightLevelList.Contains(HeightLevel.Tall))
-        {
-            target = GameObject.FindGameObjectWithTag("Tall Target").transform;
+            case HeightLevel.Tall:
+                target = TransformLibrary_System.instance.TallTarget;
+                break;
+
+            case HeightLevel.High:
+                target = TransformLibrary_System.instance.HighTarget;
+                break;
+
+            case HeightLevel.Sky:
+                target = TransformLibrary_System.instance.SkyTarget;
+                break;
         }
         
         
