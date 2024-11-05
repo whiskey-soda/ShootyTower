@@ -5,12 +5,11 @@ using UnityEngine.AI;
 using UnityEngine.Scripting;
 
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(BaseClass_Enemy))]
 
 public class Pathfinding_Enemy : MonoBehaviour
 {
-
+    [Header("DEBUG")]
     public Transform target;
 
     NavMeshAgent agent;

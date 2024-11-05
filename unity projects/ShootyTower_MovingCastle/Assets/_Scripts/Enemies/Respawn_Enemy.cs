@@ -18,14 +18,15 @@ public class Respawn_Enemy : MonoBehaviour
     Transform targetTransform;
     float distanceFromTarget;
 
-    private void Start()
-    {
-        targetTransform = GetComponent<Pathfinding_Enemy>().target;
-    }
-
 
     private void FixedUpdate()
     {
+        //fetch target transform if not already fetched
+        if (targetTransform == null)
+        {
+            targetTransform = GetComponent<Pathfinding_Enemy>().target;
+        }
+
         distanceFromTarget = Vector2.Distance(transform.position, targetTransform.position);
 
         if (distanceFromTarget > respawnDistance)

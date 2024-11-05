@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BaseClass_Enemy))]
 [RequireComponent(typeof(Animator))]
 
 public class AnimationManager_Enemy : MonoBehaviour
@@ -12,7 +11,7 @@ public class AnimationManager_Enemy : MonoBehaviour
 
     private void Awake()
     {
-        myEnemyScript = GetComponent<BaseClass_Enemy>();
+        myEnemyScript = GetComponentInParent<BaseClass_Enemy>();
         myAnimator = GetComponent<Animator>();
     }
 
