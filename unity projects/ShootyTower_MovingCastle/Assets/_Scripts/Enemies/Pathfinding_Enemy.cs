@@ -77,10 +77,11 @@ public class Pathfinding_Enemy : MonoBehaviour
         if (myEnemyScript.isAttacking)
         {
             agent.ResetPath();
+            agent.avoidancePriority = 40;
         }
         else
         {
-
+            agent.avoidancePriority = 50;
             agent.SetDestination(target.position);
         }
     }
