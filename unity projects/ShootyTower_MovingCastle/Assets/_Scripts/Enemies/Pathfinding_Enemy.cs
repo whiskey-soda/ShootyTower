@@ -76,11 +76,10 @@ public class Pathfinding_Enemy : MonoBehaviour
         //stop moving when in range, start moving when player is out of range
         if (myEnemyScript.isAttacking)
         {
-            agent.enabled = false;
+            agent.ResetPath();
         }
         else
         {
-            agent.enabled = true;
 
             agent.SetDestination(target.position);
         }

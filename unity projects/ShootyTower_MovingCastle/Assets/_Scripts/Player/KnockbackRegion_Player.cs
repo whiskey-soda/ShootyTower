@@ -11,7 +11,7 @@ public class KnockbackRegion_Player : MonoBehaviour
     [SerializeField] float knockbackForce = 3;
     [SerializeField] float stuckEnemyRange = 1.5f;
     [SerializeField] float unstickEnemyDisplacement = 1;
-    [SerializeField] float knockbackDetectionLeeway = .7f;
+    [SerializeField] float knockbackDetectionLeeway = .2f;
 
     [Header("DEBUG")]
     [SerializeField] Movement_Player myMovementScript;
