@@ -13,6 +13,8 @@ public class BaseClass_Enemy : MonoBehaviour
     public float damagePerSec;
 
     public float xpValue;
+
+    [Header("DEBUG")]
     public XPSpawner_Enemy xpSpawner;
     
 
