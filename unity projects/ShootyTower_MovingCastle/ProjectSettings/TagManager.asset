@@ -6,19 +6,13 @@ TagManager:
   tags:
   - Enemy
   - Projectile
-  - Tower
-  - Ground Target
-  - Tall Target
-  - Very Tall Target
-  - Aerial Target
   - Enemy Hurtbox
   - Tower Hurtbox
-  - Ground 2 Weapon Position
   - Enemy Collision
-  - XP Orb
   - Level Up Menu
   - Hazard
   - Prop Hurtbox
+  - XP Orb
   layers:
   - Default
   - TransparentFX
@@ -32,8 +26,8 @@ TagManager:
   - Ground
   - 
   - Tall
-  - VeryTall
-  - Aerial
+  - High
+  - Sky
   - 
   - 
   - Targeting Weapon

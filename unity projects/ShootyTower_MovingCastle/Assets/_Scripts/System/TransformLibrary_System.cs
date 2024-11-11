@@ -18,8 +18,7 @@ public class TransformLibrary_System : MonoBehaviour
 
     public static TransformLibrary_System instance;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         //singleton code
         if (instance == null)
