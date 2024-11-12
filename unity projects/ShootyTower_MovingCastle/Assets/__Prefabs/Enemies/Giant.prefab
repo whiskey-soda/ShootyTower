@@ -505,6 +505,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 3471808344003277321, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
+      propertyPath: avoidancePriority
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6798339379856205938, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
       propertyPath: m_Name
       value: Tall Layer
@@ -594,6 +598,10 @@ PrefabInstance:
     - target: {fileID: 3471808344003277321, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
       propertyPath: m_AgentTypeID
       value: -1923039037
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471808344003277321, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
+      propertyPath: avoidancePriority
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6798339379856205938, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
       propertyPath: m_Name
