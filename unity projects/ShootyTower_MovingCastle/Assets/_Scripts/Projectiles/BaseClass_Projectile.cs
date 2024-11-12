@@ -39,6 +39,9 @@ public class BaseClass_Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //checks if the collision is a hurtbox.
+        //if collision is a hurtbox, checks of it matches the height level of the projectile.
+
         if (collision.gameObject.CompareTag("Enemy Hurtbox"))
         {
             Hurtbox_Enemy hurtboxScript = collision.GetComponent<Hurtbox_Enemy>();
@@ -94,6 +97,10 @@ public class BaseClass_Projectile : MonoBehaviour
         return bulletHit;
     }
 
+    /// <summary>
+    /// damages an enemy and applies knockback to them, then processes the hit logic for the projectile
+    /// </summary>
+    /// <param name="hurtboxScript"></param>
     private void ProcessEnemyHit(Hurtbox_Enemy hurtboxScript)
     {
         hurtboxScript.TakeDamage(damage);
@@ -103,6 +110,10 @@ public class BaseClass_Projectile : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// hit logic for the projectile. includes values and functions held on the projectile, such as
+    /// spawning damage numbers and decrementing pierce value on hit
+    /// </summary>
     public void ProcessHit()
     {
         damageNumberSpawner.SpawnDamageNumber(damage);
