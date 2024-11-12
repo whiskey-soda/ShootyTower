@@ -513,7 +513,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &34445297
 RectTransform:
@@ -4678,7 +4678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e47e38fa4bcbfa48a5e352e9f42a7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: 0
+  weapon: 1
   height: 0
   weaponManager: {fileID: 0}
 --- !u!4 &1438226426

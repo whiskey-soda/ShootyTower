@@ -22,7 +22,7 @@ public class Hurtbox_Enemy : MonoBehaviour
     void Start()
     {
         myEnemyScript = GetComponentInParent<BaseClass_Enemy>();
-        myKnockbackScript = GetComponentInParent<Knockback_Enemy>();
+        myKnockbackScript = transform.parent.GetComponentInChildren<Knockback_Enemy>();
     }
 
     public void TakeDamage(float damageValue)

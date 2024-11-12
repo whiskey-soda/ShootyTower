@@ -103,8 +103,8 @@ public class BaseClass_Projectile : MonoBehaviour
     /// <param name="hurtboxScript"></param>
     private void ProcessEnemyHit(Hurtbox_Enemy hurtboxScript)
     {
-        hurtboxScript.TakeDamage(damage);
         hurtboxScript.ApplyKnockback(knockback, normalizedMovementVector);
+        hurtboxScript.TakeDamage(damage);
 
         ProcessHit();
         

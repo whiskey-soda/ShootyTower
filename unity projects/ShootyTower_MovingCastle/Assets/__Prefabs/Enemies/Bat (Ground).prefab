@@ -74,7 +74,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHeight: 0
-  heightLevelList: 00000000
   health: 5
   moveSpeed: 2
   damagePerSec: 3
@@ -421,7 +420,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5633290487664089200, guid: 4a8b207318aafc243952bd385a0952a2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

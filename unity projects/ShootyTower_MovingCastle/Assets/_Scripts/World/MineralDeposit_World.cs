@@ -17,16 +17,20 @@ public class MineralDeposit_World : PropHealth_World
 
     public override void TakeDamage(float damageVal)
     {
-        //give drops for each point of damage taken by the mineral deposit
-        for (int i=0; i<(int)damageVal; i++)
+        if (!isDestroyed)
         {
-            GiveMineral();
 
-            if (TryGiveDrop(crystalDropChance)) { GiveCrystal(); }
-            if (TryGiveDrop(dustDropChance)) { GiveDust(); }
+            //give drops for each point of damage taken by the mineral deposit
+            for (int i = 0; i < (int)damageVal; i++)
+            {
+                GiveMineral();
+
+                if (TryGiveDrop(crystalDropChance)) { GiveCrystal(); }
+                if (TryGiveDrop(dustDropChance)) { GiveDust(); }
+            }
+
+            base.TakeDamage(damageVal);
         }
-
-        base.TakeDamage(damageVal);
     }
 
     void GiveMineral()
