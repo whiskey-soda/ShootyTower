@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5062988058179312935}
   - component: {fileID: 8630347838720254644}
   - component: {fileID: 7071346734003710629}
+  - component: {fileID: 8745208492539346668}
   - component: {fileID: 2070280084081723213}
   m_Layer: 20
   m_Name: Test Slow Hazard
@@ -101,6 +102,33 @@ MonoBehaviour:
   slows: 1
   damages: 0
   damagePerSec: 0
+--- !u!50 &8745208492539346668
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6672596924766612626}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!61 &2070280084081723213
 BoxCollider2D:
   m_ObjectHideFlags: 0

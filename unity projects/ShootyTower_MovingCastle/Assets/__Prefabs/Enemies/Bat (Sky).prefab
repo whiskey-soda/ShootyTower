@@ -195,7 +195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHeight: 3
-  heightLevelList: 03000000
   health: 5
   moveSpeed: 2
   damagePerSec: 3
@@ -281,7 +280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5148760257138064597, guid: 4a8b207318aafc243952bd385a0952a2, type: 3}
       propertyPath: m_Name
-      value: High Layer
+      value: Sky Layer
       objectReference: {fileID: 0}
     - target: {fileID: 5148760257138064597, guid: 4a8b207318aafc243952bd385a0952a2, type: 3}
       propertyPath: m_Layer
