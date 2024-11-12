@@ -11,7 +11,7 @@ public class RegionGeneration_World : MonoBehaviour
 
     [SerializeField] Tileset_World[] tilesets;
 
-    [SerializeField] uint worldSize = 1;
+    public uint worldSize = 1;
 
     [Space]
     [SerializeField] uint worldXSize = 5;

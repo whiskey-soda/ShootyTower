@@ -14,8 +14,8 @@ public class SpawnDirector_System : MonoBehaviour
     [SerializeField] SpawnData_Enemy[] wave1_9NewEnemyOrder;
 
     //applied per wave
-    [SerializeField] float spawnRateIncreaseMultiplier = 1.2f;
-    [SerializeField] float healthBonusIncreaseMultiplier = 1.1f;
+    public float spawnRateIncreaseMultiplier = 1.2f;
+    public float healthIncreaseMultiplier = 1.1f;
 
     [SerializeField] float campaignEnd_BuffDecreaseCoefficient = .6f;
 
@@ -32,10 +32,11 @@ public class SpawnDirector_System : MonoBehaviour
     [SerializeField] float spawnDelay;
     [SerializeField] float currentSpawnCooldown;
 
-
-    [SerializeField] float spawnsPerSec = 1;
-    [SerializeField] float healthBonusMultiplier = 1;
+    [Space]
+    public float spawnsPerSec = 1;
+    public float healthMultiplier = 1;
     public float difficulty = 1;
+    [Space]
 
     [SerializeField] float campaignStart_spawnsPerSec;
     [SerializeField] float campaignStart_healthBonusMultiplier;
@@ -78,7 +79,7 @@ public class SpawnDirector_System : MonoBehaviour
             }
         }
 
-        difficulty = (spawnsPerSec + healthBonusMultiplier) / 2;
+        difficulty = (spawnsPerSec + healthMultiplier) / 2;
     }
 
     [ContextMenu("Start Wave")]
@@ -110,7 +111,7 @@ public class SpawnDirector_System : MonoBehaviour
         else 
         {
             spawnsPerSec *= spawnRateIncreaseMultiplier;
-            healthBonusMultiplier *= healthBonusIncreaseMultiplier;
+            healthMultiplier *= healthIncreaseMultiplier;
 
             //generate random assortments of enemies for the wave
             //gradually increase the amount of enemies in the wave
@@ -193,7 +194,7 @@ public class SpawnDirector_System : MonoBehaviour
                 //spawn random prefab from the enemy's list of prefabs
                 //for example, spawns a harpy at a random height
                 int enemyPrefabToSpawn = Random.Range(0, enemy.prefabsList.Count);
-                enemySpawnerScript.SpawnEnemy(enemy.prefabsList[enemyPrefabToSpawn], healthBonusMultiplier);
+                enemySpawnerScript.SpawnEnemy(enemy.prefabsList[enemyPrefabToSpawn], healthMultiplier);
 
                 break;
             }
@@ -209,7 +210,7 @@ public class SpawnDirector_System : MonoBehaviour
     void StartCampaign()
     {
         campaignStart_spawnsPerSec = spawnsPerSec;
-        campaignStart_healthBonusMultiplier = healthBonusMultiplier;
+        campaignStart_healthBonusMultiplier = healthMultiplier;
     }
 
     /// <summary>
@@ -221,10 +222,10 @@ public class SpawnDirector_System : MonoBehaviour
         currentWaveNum = 0;
 
         spawnsPerSec = DecrementEnemyBuff(spawnsPerSec, campaignStart_spawnsPerSec);
-        healthBonusMultiplier = DecrementEnemyBuff(healthBonusMultiplier, campaignStart_healthBonusMultiplier);
+        healthMultiplier = DecrementEnemyBuff(healthMultiplier, campaignStart_healthBonusMultiplier);
 
         spawnRateIncreaseMultiplier *= campaignEnd_DifficultyRatesIncreaseMultiplier;
-        healthBonusIncreaseMultiplier *= campaignEnd_DifficultyRatesIncreaseMultiplier;
+        healthIncreaseMultiplier *= campaignEnd_DifficultyRatesIncreaseMultiplier;
     }
 
     float DecrementEnemyBuff(float buff, float buffBaseValue)
