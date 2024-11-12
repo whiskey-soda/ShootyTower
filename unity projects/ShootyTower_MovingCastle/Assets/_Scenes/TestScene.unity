@@ -6560,7 +6560,7 @@ GameObject:
   - component: {fileID: 1800469951}
   m_Layer: 7
   m_Name: Weapons
-  m_TagString: Untagged
+  m_TagString: Weapon Parent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7848,5 +7848,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 173225880}
   - {fileID: 1438226426}
-  - {fileID: 1930620386}
   - {fileID: 61690041}
+  - {fileID: 1930620386}

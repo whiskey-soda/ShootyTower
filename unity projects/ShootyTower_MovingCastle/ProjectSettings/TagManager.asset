@@ -13,6 +13,7 @@ TagManager:
   - Hazard
   - Prop Hurtbox
   - XP Orb
+  - Weapon Parent
   layers:
   - Default
   - TransparentFX
