@@ -281,6 +281,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 3608819577479013730, guid: 4a8b207318aafc243952bd385a0952a2, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5148760257138064597, guid: 4a8b207318aafc243952bd385a0952a2, type: 3}
       propertyPath: m_Name
       value: Ground Layer
@@ -602,6 +606,10 @@ PrefabInstance:
     - target: {fileID: 3471808344003277321, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
       propertyPath: avoidancePriority
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556871096372655149, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
+      propertyPath: myHeightLevel
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6798339379856205938, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
       propertyPath: m_Name
