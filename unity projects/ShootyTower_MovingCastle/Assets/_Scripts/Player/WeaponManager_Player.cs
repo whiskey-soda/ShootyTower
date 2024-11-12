@@ -13,10 +13,12 @@ public class WeaponManager_Player : MonoBehaviour
     [Header("DEBUG")]
 
     [SerializeField] WeaponUpgrader_Player weaponUpgradeScript;
+    Transform weaponParentTransform;
 
     private void Awake()
     {
         weaponUpgradeScript = GetComponent<WeaponUpgrader_Player>();
+        weaponParentTransform = GameObject.FindWithTag("Weapon Parent").transform;
     }
 
 
@@ -25,7 +27,7 @@ public class WeaponManager_Player : MonoBehaviour
         GameObject weaponToAdd = FetchWeaponPrefab(weaponType);
 
         //add weapon as child of player object
-        GameObject newWeapon = Instantiate(weaponToAdd, transform);
+        GameObject newWeapon = Instantiate(weaponToAdd, weaponParentTransform);
         BaseClass_Weapon newWeaponScript = newWeapon.GetComponent<BaseClass_Weapon>();
 
         newWeaponScript.heightLevel = heightLevel;
