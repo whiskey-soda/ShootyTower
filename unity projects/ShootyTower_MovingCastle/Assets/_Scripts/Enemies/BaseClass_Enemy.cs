@@ -7,7 +7,7 @@ public class BaseClass_Enemy : MonoBehaviour
 {
     [Header("CONFIG")]
     public HeightLevel baseHeight; //defines collision box location
-    public List<HeightLevel> heightLevelList;
+    //public List<HeightLevel> heightLevelList;
     public float health; //health bonus is applies by spawner script
     public float moveSpeed;
     public float damagePerSec;
@@ -16,9 +16,6 @@ public class BaseClass_Enemy : MonoBehaviour
 
     [Header("DEBUG")]
     public XPSpawner_Enemy xpSpawner;
-    
-
-    [Header("DEBUG")]
     //for animator functionality
     public bool isAttacking = false;
 
