@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4556871096372655149, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
       propertyPath: myHeightLevel
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6798339379856205938, guid: 945371b1f61c4014a8ef053e9851a736, type: 3}
       propertyPath: m_Name
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2937068637693776928, guid: 4a8b207318aafc243952bd385a0952a2, type: 3}
       propertyPath: myHeightLevel
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3362258395846217655, guid: 4a8b207318aafc243952bd385a0952a2, type: 3}
       propertyPath: m_Size.x
