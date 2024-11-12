@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeight: 75
   prefabsList:
-  - {fileID: 7617110718900748935, guid: b954df0c1df733342a755bc7a2e4997c, type: 3}
+  - {fileID: 2545334094843286869, guid: c757880a635bc0b4f89631f264cccdf6, type: 3}

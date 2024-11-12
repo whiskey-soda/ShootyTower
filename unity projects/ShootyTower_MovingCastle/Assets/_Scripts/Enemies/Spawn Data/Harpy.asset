@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWeight: 20
   prefabsList:
-  - {fileID: 3648148466575769295, guid: 97f1af901476b844c9a3075722565215, type: 3}
-  - {fileID: 7033808309442316932, guid: 53fb7135eafdef441afc40db0c5b6fda, type: 3}
-  - {fileID: 5209016663190664122, guid: f283c1877251c1349bae57c35848aa99, type: 3}
+  - {fileID: 1410469344723464290, guid: 5564adfb12824d94bb5d7eb898f546b7, type: 3}
+  - {fileID: 3012963409964119306, guid: b9ed8a104b1cc4e43a0feff527f94be4, type: 3}
+  - {fileID: 42171675153053992, guid: 0c870936d702d5f43ba8ea55907cbbda, type: 3}
