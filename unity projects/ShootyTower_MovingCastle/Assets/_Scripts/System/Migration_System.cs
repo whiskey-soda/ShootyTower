@@ -48,11 +48,17 @@ public class Migration_System : MonoBehaviour
         //writes all regions to the json file, one on each line
         using (StreamWriter writer = new StreamWriter(Application.dataPath + Path.AltDirectorySeparatorChar + fileName, append: true))
         {
-            foreach(RegionData_World region in regions)
+            string json = JsonUtility.ToJson(regions);
+            writer.Write(json);
+
+            //writing each region one by one
+            /*
+            foreach (RegionData_World region in regions)
             {
                 string json = JsonUtility.ToJson(region);
                 writer.WriteLine(json);
             }
+            */
         }
     }
 
@@ -63,14 +69,21 @@ public class Migration_System : MonoBehaviour
     {
         regions.Clear();
 
+
         using(StreamReader reader = new StreamReader(Application.dataPath + Path.AltDirectorySeparatorChar + fileName))
         {
+            string json = reader.ReadToEnd();
+            regions = JsonUtility.FromJson<List<RegionData_World>>(json);
+
+            //reading each region one by one
+            /*
             while(!reader.EndOfStream)
             {
                 string json = reader.ReadLine();
                 RegionData_World regionData = JsonUtility.FromJson<RegionData_World>(json);
                 regions.Add(regionData);
             }
+            */
         }
 
 

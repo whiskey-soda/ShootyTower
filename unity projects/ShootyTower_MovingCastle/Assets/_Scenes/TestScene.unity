@@ -6145,6 +6145,7 @@ GameObject:
   - component: {fileID: 1765206678}
   - component: {fileID: 1765206679}
   - component: {fileID: 1765206680}
+  - component: {fileID: 1765206681}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: GameController
@@ -6257,7 +6258,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7770edd1bfa41e944b342fac9d9c2fff, type: 2}
   - {fileID: 11400000, guid: 0803517a1205fa140b573cbd65d31f24, type: 2}
   spawnRateIncreaseMultiplier: 1.2
-  healthBonusIncreaseMultiplier: 1.1
+  healthIncreaseMultiplier: 1.1
   campaignEnd_BuffDecreaseCoefficient: 0.6
   campaignEnd_DifficultyRatesIncreaseMultiplier: 1.2
   enemySpawnerScript: {fileID: 0}
@@ -6266,7 +6267,7 @@ MonoBehaviour:
   spawnDelay: 0
   currentSpawnCooldown: 0
   spawnsPerSec: 1
-  healthBonusMultiplier: 1
+  healthMultiplier: 1
   difficulty: 1
   campaignStart_spawnsPerSec: 0
   campaignStart_healthBonusMultiplier: 0
@@ -6378,6 +6379,18 @@ MonoBehaviour:
   TallWeapon: {fileID: 2009268265}
   HighWeapon: {fileID: 104996140}
   SkyWeapon: {fileID: 6965718}
+--- !u!114 &1765206681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765206666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d76be2eeeddd245908690c888672a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1765207112
 GameObject:
   m_ObjectHideFlags: 0
