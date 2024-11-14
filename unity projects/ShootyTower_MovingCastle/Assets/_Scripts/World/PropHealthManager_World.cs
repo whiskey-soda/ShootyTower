@@ -7,7 +7,7 @@ public class PropHealthManager_World : MonoBehaviour
 
     public static PropHealthManager_World instance;
 
-    [SerializeField] List<float> propHealthList;
+    [SerializeField] public List<float> propHealthList;
 
     // Start is called before the first frame update
     void Start()

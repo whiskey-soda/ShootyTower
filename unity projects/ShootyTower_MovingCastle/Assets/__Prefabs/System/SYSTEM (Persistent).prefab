@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7575158411872840972}
   - component: {fileID: 4625884086083059539}
   - component: {fileID: 5775010685202412763}
+  - component: {fileID: 2236317620391608998}
   m_Layer: 0
   m_Name: SYSTEM (Persistent)
   m_TagString: Untagged
@@ -58,6 +59,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67eb4c11ba9e1b441b4bc47bf5b4421e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSpawnsPerSec: 1
+  defaultHealthMultiplier: 1
+  defaultSpawnRateIncreaseMultiplier: 1.2
+  defaultHealthIncreaseMultiplier: 1.1
+  defaultWorldSize: 1
   regions: []
   currentRegion:
     spawnsPerSec: 0
@@ -75,5 +81,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4326fd56e86fbd94096e8939d81645f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2236317620391608998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237386407862141393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c6c946bc351954fa51752fb0fff90d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -21,7 +21,7 @@ public class RegionGeneration_World : MonoBehaviour
 
     [Header("DEBUG")]
 
-    int seed = 0;
+    public int seed = 0;
 
     Tileset_World activeTileset;
 
@@ -82,18 +82,18 @@ public class RegionGeneration_World : MonoBehaviour
     /// <summary>
     /// sets seed to a random int value between -9999 and 9999
     /// </summary>
-    void SetSeedToRandom()
+    public void SetSeedToRandom()
     {
         //set seed for world generation
-        seed = Random.Range(-9999, 10000);
-        Random.InitState(seed);
+        int randomSeed = Random.Range(-9999, 10000);
+        SetSeed(randomSeed);
     }
 
     /// <summary>
     /// sets seed to the value passed in to the function
     /// </summary>
     /// <param name="newSeed"></param>
-    void SetSeed(int newSeed)
+    public void SetSeed(int newSeed)
     {
         seed = newSeed;
         Random.InitState(seed);

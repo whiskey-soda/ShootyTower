@@ -8,12 +8,13 @@ public class MineralDeposit_World : PropHealth_World
     float crystalDropChance;
     float dustDropChance;
 
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
         crystalDropChance = 1 / (1.5f * maxHealth);
         dustDropChance = .6f / (1.5f * maxHealth);
     }
+
 
     public override void TakeDamage(float damageVal)
     {

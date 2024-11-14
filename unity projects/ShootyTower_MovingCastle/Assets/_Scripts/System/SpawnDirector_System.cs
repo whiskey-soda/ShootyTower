@@ -8,6 +8,7 @@ public class SpawnDirector_System : MonoBehaviour
 {
     [Header("CONFIG")]
     [SerializeField] float waveDurationSecs = 50;
+    [SerializeField] float waveBreakDurationSecs = 5;
 
     [SerializeField] SpawnData_Enemy[] allEnemyTypesList;
 
@@ -38,8 +39,6 @@ public class SpawnDirector_System : MonoBehaviour
     public float difficulty = 1;
     [Space]
 
-    [SerializeField] float campaignStart_spawnsPerSec;
-    [SerializeField] float campaignStart_healthBonusMultiplier;
 
 
     [SerializeField] List<SpawnData_Enemy> enemiesInWave;
@@ -100,6 +99,7 @@ public class SpawnDirector_System : MonoBehaviour
     void EndWave()
     {
         enemiesSpawning = false;
+        Invoke(nameof(StartWave), waveBreakDurationSecs);
     }
 
     void ConfigureNewWave()
@@ -206,12 +206,6 @@ public class SpawnDirector_System : MonoBehaviour
         }
     }
 
-    [ContextMenu("Start Campaign")]
-    public void StartCampaign()
-    {
-        campaignStart_spawnsPerSec = spawnsPerSec;
-        campaignStart_healthBonusMultiplier = healthMultiplier;
-    }
 
     /// <summary>
     /// increases the difficulty scaling multipliers

@@ -8,7 +8,7 @@ public class PropHealth_World : MonoBehaviour
     public float currentHealth;
     public bool isDestroyed = false;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         currentHealth = maxHealth;
     }

@@ -6,7 +6,9 @@ using UnityEngine;
 public class Migration_System : MonoBehaviour
 {
 
-    RegionData_World campaignStartRegionData;
+    public static Migration_System instance;
+
+    public RegionData_World campaignStartRegionData;
     RegionData_World campaignEndRegionData;
 
     SpawnDirector_System spawnDirector;
@@ -16,6 +18,19 @@ public class Migration_System : MonoBehaviour
     {
         spawnDirector = FindObjectOfType<SpawnDirector_System>();
         regionGenerator = FindObjectOfType<RegionGeneration_World>();
+
+        //singleton code
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        InitRegion();
     }
 
 
@@ -23,7 +38,7 @@ public class Migration_System : MonoBehaviour
     /// returns a region data object with current values from the game
     /// </summary>
     /// <returns></returns>
-    RegionData_World FetchRegionData()
+    public RegionData_World FetchRegionData()
     {
         
         RegionData_World currentRegionData = new RegionData_World();
@@ -36,19 +51,12 @@ public class Migration_System : MonoBehaviour
 
         return currentRegionData;
     }
-
-    void LoadRegion(RegionData_World region)
-    {
-
-        campaignStartRegionData = region;
-
-    }
+    
 
     [ContextMenu("Player Death")]
     void PlayerDeath()
     {
         RegionManager_System.instance.regions.Add(campaignStartRegionData);
-        Debug.Log(RegionManager_System.instance.regions.Count);
     }
 
     void Migrate()

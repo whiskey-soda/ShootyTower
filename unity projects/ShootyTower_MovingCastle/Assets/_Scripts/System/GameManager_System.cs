@@ -23,12 +23,20 @@ public class GameManager_System : MonoBehaviour
 
     private void Start()
     {
-        ConfigureGameSettings();
-        StartGame();
-
+        if (SaveCampaign_System.instance.isResumingCampaign)
+        {
+            SaveCampaign_System.instance.LoadGameState();
+        }
+        else
+        {
+            StartNewGame();
+        }
     }
 
-    private static void ConfigureGameSettings()
+    /// <summary>
+    /// sets all gameplay settings based on values from the currentRegion held on the RegionManager
+    /// </summary>
+    public static void ConfigureGameSettings()
     {
         //enemy buffs
         SpawnDirector_System.instance.spawnsPerSec = RegionManager_System.instance.currentRegion.spawnsPerSec;
@@ -42,12 +50,16 @@ public class GameManager_System : MonoBehaviour
         RegionGeneration_World.instance.SetWorldSize(RegionManager_System.instance.currentRegion.worldSize);
     }
 
-    void StartGame()
+    void StartNewGame()
     {
+        ConfigureGameSettings();
+        RegionGeneration_World.instance.SetSeedToRandom();
         RegionGeneration_World.instance.GenerateRegion();
-
-        SpawnDirector_System.instance.StartCampaign();
-        SpawnDirector_System.instance.Invoke(nameof(SpawnDirector_System.StartWave), firstWaveStartDelay);
+        StartEnemySpawning();
     }
 
+    public void StartEnemySpawning()
+    {
+        SpawnDirector_System.instance.Invoke(nameof(SpawnDirector_System.StartWave), firstWaveStartDelay);
+    }
 }
