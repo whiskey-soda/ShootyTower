@@ -12,12 +12,9 @@ public class UIController_System : MonoBehaviour
     [SerializeField] GameObject LevelUpMenu;
     Pause_System pauseScript;
 
-    private void Awake()
-    {
-        pauseScript = gameObject.GetComponent<Pause_System>();
-    }
+    GameObject NewWeaponMenu;
 
-    private void Start()
+    private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
         if (Instance != null && Instance != this)
@@ -30,7 +27,14 @@ public class UIController_System : MonoBehaviour
         }
 
         LevelUpMenu = GameObject.FindGameObjectWithTag("Level Up Menu");
+        pauseScript = gameObject.GetComponent<Pause_System>();
+    }
+
+    private void Start()
+    {
+        
         HideLevelUpMenu();
+        NewWeaponMenu.SetActive(false);
 
     }
 
@@ -45,4 +49,21 @@ public class UIController_System : MonoBehaviour
         LevelUpMenu.SetActive(false);
         pauseScript.ResumeGame();
     }
+
+    public void ToggleNewWeaponMenu()
+    {
+        //if not active, pause game and show the menu
+        if (!NewWeaponMenu.activeSelf)
+        {
+            NewWeaponMenu.SetActive(true);
+            pauseScript.PauseGame();
+        }
+        //if active, close menu and resume game
+        else
+        {
+            NewWeaponMenu.SetActive(false);
+            pauseScript.ResumeGame();
+        }
+    }
+
 }

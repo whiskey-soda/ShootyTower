@@ -23,7 +23,7 @@ public class UpgradeGenerator_System : MonoBehaviour
         public float upgradePercent;
     }
 
-    private void Start()
+    private void Awake()
     {
         weaponUpgraderScript = FindObjectOfType<WeaponUpgrader_Player>();
 
