@@ -29,14 +29,27 @@ public class RegionMenu_UI : MonoBehaviour
     /// <summary>
     /// loads regions from the json file and displays them in panels
     /// </summary>
-    void LoadRegionMenu()
+    public void LoadRegionMenu()
     {
+        ClearRegionMenu();
         RegionManager_System.instance.LoadRegionsFromJSON();
         DisplayRegionPanels();
     }
 
+    /// <summary>
+    /// deletes all panels in the region menu
+    /// </summary>
+    private void ClearRegionMenu()
+    {
+        RegionPanel_UI[] existingPanels = GetComponentsInChildren<RegionPanel_UI>();
+        foreach (RegionPanel_UI panel in existingPanels)
+        {
+            Destroy(panel.gameObject);
+        }
+    }
+
     [ContextMenu("Display Region Panels")]
-    public void DisplayRegionPanels()
+    void DisplayRegionPanels()
     {
         foreach (RegionData_World regionData in RegionManager_System.instance.regions)
         {

@@ -28,6 +28,8 @@ public class RegionPanel_UI : MonoBehaviour
     {
         RegionManager_System.instance.regions.Remove(myRegion);
         RegionManager_System.instance.SaveRegionsToJSON();
+        RegionManager_System.instance.LoadRegionsFromJSON();
+        RegionMenu_UI.instance.LoadRegionMenu();
         Destroy(gameObject);
     }
 
