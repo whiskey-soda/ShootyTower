@@ -6,15 +6,11 @@ using UnityEngine;
 public class Migration_System : MonoBehaviour
 {
 
-    List<RegionData_World> regions;
-
-    RegionData_World campaignStartData;
-    RegionData_World campaignEndData;
+    RegionData_World campaignStartRegionData;
+    RegionData_World campaignEndRegionData;
 
     SpawnDirector_System spawnDirector;
     RegionGeneration_World regionGenerator;
-
-    string fileName = "Regions.json";
 
     private void Awake()
     {
@@ -29,6 +25,7 @@ public class Migration_System : MonoBehaviour
     /// <returns></returns>
     RegionData_World FetchRegionData()
     {
+        
         RegionData_World currentRegionData = new RegionData_World();
 
         currentRegionData.spawnsPerSec = spawnDirector.spawnsPerSec;
@@ -40,53 +37,32 @@ public class Migration_System : MonoBehaviour
         return currentRegionData;
     }
 
-    /// <summary>
-    /// Writes all regions saved in the list to the JSON
-    /// </summary>
-    void SaveRegionsToJSON()
+    void LoadRegion(RegionData_World region)
     {
-        //writes all regions to the json file, one on each line
-        using (StreamWriter writer = new StreamWriter(Application.dataPath + Path.AltDirectorySeparatorChar + fileName, append: true))
-        {
-            string json = JsonUtility.ToJson(regions);
-            writer.Write(json);
 
-            //writing each region one by one
-            /*
-            foreach (RegionData_World region in regions)
-            {
-                string json = JsonUtility.ToJson(region);
-                writer.WriteLine(json);
-            }
-            */
-        }
+        campaignStartRegionData = region;
+
     }
 
-    /// <summary>
-    /// Overwrites the current list of regions with those from the JSON
-    /// </summary>
-    void LoadRegionsFromJSON()
+    [ContextMenu("Player Death")]
+    void PlayerDeath()
     {
-        regions.Clear();
+        RegionManager_System.instance.regions.Add(campaignStartRegionData);
+        Debug.Log(RegionManager_System.instance.regions.Count);
+    }
 
+    void Migrate()
+    {
+        RegionManager_System.instance.regions.Add(campaignStartRegionData);
 
-        using(StreamReader reader = new StreamReader(Application.dataPath + Path.AltDirectorySeparatorChar + fileName))
-        {
-            string json = reader.ReadToEnd();
-            regions = JsonUtility.FromJson<List<RegionData_World>>(json);
+        campaignEndRegionData = FetchRegionData();
+        RegionManager_System.instance.regions.Add(campaignEndRegionData);
+    }
 
-            //reading each region one by one
-            /*
-            while(!reader.EndOfStream)
-            {
-                string json = reader.ReadLine();
-                RegionData_World regionData = JsonUtility.FromJson<RegionData_World>(json);
-                regions.Add(regionData);
-            }
-            */
-        }
-
-
+    [ContextMenu("Init Region")]
+    void InitRegion()
+    {
+        campaignStartRegionData = FetchRegionData();
     }
 
 }
