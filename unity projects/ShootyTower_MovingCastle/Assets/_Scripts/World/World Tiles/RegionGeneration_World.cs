@@ -30,18 +30,30 @@ public class RegionGeneration_World : MonoBehaviour
 
     GameObject environmentParentObj;
 
+    public static RegionGeneration_World instance;
+
     private void Awake()
     {
+
+        navMeshSurfaces = FindObjectsOfType<NavMeshSurface>();
+        environmentParentObj = new GameObject("Environment");
+
+        //singleton code
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void SetWorldSize(uint newSize)
+    {
+        worldSize = newSize;
+
         //size world to appropriate dimensions
         worldXSize *= worldSize;
         worldYSize *= worldSize;
-
-    }
-
-    private void Start()
-    {
-        navMeshSurfaces = FindObjectsOfType<NavMeshSurface>();
-        environmentParentObj = new GameObject("Environment");
     }
 
     Tileset_World PickRandomTileset(Tileset_World[] tileSets)
@@ -88,7 +100,7 @@ public class RegionGeneration_World : MonoBehaviour
     }
 
     [ContextMenu("Generate Region")]
-    void GenerateRegion()
+    public void GenerateRegion()
     {
         //seed should be set before region is generated
 

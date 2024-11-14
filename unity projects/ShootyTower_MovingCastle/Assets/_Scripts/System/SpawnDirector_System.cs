@@ -86,7 +86,7 @@ public class SpawnDirector_System : MonoBehaviour
     /// <summary>
     /// configures and starts a new wave, and invokes the method to end the wave after the duration is done
     /// </summary>
-    void StartWave()
+    public void StartWave()
     {
         currentWaveNum++;
 
@@ -207,23 +207,27 @@ public class SpawnDirector_System : MonoBehaviour
     }
 
     [ContextMenu("Start Campaign")]
-    void StartCampaign()
+    public void StartCampaign()
     {
         campaignStart_spawnsPerSec = spawnsPerSec;
         campaignStart_healthBonusMultiplier = healthMultiplier;
     }
 
     /// <summary>
-    /// decrements enemy buff values and increases the difficulty scaling multipliers
+    /// increases the difficulty scaling multipliers
     /// </summary>
     [ContextMenu("End Campaign")]
     void EndCampaign()
     {
         currentWaveNum = 0;
 
+        // disabled decrementing buffs because the player will always be given the option for an easier region
+        /*
         spawnsPerSec = DecrementEnemyBuff(spawnsPerSec, campaignStart_spawnsPerSec);
         healthMultiplier = DecrementEnemyBuff(healthMultiplier, campaignStart_healthBonusMultiplier);
+        */
 
+        //NOTE: does this really need to happen? i dont think so.
         spawnRateIncreaseMultiplier *= campaignEnd_DifficultyRatesIncreaseMultiplier;
         healthIncreaseMultiplier *= campaignEnd_DifficultyRatesIncreaseMultiplier;
     }

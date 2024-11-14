@@ -68,6 +68,7 @@ public class RegionManager_System : MonoBehaviour
     public void LoadRegion(RegionData_World regionToLoad)
     {
         currentRegion = regionToLoad;
+        SceneChanger_System.instance.GoToGameplay();
     }
 
 }
