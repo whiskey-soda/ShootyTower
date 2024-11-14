@@ -115,6 +115,7 @@ public class SpawnDirector_System : MonoBehaviour
         }
         else 
         {
+            //waves only get more difficult if you make it past wave 9
             spawnsPerSec *= spawnRateIncreaseMultiplier;
             healthMultiplier *= healthIncreaseMultiplier;
 
