@@ -63,8 +63,13 @@ public class Migration_System : MonoBehaviour
     {
         RegionManager_System.instance.regions.Add(campaignStartRegionData);
 
+
         campaignEndRegionData = FetchRegionData();
-        RegionManager_System.instance.regions.Add(campaignEndRegionData);
+        //if campaign has gotten harder, add a new harder region 
+        if (campaignEndRegionData.spawnsPerSec != campaignStartRegionData.spawnsPerSec)
+        {
+            RegionManager_System.instance.regions.Add(campaignEndRegionData);
+        }
     }
 
     [ContextMenu("Init Region")]
