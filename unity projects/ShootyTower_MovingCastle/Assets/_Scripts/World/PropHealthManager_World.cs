@@ -33,7 +33,7 @@ public class PropHealthManager_World : MonoBehaviour
     }
 
     [ContextMenu("Update Prop Health List")]
-    void UpdateHealthList()
+    public void UpdateHealthList()
     {
         propHealthList.Clear();
         PropHealth_World[] propList = GatherProps();
@@ -44,8 +44,18 @@ public class PropHealthManager_World : MonoBehaviour
         }
     }
 
-    [ContextMenu("Update Prop Healths")]
-    void UpdatePropHealths()
+    /// <summary>
+    /// overrides the prop health list with a new health list
+    /// </summary>
+    /// <param name="newHealthList"></param>
+    public void SetHealthList(List<float> newHealthList)
+    {
+        propHealthList.Clear();
+        propHealthList = newHealthList;
+    }
+
+    [ContextMenu("Update Health On Props")]
+    public void UpdateHealthOnProps()
     {
         PropHealth_World[] propList = GatherProps();
         for (int i = 0; i < propHealthList.Count; i++)
