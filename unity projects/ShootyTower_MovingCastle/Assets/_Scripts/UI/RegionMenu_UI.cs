@@ -23,6 +23,15 @@ public class RegionMenu_UI : MonoBehaviour
 
     private void Start()
     {
+        LoadRegionMenu();
+    }
+
+    /// <summary>
+    /// loads regions from the json file and displays them in panels
+    /// </summary>
+    void LoadRegionMenu()
+    {
+        RegionManager_System.instance.LoadRegionsFromJSON();
         DisplayRegionPanels();
     }
 

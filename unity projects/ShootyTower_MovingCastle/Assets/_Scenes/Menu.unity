@@ -135,30 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SYSTEM (Persistent)
       objectReference: {fileID: 0}
-    - target: {fileID: 4625884086083059539, guid: 3e68fef5cea260b48b0bf8fe3812068f, type: 3}
-      propertyPath: regions.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625884086083059539, guid: 3e68fef5cea260b48b0bf8fe3812068f, type: 3}
-      propertyPath: regions.Array.data[0].worldSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625884086083059539, guid: 3e68fef5cea260b48b0bf8fe3812068f, type: 3}
-      propertyPath: regions.Array.data[0].spawnsPerSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625884086083059539, guid: 3e68fef5cea260b48b0bf8fe3812068f, type: 3}
-      propertyPath: regions.Array.data[0].healthMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625884086083059539, guid: 3e68fef5cea260b48b0bf8fe3812068f, type: 3}
-      propertyPath: regions.Array.data[0].healthIncreaseMultiplier
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4625884086083059539, guid: 3e68fef5cea260b48b0bf8fe3812068f, type: 3}
-      propertyPath: regions.Array.data[0].spawnRateIncreaseMultiplier
-      value: 1.2
-      objectReference: {fileID: 0}
     - target: {fileID: 5911074122222107399, guid: 3e68fef5cea260b48b0bf8fe3812068f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
