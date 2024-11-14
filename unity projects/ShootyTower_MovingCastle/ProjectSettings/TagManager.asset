@@ -14,6 +14,15 @@ TagManager:
   - Prop Hurtbox
   - XP Orb
   - Weapon Parent
+  - Very Tall Target
+  - Ground 2 Weapon Position
+  - Ground Target
+  - Aerial Target
+  - Tall Target
+  - Ground NavMesh
+  - Tall NavMesh
+  - High NavMesh
+  - Sky NavMesh
   layers:
   - Default
   - TransparentFX

@@ -2619,7 +2619,7 @@ GameObject:
   - component: {fileID: 585738478}
   m_Layer: 0
   m_Name: Ground NavMesh
-  m_TagString: Untagged
+  m_TagString: Ground NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3044,7 +3044,7 @@ GameObject:
   - component: {fileID: 805084110}
   m_Layer: 0
   m_Name: High NavMesh
-  m_TagString: Untagged
+  m_TagString: High NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4739,7 +4739,7 @@ GameObject:
   - component: {fileID: 1460976174}
   m_Layer: 0
   m_Name: Tall NavMesh
-  m_TagString: Untagged
+  m_TagString: Tall NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5102,7 +5102,7 @@ GameObject:
   - component: {fileID: 1519706608}
   m_Layer: 0
   m_Name: Sky NavMesh
-  m_TagString: Untagged
+  m_TagString: Sky NavMesh
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6239,6 +6239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveDurationSecs: 50
+  waveBreakDurationSecs: 5
   allEnemyTypesList:
   - {fileID: 11400000, guid: 0803517a1205fa140b573cbd65d31f24, type: 2}
   - {fileID: 11400000, guid: c24730c82b5731348a8ee03b1665373e, type: 2}
@@ -6270,8 +6271,6 @@ MonoBehaviour:
   spawnsPerSec: 1
   healthMultiplier: 1
   difficulty: 1
-  campaignStart_spawnsPerSec: 0
-  campaignStart_healthBonusMultiplier: 0
   enemiesInWave: []
   waveWeightTotal: 0
   numOfEnemyTypesInWave: 3
@@ -6306,6 +6305,7 @@ MonoBehaviour:
   worldSize: 1
   worldXSize: 5
   worldYSize: 3
+  seed: 0
   navMeshSurfaces: []
 --- !u!114 &1765206676
 MonoBehaviour:
@@ -6392,6 +6392,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d76be2eeeddd245908690c888672a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  campaignStartRegionData:
+    spawnsPerSec: 0
+    healthMultiplier: 0
+    spawnRateIncreaseMultiplier: 0
+    healthIncreaseMultiplier: 0
+    worldSize: 0
 --- !u!114 &1765206682
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RegionGeneration_World : MonoBehaviour
 {
@@ -116,6 +117,24 @@ public class RegionGeneration_World : MonoBehaviour
         foreach (NavMeshSurface surface in navMeshSurfaces)
         {
             surface.BuildNavMesh();
+
+            //set navmeshes to correct offsets
+            if (surface.CompareTag("Ground NavMesh"))
+            {
+                surface.transform.position = new Vector3(surface.transform.position.x, surface.transform.position.y, 0);
+            }
+            else if (surface.CompareTag("Tall NavMesh"))
+            {
+                surface.transform.position = new Vector3(surface.transform.position.x, surface.transform.position.y, 5);
+            }
+            else if (surface.CompareTag("High NavMesh"))
+            {
+                surface.transform.position = new Vector3(surface.transform.position.x, surface.transform.position.y, 10);
+            }
+            else if (surface.CompareTag("Sky NavMesh"))
+            {
+                surface.transform.position = new Vector3(surface.transform.position.x, surface.transform.position.y, 15);
+            }
         }
 
     }
