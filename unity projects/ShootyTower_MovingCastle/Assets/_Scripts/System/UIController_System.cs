@@ -10,6 +10,8 @@ public class UIController_System : MonoBehaviour
 
     [Header("DEBUG")]
     [SerializeField] GameObject LevelUpMenu;
+    [SerializeField] GameObject upgradeMenu;
+    [SerializeField] GameObject weaponMenu;
     Pause_System pauseScript;
 
     GameObject NewWeaponMenu;
@@ -34,7 +36,6 @@ public class UIController_System : MonoBehaviour
     {
         
         HideLevelUpMenu();
-        NewWeaponMenu.SetActive(false);
 
     }
 
@@ -48,6 +49,11 @@ public class UIController_System : MonoBehaviour
     {
         LevelUpMenu.SetActive(false);
         pauseScript.ResumeGame();
+    }
+
+    public void ShowMenu(GameObject menuParent)
+    {
+
     }
 
     public void ToggleNewWeaponMenu()
