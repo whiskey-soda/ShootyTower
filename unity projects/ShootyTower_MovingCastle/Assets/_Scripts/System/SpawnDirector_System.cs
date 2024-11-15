@@ -107,7 +107,7 @@ public class SpawnDirector_System : MonoBehaviour
         if (currentWaveNum <= 9)
         {
             enemiesInWave.Clear();
-            for (int i = 0; i < currentWaveNum-1; i++)
+            for (int i = 0; i <= currentWaveNum-1; i++)
             {
                 enemiesInWave.Add(wave1_9NewEnemyOrder[i]);
             }
