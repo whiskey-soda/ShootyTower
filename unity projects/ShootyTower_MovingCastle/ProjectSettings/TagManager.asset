@@ -25,6 +25,7 @@ TagManager:
   - Sky NavMesh
   - Upgrade Menu
   - New Weapon Menu
+  - New Weapon Button
   layers:
   - Default
   - TransparentFX

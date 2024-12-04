@@ -47,6 +47,7 @@ public class UIController_System : MonoBehaviour
     public void ShowLevelUpMenu()
     {
         LevelUpMenu.SetActive(true);
+        LevelUpMenu.GetComponent<LevelUpMenu_UI>().InitMenu();
         pauseScript.PauseGame();
     }
 

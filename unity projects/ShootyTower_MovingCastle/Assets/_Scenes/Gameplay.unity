@@ -3238,6 +3238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e444800c742244a95ce893ffe603a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newWeaponLevels: 
+  newWeaponChance: 0.2
 --- !u!1 &758627079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,7 +4570,7 @@ GameObject:
   - component: {fileID: 1309189686}
   m_Layer: 5
   m_Name: New Weapon Button
-  m_TagString: Untagged
+  m_TagString: New Weapon Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
