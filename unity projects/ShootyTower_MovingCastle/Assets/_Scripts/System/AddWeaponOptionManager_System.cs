@@ -12,6 +12,8 @@ public class AddWeaponOptionManager_System : MonoBehaviour
     public HeightLevel heightLevelToArmNext = HeightLevel.Ground;
     public bool allLayersArmed = false;
 
+    AddWeaponOption_System[] newWeaponOptions;
+
     private void Awake()
     {
         //singleton code
@@ -21,6 +23,8 @@ public class AddWeaponOptionManager_System : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        newWeaponOptions = GetComponentsInChildren<AddWeaponOption_System>();
     }
 
     private void OnEnable()
@@ -30,6 +34,8 @@ public class AddWeaponOptionManager_System : MonoBehaviour
             // whenever menu is shown, make sure height level is set
             FetchHighestHeightLevel();
         }
+
+        GenerateWeaponOptions();
 
     }
 
@@ -67,7 +73,32 @@ public class AddWeaponOptionManager_System : MonoBehaviour
                 allLayersArmed = true;
             }
         }
-
-
     }
+
+    void GenerateWeaponOptions()
+    {
+
+        int[] weaponIndices = new int[Enum.GetNames(typeof(WeaponType)).Length - 1];
+        for (int i = 0; i < weaponIndices.Length; i++)
+        {
+            weaponIndices[i] = i + 1;
+        }
+
+        // Knuth shuffle algorithm :: courtesy of Wikipedia :)
+        for (int t = 0; t < weaponIndices.Length; t++)
+        {
+            int tmp = weaponIndices[t];
+            int r = UnityEngine.Random.Range(t, weaponIndices.Length);
+            weaponIndices[t] = weaponIndices[r];
+            weaponIndices[r] = tmp;
+        }
+
+
+        for (int i = 0; i < newWeaponOptions.Length; i++)
+        {
+            newWeaponOptions[i].SetLabel( ((WeaponType)weaponIndices[i]).ToString() );
+            newWeaponOptions[i].weaponType = (WeaponType)weaponIndices[i];
+        }
+    }
+
 }

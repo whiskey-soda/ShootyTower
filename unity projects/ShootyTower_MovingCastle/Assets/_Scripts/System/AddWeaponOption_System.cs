@@ -9,16 +9,20 @@ using UnityEngine.UI;
 public class AddWeaponOption_System : MonoBehaviour
 {
 
-    WeaponType weaponType = WeaponType.Bow;
+    public WeaponType weaponType;
 
     TMP_Dropdown dropdown;
 
     Button button;
 
+    TextMeshProUGUI weaponLabel;
+
     private void Awake()
     {
         dropdown = GetComponentInChildren<TMP_Dropdown>();
         button = GetComponentInChildren<Button>();
+
+        weaponLabel = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -48,6 +52,9 @@ public class AddWeaponOption_System : MonoBehaviour
         WeaponManager_Player.instance.AddWeapon(weaponType, heightLevel);
     }
 
-    
+    public void SetLabel(string newLabelText)
+    {
+        weaponLabel.text = newLabelText;
+    }
 
 }
