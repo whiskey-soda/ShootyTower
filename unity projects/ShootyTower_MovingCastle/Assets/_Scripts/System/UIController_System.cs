@@ -56,9 +56,14 @@ public class UIController_System : MonoBehaviour
         pauseScript.ResumeGame();
     }
 
-    public void ShowMenu(GameObject menuParent)
+    public void ShowUpgradeMenu()
     {
+        upgradeMenu.SetActive(true);
+    }
 
+    public void HideUpgradeMenu()
+    {
+        upgradeMenu.SetActive(false);
     }
 
     public void ToggleNewWeaponMenu()
