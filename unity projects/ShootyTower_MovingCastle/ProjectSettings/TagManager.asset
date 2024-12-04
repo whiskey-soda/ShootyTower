@@ -23,6 +23,8 @@ TagManager:
   - Tall NavMesh
   - High NavMesh
   - Sky NavMesh
+  - Upgrade Menu
+  - New Weapon Menu
   layers:
   - Default
   - TransparentFX

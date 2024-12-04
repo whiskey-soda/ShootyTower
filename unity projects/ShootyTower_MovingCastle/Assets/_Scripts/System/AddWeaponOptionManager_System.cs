@@ -25,6 +25,9 @@ public class AddWeaponOptionManager_System : MonoBehaviour
         }
 
         newWeaponOptions = GetComponentsInChildren<AddWeaponOption_System>();
+
+        //starts enabled, and disables itself after configuring
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -34,9 +37,7 @@ public class AddWeaponOptionManager_System : MonoBehaviour
             // whenever menu is shown, make sure height level is set
             FetchHighestHeightLevel();
         }
-
         GenerateWeaponOptions();
-
     }
 
     /// <summary>
@@ -96,6 +97,7 @@ public class AddWeaponOptionManager_System : MonoBehaviour
 
         for (int i = 0; i < newWeaponOptions.Length; i++)
         {
+            Debug.Log($"CONFIGURING OPTION {i}");
             newWeaponOptions[i].SetLabel( ((WeaponType)weaponIndices[i]).ToString() );
             newWeaponOptions[i].weaponType = (WeaponType)weaponIndices[i];
         }

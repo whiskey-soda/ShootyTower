@@ -1516,10 +1516,10 @@ RectTransform:
   - {fileID: 1573024484}
   m_Father: {fileID: 1245220558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 409.99994, y: -340}
-  m_SizeDelta: {x: 250, y: 450}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &205421201
 MonoBehaviour:
@@ -2419,10 +2419,10 @@ RectTransform:
   - {fileID: 1336048781}
   m_Father: {fileID: 1245220558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1009.99994, y: -340}
-  m_SizeDelta: {x: 250, y: 450}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569688818
 MonoBehaviour:
@@ -4404,11 +4404,11 @@ GameObject:
   - component: {fileID: 1245220561}
   m_Layer: 5
   m_Name: Upgrade Menu
-  m_TagString: Untagged
+  m_TagString: Upgrade Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1245220558
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6002,10 +6002,10 @@ RectTransform:
   - {fileID: 115015419}
   m_Father: {fileID: 1245220558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 709.99994, y: -340}
-  m_SizeDelta: {x: 250, y: 450}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1522574515
 MonoBehaviour:
@@ -7616,7 +7616,7 @@ GameObject:
   - component: {fileID: 1766585410}
   - component: {fileID: 1766585409}
   m_Layer: 5
-  m_Name: Add Weapon Panel 1 (1)
+  m_Name: Add Weapon Panel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7639,10 +7639,10 @@ RectTransform:
   - {fileID: 2011147009}
   m_Father: {fileID: 3157486146829295183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 835, y: -225}
-  m_SizeDelta: {x: 250, y: 450}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766585409
 MonoBehaviour:
@@ -8334,7 +8334,7 @@ GameObject:
   - component: {fileID: 1849936283}
   - component: {fileID: 1849936282}
   m_Layer: 5
-  m_Name: Add Weapon Panel 1 (2)
+  m_Name: Add Weapon Panel 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8357,10 +8357,10 @@ RectTransform:
   - {fileID: 12587712}
   m_Father: {fileID: 3157486146829295183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 835, y: -225}
-  m_SizeDelta: {x: 250, y: 450}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849936282
 MonoBehaviour:
@@ -9108,6 +9108,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1765206670}
         m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
+        m_MethodName: ToggleNewWeaponMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1765206670}
+        m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
         m_MethodName: HideLevelUpMenu
         m_Mode: 1
         m_Arguments:
@@ -9428,6 +9440,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1766585409}
         m_TargetAssemblyTypeName: AddWeaponOption_System, Assembly-CSharp
         m_MethodName: AddWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1765206670}
+        m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
+        m_MethodName: ToggleNewWeaponMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10047,10 +10071,10 @@ RectTransform:
   - {fileID: 2445856195336325955}
   m_Father: {fileID: 3157486146829295183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 835, y: -225}
-  m_SizeDelta: {x: 250, y: 450}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762722571488587555
 MonoBehaviour:
@@ -10171,6 +10195,18 @@ MonoBehaviour:
       - m_Target: {fileID: 6189121765340927436}
         m_TargetAssemblyTypeName: AddWeaponOption_System, Assembly-CSharp
         m_MethodName: AddWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1765206670}
+        m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
+        m_MethodName: ToggleNewWeaponMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10810,14 +10846,13 @@ GameObject:
   - component: {fileID: 1242435983533620383}
   - component: {fileID: 7635029108762346153}
   - component: {fileID: 1838005944260708978}
-  - component: {fileID: 7635029108762346154}
   m_Layer: 5
   m_Name: Weapon Menu
-  m_TagString: Untagged
+  m_TagString: New Weapon Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &5073710958625676150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11373,20 +11408,6 @@ MonoBehaviour:
   m_Spacing: {x: 50, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &7635029108762346154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053420578039774399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b896abf268e0b4485cc6a71fe9bd1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addWeaponPanelPrefab: {fileID: 0}
-  weaponOptionCount: 2
 --- !u!224 &7688217035064176207
 RectTransform:
   m_ObjectHideFlags: 0

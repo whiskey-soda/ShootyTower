@@ -14,8 +14,6 @@ public class UIController_System : MonoBehaviour
     [SerializeField] GameObject weaponMenu;
     Pause_System pauseScript;
 
-    GameObject NewWeaponMenu;
-
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -28,8 +26,15 @@ public class UIController_System : MonoBehaviour
             Instance = this;
         }
 
+        //the entire menu that comes up when u level up
         LevelUpMenu = GameObject.FindGameObjectWithTag("Level Up Menu");
         pauseScript = gameObject.GetComponent<Pause_System>();
+
+        // the menu child that contains upgrade options
+        upgradeMenu = GameObject.FindGameObjectWithTag("Upgrade Menu");
+
+        // the menu child that contains weapon options
+        weaponMenu = GameObject.FindGameObjectWithTag("New Weapon Menu");
     }
 
     private void Start()
@@ -59,15 +64,15 @@ public class UIController_System : MonoBehaviour
     public void ToggleNewWeaponMenu()
     {
         //if not active, pause game and show the menu
-        if (!NewWeaponMenu.activeSelf)
+        if (!weaponMenu.activeSelf)
         {
-            NewWeaponMenu.SetActive(true);
+            weaponMenu.SetActive(true);
             pauseScript.PauseGame();
         }
         //if active, close menu and resume game
         else
         {
-            NewWeaponMenu.SetActive(false);
+            weaponMenu.SetActive(false);
             pauseScript.ResumeGame();
         }
     }
