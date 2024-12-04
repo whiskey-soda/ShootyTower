@@ -10,15 +10,25 @@ public class WeaponManager_Player : MonoBehaviour
     [Header("CONFIG")]
     public List<GameObject> weaponPrefabList;
 
-    [Header("DEBUG")]
-
-    [SerializeField] WeaponUpgrader_Player weaponUpgradeScript;
+    [SerializeField] public WeaponUpgrader_Player weaponUpgradeScript;
     Transform weaponParentTransform;
+
+    public static WeaponManager_Player instance;
 
     private void Awake()
     {
+        //singleton code
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+
         weaponUpgradeScript = GetComponent<WeaponUpgrader_Player>();
         weaponParentTransform = GameObject.FindWithTag("Weapon Parent").transform;
+
     }
 
 
