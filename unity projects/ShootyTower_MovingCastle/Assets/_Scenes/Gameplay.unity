@@ -1050,6 +1050,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1765206670}
         m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
+        m_MethodName: HideUpgradeMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1765206670}
+        m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
         m_MethodName: HideLevelUpMenu
         m_Mode: 1
         m_Arguments:
@@ -3238,8 +3250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e444800c742244a95ce893ffe603a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newWeaponLevels: 
-  newWeaponChance: 0.2
+  newWeaponLevels: 05000000080000000a000000
+  newWeaponChance: 0.12
 --- !u!1 &758627079
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,6 +4796,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1765206670}
+        m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
+        m_MethodName: HideUpgradeMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1765206670}
         m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
         m_MethodName: HideLevelUpMenu
@@ -6631,6 +6655,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1765206670}
+        m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
+        m_MethodName: HideUpgradeMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1765206670}
         m_TargetAssemblyTypeName: UIController_System, Assembly-CSharp
         m_MethodName: HideLevelUpMenu

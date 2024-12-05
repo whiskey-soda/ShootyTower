@@ -34,8 +34,8 @@ public class Leveling_Player : MonoBehaviour
     {
         if (currentXP >= lvlUpXpRequirement)
         {
-            LevelUp.Invoke();
             RaiseLevel();
+            LevelUp.Invoke();
         }
     }
 

@@ -22,6 +22,7 @@ public class LevelUpMenu_UI : MonoBehaviour
 
     public void InitMenu()
     {
+        //check if player has reached a level designated as a new weapon level
         bool showWeaponMenu = false;
 
         foreach (uint level in newWeaponLevels)
@@ -34,12 +35,14 @@ public class LevelUpMenu_UI : MonoBehaviour
 
         if (showWeaponMenu)
         {
+
             UIController_System.Instance.ToggleNewWeaponMenu();
         }
         else
         {
-            UIController_System.Instance.ShowLevelUpMenu();
+            UIController_System.Instance.ShowUpgradeMenu();
 
+            //random chance to show new weapon button
             float newWeaponRollResult = Random.Range(0f, 1f);
             if (newWeaponRollResult <= newWeaponChance)
             {

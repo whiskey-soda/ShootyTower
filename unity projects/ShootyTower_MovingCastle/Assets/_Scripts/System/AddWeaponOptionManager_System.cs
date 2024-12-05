@@ -97,7 +97,6 @@ public class AddWeaponOptionManager_System : MonoBehaviour
 
         for (int i = 0; i < newWeaponOptions.Length; i++)
         {
-            Debug.Log($"CONFIGURING OPTION {i}");
             newWeaponOptions[i].SetLabel( ((WeaponType)weaponIndices[i]).ToString() );
             newWeaponOptions[i].weaponType = (WeaponType)weaponIndices[i];
         }
